@@ -1,7 +1,8 @@
 <script setup>
 import Hero from './components/Hero.vue'
 import Header from './components/Header.vue'
-import Brands from './components/Brands.vue'
+import Brands from './components/OurBrands.vue'
+import List from './components/List.vue'
 
 </script>
 
@@ -9,6 +10,7 @@ import Brands from './components/Brands.vue'
   <Header />
   <Hero />
   <Brands />
+  <List />
 </template>
 
 <style>
@@ -19,5 +21,6 @@ import Brands from './components/Brands.vue'
   min-height: 100vh;
   position: relative;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 </style>

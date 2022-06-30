@@ -3,9 +3,22 @@ import anime from 'animejs'
 import { onMounted } from 'vue';
 
 const scrollToBrand = () => {
-	document.getElementById('brands').scrollTo({
-		top: 0,
-		behavior: 'smooth',
+	document.getElementById('our-brands').scrollIntoView(true)
+}
+
+const getScrollButtonPosition = () => {
+	if (window.innerWidth < 640) return '13vh'
+	else return '5vh'
+}
+
+const animateScrollButton = () => {
+	anime({
+		targets: '#hero .scroll-down img',
+		loop: true,
+		duration: 600,
+		easing: (el, i, total) => t => Math.pow(Math.sin(t * (i + 1)), total/1.25),
+		direction: 'alternate',
+		translateY: [0, 15]
 	})
 }
 
@@ -18,11 +31,27 @@ onMounted(() => {
 	})
 
 	const animation = anime.timeline({
-		duration: 2000,
+		duration: 2000/10,
 		direction: 'normal',
 		easing: 'easeInOutSine',
 		loop: false,
 	})
+
+	const show_stuff = () => {
+		animateScrollButton()
+		setTimeout(() => {
+			document.body.style.overflowY = 'auto'
+			document.getElementById('our-brands').style.display = 'flex'
+			document.getElementById('brands').style.display = 'grid'
+			document.getElementById('brands-2').style.display = 'grid'
+		}, 800)
+		anime({
+			targets: '#hero img',
+			opacity: 1,
+			easing: 'easeInSine',
+			duration: 1000,
+		})
+	}
 
 	animation
 		.add({
@@ -45,33 +74,32 @@ onMounted(() => {
 		.add({
 			targets: '#header',
 			top: 0,
+			opacity: [0, 1],
 			duration: 1000
 		}, '-=1000')
 		.add({
 			targets: '#hero .scroll-down',
-			bottom: '5vh',
-			opacity: [0, 1],
-			duration: 1000,
-			complete: (el) => {
-				document.body.style.overflowY = 'auto'
-				document.getElementById('brands').style.display = 'flex'
+			bottom: () => getScrollButtonPosition(),
+			duration: 800,
+			easing: 'cubicBezier(.5, .05, .1, .3)',
+			begin: () => {
 				anime({
-					targets: '#hero .scroll-down img',
-					loop: true,
-					duration: 600,
-					easing: (el, i, total) => t => Math.pow(Math.sin(t * (i + 1)), total),
-					direction: 'alternate',
-					translateY: [0, 15]
+					targets: '#hero button',
+					opacity: 1,
+					duration: 1000
 				})
+			},
+			complete: () => {
+				show_stuff()
 			}
-		}, '-=200')
+		}, '-=1000')
 })
 </script>
 
 
 <template>
-	<div id="hero" class="relative">
-		<svg viewBox="0 0 9629.1094 2123.3979" id="text">
+	<div id="hero" class="relative flex bg-light items-center justify-center h-screen">
+		<svg viewBox="0 0 9629.1094 2123.3979" id="text" class="relative -top-[8vh] sm:top-0">
 			<path
 				d="M 513.67445,138.83827 V 1354.9274 c 0,0 -26.19526,271.0445 216.18513,271.0445 H 1921.9284 l -276.7655,358.5866 -881.96491,-6.0309 c 0,0 -658.2748,53.8081 -659.74976,-512.3826 L 100,142.32879 Z" />
 			<path
@@ -82,25 +110,41 @@ onMounted(() => {
 				d="m 6805.633,1981.9281 c 0,0 915.7114,-1511.82122 1073.9741,-1715.80799 176.1461,-227.03535 427.3212,-222.68574 569.7854,21.24582 97.364,166.71031 1079.7165,1692.18777 1079.7165,1692.18777 H 9063.8639 L 8784.8708,1556.9086 H 7515.4269 l 198.1956,-318.6851 H 8608.932 L 8154.0901,519.71083 7255.2261,1983.3545 Z" />
 		</svg>
 
-		<div class="scroll-down flex flex-col justify-center absolute -bottom-[6vh] opacity-0 cursor-pointer" @click="scrollToBrand">
-			<button class="mb-2 font-bold text-theme-dark">Scroll Down</button>
-			<img src="../assets/icons/down-arrow.svg" class="h-[2rem]" />
+		<div class="scroll-down flex flex-col justify-center absolute bottom-0 cursor-pointer" @click="scrollToBrand">
+			<button class="
+				font-bold text-dark opacity-0
+				2xl:text-3xl
+				xl:text-2xl
+				lg:text-xl
+				md:text-lg
+				sm:mb-2
+				mb-1
+			">See More</button>
+			<img src="../assets/icons/down-arrow.svg" class="
+				opacity-0
+				2xl:h-[2.5rem]
+				md:h-[1.85rem]
+				h-[1.2rem]
+			" />
 		</div>
 	</div>
 </template>
 
 <style scoped>
-#hero {
-	@apply flex bg-gray-100 items-center justify-center h-screen;
-}
-
 path {
 	fill: transparent;
-	stroke: var(--theme-dark);
+	stroke: var(--dark);
 	stroke-width: 35;
 }
 
-svg {
-	width: 77%;
+@media screen and (max-width: 1280px) {
+	svg {
+		width: 77%;
+	}
+}
+@media screen and (min-width: 1280px) {
+	svg {
+		width: 65%;
+	}
 }
 </style>

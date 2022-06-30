@@ -20,7 +20,7 @@ const props = defineProps(['colorful'])
 <template>
 	<svg viewBox="0 0 7320.7002 6884.4492">
 		<path v-for="(path, i) in all_path" :key="i"
-			:d="path.d" :style="`fill: ${props.colorful ? path.fill : 'var(--theme-dark)'}`"
+			:d="path.d" :style="`fill: ${props.colorful ? path.fill : 'var(--dark)'}`"
 		/>
 	</svg>
 </template>

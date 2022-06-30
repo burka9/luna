@@ -4,12 +4,30 @@
 
 @layer base {
 	:root {
-		--theme-dark: #53717b;
-		--theme-light: rgb(203 213 225);
+		--dark: #52717bff;
+		--normal: #251c18ff;
+		--light: #dae3e7ff;
 	}
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 * {
 	margin: 0;
 	padding: 0;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 25px;
+	background: var(--dark);
+}
+
+::-webkit-scrollbar-track {
+	background: var(--light);
 }
