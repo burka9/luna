@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--theme-dark: #53717b;
+		--theme-light: rgb(203 213 225);
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
