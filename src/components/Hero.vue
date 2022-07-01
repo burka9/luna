@@ -37,13 +37,23 @@ onMounted(() => {
 		loop: false,
 	})
 
+	const hidden_views = [
+		{ id: 'our-brands', display: 'flex' },
+		{ id: 'brands', display: 'grid' },
+		{ id: 'brands-2', display: 'grid' },
+		{ id: 'who-are-we', display: 'flex' },
+		{ id: 'our-values', display: 'flex' },
+		{ id: 'icon-section', display: 'flex' },
+		{ id: 'feeding-program', display: 'flex' },
+		{ id: 'footer', display: 'flex' },
+	]
+
 	const show_stuff = () => {
 		animateScrollButton()
 		setTimeout(() => {
 			document.body.style.overflowY = 'auto'
-			document.getElementById('our-brands').style.display = 'flex'
-			document.getElementById('brands').style.display = 'grid'
-			document.getElementById('brands-2').style.display = 'grid'
+			for (const view in hidden_views)
+				document.getElementById(hidden_views[view]['id']).style.display = hidden_views[view]['display']
 		}, 800)
 		anime({
 			targets: '#hero img',

@@ -40,7 +40,7 @@
 				md:my-6 md:text-lg
 				sm:text-base
 				my-4 text-sm
-			">The company has implemented SAP ERP system, to streamline the business processeswithin any department, connecting real-time activities of each of the departments andbusiness units in the company.</p>
+			">The company has implemented SAP ERP system, to streamline the business processes within any department, connecting real-time activities of each of the departments andbusiness units in the company.</p>
 		</div>
 	</div>
 </template>

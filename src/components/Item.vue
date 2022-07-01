@@ -7,8 +7,6 @@ const props = defineProps(['item', 'dark'])
 const className = () => props.dark ? 'border-white text-white' : 'border-dark text-dark'
 const svgClassName = () => props.dark ? 'fill-white' : 'fill-dark'
 
-console.log(getCurrentInstance())
-
 const showing = (isVisible, entry) => {
 	console.log('showing')
 	console.log(isVisible)
@@ -24,7 +22,8 @@ const showing = (isVisible, entry) => {
 			lg:border-[3px] lg:h-[440px] lg:w-60
 			md:border-[2px] md:h-[360px] md:w-52
 			border-[2px] h-[450px] w-60
-		` + className()">
+		` + className()"
+		v-observe-visibility="showing">
 		<component :class="
 			`
 			xl:w-48
@@ -51,7 +50,7 @@ const showing = (isVisible, entry) => {
 				lg:mx-4
 				md:text-xs md:mx-4
 				text-sm mx-2
-			">{{ props.item.content.slice(0, 100) }}</p>
+			">{{ props.item.content }}</p>
 			<button class="
 				uppercase
 				xl:my-3

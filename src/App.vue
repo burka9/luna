@@ -4,6 +4,10 @@ import Header from './components/Header.vue'
 import Brands from './components/OurBrands.vue'
 import List from './components/List.vue'
 import Who from './components/Who.vue'
+import Values from './components/Values.vue'
+import Icons from './components/IconSection.vue'
+import Footer from './components/Footer.vue'
+import Feed from './components/Feed.vue'
 
 </script>
 
@@ -12,7 +16,11 @@ import Who from './components/Who.vue'
   <Hero />
   <Brands />
   <List />
-  <!-- <Who /> -->
+  <Who />
+  <Values />
+  <Icons />
+  <Feed />
+  <Footer />
 </template>
 
 <style>
