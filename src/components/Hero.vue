@@ -31,7 +31,7 @@ onMounted(() => {
 	})
 
 	const animation = anime.timeline({
-		duration: 2000/10,
+		duration: 2000/1,
 		direction: 'normal',
 		easing: 'easeInOutSine',
 		loop: false,
@@ -75,7 +75,10 @@ onMounted(() => {
 			targets: '#header',
 			top: 0,
 			opacity: [0, 1],
-			duration: 1000
+			duration: 1000,
+			complete: () => {
+				document.getElementById('header').style.maxWidth = `${window.innerWidth}px`
+			},
 		}, '-=1000')
 		.add({
 			targets: '#hero .scroll-down',
@@ -109,6 +112,9 @@ onMounted(() => {
 			<path
 				d="m 6805.633,1981.9281 c 0,0 915.7114,-1511.82122 1073.9741,-1715.80799 176.1461,-227.03535 427.3212,-222.68574 569.7854,21.24582 97.364,166.71031 1079.7165,1692.18777 1079.7165,1692.18777 H 9063.8639 L 8784.8708,1556.9086 H 7515.4269 l 198.1956,-318.6851 H 8608.932 L 8154.0901,519.71083 7255.2261,1983.3545 Z" />
 		</svg>
+
+		<h1 class="hidden">Luna</h1>
+		<h1 class="hidden">Luna Group</h1>
 
 		<div class="scroll-down flex flex-col justify-center absolute bottom-0 cursor-pointer" @click="scrollToBrand">
 			<button class="

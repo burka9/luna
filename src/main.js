@@ -2,4 +2,11 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import './index.css'
 
-createApp(App).mount('#app')
+import VueObserveVisibilityPlugin, { ObserveVisibility } from 'vue-observe-visibility'
+
+
+
+const app = createApp(App)
+
+app.use(VueObserveVisibilityPlugin)
+app.mount('#app')

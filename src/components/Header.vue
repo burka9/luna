@@ -26,6 +26,7 @@ const toggleBurger = () => {
 	})
 	anime({
 		targets: '#logo-box',
+		rotateZ: showing_burger ? [0, 10] : [10, 0],
 		translateY: el => {
 			let x = el.getBoundingClientRect().height + 10
 			return showing_burger ? [0, x] : [x, 0]
@@ -33,9 +34,12 @@ const toggleBurger = () => {
 	})
 	anime({
 		targets: '#header .links',
+		rotateZ: showing_burger ? [0, 0] : [0, 0],
 		top: el => {
-			let x = document.getElementById('burger-menu').getBoundingClientRect().top
-			return showing_burger ? [-16, x] : [x, -16]
+			let x = el.getBoundingClientRect().height
+			x = -1* (5 + x)
+			let y = document.getElementById('burger-menu').getBoundingClientRect().top
+			return showing_burger ? [x, y] : [y, x]
 		}
 	})
 }
@@ -43,17 +47,18 @@ const toggleBurger = () => {
 
 <template>
 	<div id="header" class="
-			bg-transprent flex sm:items-center justify-between absolute z-10 w-full
-			flex-col sm:flex-row
+			bg-transprent flex sm:items-center justify-between absolute z-10 w-screen
 			opactiy-0 top-[-15vh]
 
 			2xl:p-36 2xl:px-44
 			lg:p-16 lg:px-24
 			md:p-12
-			sm:p-8
-			p-5
+			sm:flex-row sm:p-8
+			flex-col p-5
 		">
-		<div class="logo flex items-center justify-between w-full sm:w-auto overflow-hidden">
+		<div class="
+			logo flex items-center justify-between w-full sm:w-auto overflow-hidden
+		">
 			<div id="logo-box" class="flex items-center">
 				<div class="
 					icon
@@ -87,7 +92,7 @@ const toggleBurger = () => {
 		<div class="
 			links uppercase flex
 			sm:relative sm:opacity-1 sm:top-0
-			absolute -top-4 opactiy-0
+			absolute -top-8 opactiy-0
 		">
 			<div class="
 				link relative flex flex-col items-center justify-center mx-2

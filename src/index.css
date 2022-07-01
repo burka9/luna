@@ -17,6 +17,7 @@ html {
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
@@ -30,4 +31,8 @@ html {
 
 ::-webkit-scrollbar-track {
 	background: var(--light);
+}
+
+body {
+	overflow-x: hidden;
 }

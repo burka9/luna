@@ -2,30 +2,53 @@
 	<div id="our-brands" class="
 		flex-col items-center justify-center
 		hidden
-		md:p-32
-		p-16 px-4
+		2xl:p-44
+		lg:p-28
+		md:p-20
+		p-16 px-12
 	">
 		<h3 class="
 			text-dark font-bold
-			md:text-5xl
+			2xl:text-9xl
+			lg:text-7xl
+			md:text-6xl
 			text-4xl
 		">Our Brands</h3>
 
 		<div class="
 			content flex flex-col items-center
-			md:p-16 md:px-40
-			my-12 mx-7
+			2xl:p-20 2xl:px-44
+			xl:p-20 xl:px-32
+			lg:p-16 lg:px-16
+			md:p-10 md:px-0
+			p-8 px-0
 		">
 			<p class="
-				text-center text-slate-500
-				md:my-6 md:text-base
+				text-center text-slate-500 
+				2xl:my-12 2xl:text-3xl
+				xl:my-10 xl:text-2xl
+				lg:my-8 lg:text-xl
+				md:my-6 md:text-lg
+				sm:text-base
 				my-4 text-sm
-			">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis natus modi pariatur libero excepturi obcaecati vero eaque officiis tenetur alias earum, architecto est odit voluptate. facilis eum unde accusamus a obcaecati vero eaque officiis tenetur est odit voluptate.</p>
+			">Luna livestock and slaughterhouse, Luna Farms, Ezana Winery, Fresh Corner Retail Outlets, Fresh Corner Kitchen and The Exclusive Restaurant, DB Honey and Wax Processing, LunaDeep Well Drilling, and Caterkomat Heavy machinery spare parts supply, are our brands in the different business lines.</p>
 			<p class="
 				text-center text-slate-500
-				md:my-6 md:text-base
+				2xl:my-12 2xl:text-3xl
+				xl:my-10 xl:text-2xl
+				lg:my-8 lg:text-xl
+				md:my-6 md:text-lg
+				sm:text-base
 				my-4 text-sm
-			">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis natus modi pariatur libero excepturi, facilis eum unde accusamus a obcaecati vero eaque officiis tenetur alias earum, architecto est odit voluptate.</p>
+			">The company has implemented SAP ERP system, to streamline the business processeswithin any department, connecting real-time activities of each of the departments andbusiness units in the company.</p>
 		</div>
 	</div>
 </template>
+
+
+<style scoped>
+.content p {
+	text-align: justify;
+	text-align-last: center;
+}
+</style>

@@ -3,6 +3,7 @@ import Hero from './components/Hero.vue'
 import Header from './components/Header.vue'
 import Brands from './components/OurBrands.vue'
 import List from './components/List.vue'
+import Who from './components/Who.vue'
 
 </script>
 
@@ -11,6 +12,7 @@ import List from './components/List.vue'
   <Hero />
   <Brands />
   <List />
+  <!-- <Who /> -->
 </template>
 
 <style>
