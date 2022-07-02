@@ -8,13 +8,31 @@ import Text from './Text.vue'
 	<div id="footer" class="
 		bg-dark
 		hidden flex-col items-center justify-center
-		py-16
+		lg:py-16
+		md:py-12
+		py-8
 	">
-		<div class="logo flex items-center my-5">
-			<Icon class="w-12" :darker="true" :colorful="true" />
-			<Text class="w-32 ml-2 fill-[#33515b]" />
+		<div class="
+			logo flex items-center
+			lg:my-5
+			md:my-4
+			my-3
+		">
+			<Icon class="
+				lg:w-14
+				w-12
+			" :darker="true" :colorful="true" />
+			<Text class="
+				fill-[#33515b]
+				lg:w-40 lg:ml-4
+				w-32 ml-2
+			" />
 		</div>
 
-		<p class="text-light tracking-wider font-bold uppercase">&copy; Luna group 2022</p>
+		<p class="
+			text-light tracking-wider font-bold uppercase
+			md:text-lg
+			text-base
+		">&copy; Luna group 2022</p>
 	</div>
 </template>

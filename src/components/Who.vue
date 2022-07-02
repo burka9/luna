@@ -1,24 +1,35 @@
 <template>
 	<div id="who-are-we" class="
 		hidden flex-col 
-		p-16 px-24
+		lg:p-16 lg:px-24
+		md:px-20
+		sm:px-16
+		p-12 px-10
 	">
 		<h3 class="
 			font-bold
 			xl:text-7xl
 			lg:text-6xl
-			md:text-5xl
-			sm:text-3xl
-			text-2xl
+			text-5xl
 		
 			text-dark
 		">Who we are</h3>
 
-		<div class="spacer w-full h-[2px] my-16 bg-dark"></div>
+		<div class="
+			spacer w-full h-[2px] bg-dark
+			lg:my-16
+			md:my-10
+			my-8
+		"></div>
 
-		<div class="content grid grid-cols-2 gap-x-40 text-slate-500">
+		<div class="
+			content grid text-slate-500
+			lg:grid-cols-2 lg:gap-x-40
+			md:grid-cols-2 md:gap-x-20
+			grid-cols-1
+		">
 			<div class="left">
-				<p class="text-xl">
+				<p class="text-xl mb-12 md:mb-0">
 					Luna, established in 2003, is a parent company for a group of business units engaged in production, processing, and import-export activities
 				</p>
 			</div>
