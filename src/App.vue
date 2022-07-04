@@ -8,19 +8,21 @@ import Values from './components/Values.vue'
 import Icons from './components/IconSection.vue'
 import Footer from './components/Footer.vue'
 import Feed from './components/Feed.vue'
+import BackToTop from './components/BackToTop.vue'
 
 </script>
 
 <template>
-  <Header />
+  <Header  />
   <Hero />
   <Brands />
-  <List />
-  <Who />
-  <Values />
-  <Icons />
-  <Feed />
-  <Footer />
+  <List  />
+  <Who  />
+  <Icons  />
+  <Values  />
+  <Feed  />
+  <Footer  />
+  <BackToTop />
 </template>
 
 <style>

@@ -17,19 +17,19 @@ const showing = (isVisible, entry) => {
 
 <template>
 	<div :class="`item grid grid-rows-2 items-start justify-items-center
-		rounded-3xl cursor-pointer overflow-hidden
-			xl:border-[3px] xl:h-[470px] xl:w-64
-			lg:border-[3px] lg:h-[440px] lg:w-60
-			md:border-[2px] md:h-[360px] md:w-52
-			border-[2px] h-[450px] w-60
+		cursor-pointer overflow-hidden
+			xl:rounded-3xl xl:border-[3px] xl:h-[380px] xl:w-64
+			lg:rounded-2xl lg:border-[3px] lg:h-[350px] lg:w-60
+			md:rounded-xl md:border-[2px] md:h-[270px] md:w-52
+			rounded-xl border-[1px] h-[300px] w-60
 		` + className()"
 		v-observe-visibility="showing">
 		<component :class="
 			`
-			xl:w-48
-			lg:w-44
-			md:w-40
-			m-6 mb-0 w-48
+			xl:w-40
+			lg:w-36
+			md:w-28 md:mb-3
+			m-6 mb-0 w-32
 			 `
 			+ svgClassName()"
 		:is="props.item.icon"></component>
@@ -39,18 +39,18 @@ const showing = (isVisible, entry) => {
 		">
 			<h3 class="
 				uppercase font-bold text-center
-				xl:text-xl xl:mb-3
-				lg:text-lg lg:mb-2
-				md:mb-0
+				xl:text-lg xl:mb-2
+				lg:text-base lg:mb-1
+				md:text-sm md:mb-0
 				text-base mb-1
 			">{{ props.item.title }}</h3>
 			<p class="
 				text-center
 				xl:mx-5
 				lg:mx-4
-				md:text-xs md:mx-4
-				text-sm mx-2
-			">{{ props.item.content }}</p>
+				md:text-xs md:mx-4 md:px-0
+				text-xs mx-2 px-3
+			">{{ props.item.content.slice(0, 75) }}</p>
 			<button class="
 				uppercase
 				xl:my-3
@@ -82,4 +82,8 @@ const showing = (isVisible, entry) => {
 .item:hover svg {
 	fill: white;
 } */
+
+.content:hover svg {
+	transform: rotateX(360deg);
+}
 </style>

@@ -10,6 +10,31 @@
 	}
 }
 
+@font-face {
+	font-family: 'Luna';
+	src: url('assets/fonts/black.otf');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Luna';
+	src: url('assets/fonts/bold.otf');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Luna';
+	src: url('assets/fonts/medium.otf');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Luna';
+	src: url('assets/fonts/light.otf');
+	font-weight: 300;
+	font-style: normal;
+}
+
 html {
 	scroll-behavior: smooth;
 }
@@ -34,5 +59,6 @@ html {
 }
 
 body {
+	font-family: 'Luna';
 	overflow-x: hidden;
 }

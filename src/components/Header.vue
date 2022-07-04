@@ -1,7 +1,34 @@
 <script setup>
 import anime from 'animejs'
+import { reactive, computed } from 'vue';
 import Icon from './Icon.vue'
 import Text from './Text.vue'
+
+let show_screen_size = false
+
+const screens = {
+	'sm': 640,
+	'md': 768,
+	'lg': 1024,
+	'xl': 1280,
+	'2xl': 1536,
+}
+
+let this_screen_size = reactive('')
+
+const screenSize = () => {
+	let s = window.innerWidth
+	let size = ''
+
+	Object.entries(screens).every(screen => {
+		size = s < screen[1] ? screen[0] : ''
+		return size == ''
+	})
+	
+	this_screen_size = size
+}
+
+window.addEventListener('resize', () => screenSize())
 
 const links = [
 	{ text: 'Home', href: '#' },
@@ -50,28 +77,34 @@ const toggleBurger = () => {
 			bg-transprent flex sm:items-center justify-between absolute z-10 w-screen
 			opactiy-0 top-[-15vh]
 
-			2xl:p-36 2xl:px-44
-			lg:p-16 lg:px-24
-			md:p-12
-			sm:flex-row sm:p-8
+			2xl:p-28 2xl:px-32
+			lg:p-12 lg:px-24
+			md:p-8
+			sm:flex-row sm:p-6
 			flex-col p-5
 		">
+
+		<div id="screen-size" class="fixed top-5 right-5 p-2 bg-white rounded" v-if="show_screen_size">
+			<p>{{ this_screen_size }}</p>
+		</div>
+		
 		<div class="
 			logo flex items-center justify-between w-full sm:w-auto overflow-hidden
 		">
 			<div id="logo-box" class="flex items-center">
 				<div class="
 					icon
-					2xl:w-24 2xl:mx-10
-					xl:w-16 xl:mr-8
-					lg:w-14 lg:mr-6
-					md:w-10 md:mr-4
-					sm:w-8 sm:mr-2
+					2xl:w-20 2xl:mx-10
+					xl:w-12 xl:mr-8
+					lg:w-10 lg:mr-6
+					md:w-8 md:mr-4
+					sm:w-6 sm:mr-2
 					w-7 mr-2
 				">
 					<Icon />
 				</div>
 				<div class="
+				hidden
 					text
 					2xl:w-56
 					xl:w-44
@@ -98,11 +131,11 @@ const toggleBurger = () => {
 				link relative flex flex-col items-center justify-center mx-2
 			" v-for="link in links" :key="link.text">
 				<a class="
-					font-bold text-dark
-					2xl:text-4xl 2xl:mx-5
-					lg:text-xl lg:mx-3
-					md:text-base md:mx-2
-					sm:text-sm sm:mx-1
+					text-dark
+					2xl:text-3xl 2xl:mx-5
+					lg:text-lg lg:mx-3
+					md:text-sm md:mx-2
+					sm:text-xs sm:mx-1
 					text-xs mx-0.5
 				" :href="link.href">{{ link.text }}</a>
 				<div class="hover-line hidden sm:flex transition-all w-0 absolute -bottom-1 left-0 h-[2px] bg-dark"></div>

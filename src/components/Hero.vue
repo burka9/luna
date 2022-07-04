@@ -48,12 +48,23 @@ onMounted(() => {
 		{ id: 'footer', display: 'flex' },
 	]
 
+	const loadParallax = () => {
+		document.querySelectorAll('.scroll').forEach(item => {
+			let pos = window.scrollY * item.dataset.rate
+			item.style.transform = `translateY(${pos}px)`
+		})
+	}
+
 	const show_stuff = () => {
 		animateScrollButton()
 		setTimeout(() => {
 			document.body.style.overflowY = 'auto'
 			for (const view in hidden_views)
 				document.getElementById(hidden_views[view]['id']).style.display = hidden_views[view]['display']
+
+				window.addEventListener('scroll', () => {
+					loadParallax()
+				})
 		}, 800)
 		anime({
 			targets: '#hero img',
@@ -111,7 +122,9 @@ onMounted(() => {
 
 
 <template>
-	<div id="hero" class="relative flex bg-light items-center justify-center h-screen">
+	<div id="hero" class="
+		relative flex bg-light items-center justify-center h-[90vh]
+	">
 		<svg viewBox="0 0 9629.1094 2123.3979" id="text" class="relative -top-[8vh] sm:top-0">
 			<path
 				d="M 513.67445,138.83827 V 1354.9274 c 0,0 -26.19526,271.0445 216.18513,271.0445 H 1921.9284 l -276.7655,358.5866 -881.96491,-6.0309 c 0,0 -658.2748,53.8081 -659.74976,-512.3826 L 100,142.32879 Z" />
@@ -135,6 +148,7 @@ onMounted(() => {
 				md:text-lg
 				sm:mb-2
 				mb-1
+				hidden
 			">See More</button>
 			<img src="../assets/icons/down-arrow.svg" class="
 				opacity-0

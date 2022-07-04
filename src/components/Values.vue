@@ -2,19 +2,19 @@
 	<div id="our-values" class="
 		bg-light
 		hidden flex-col justify-center items-center
-		lg:py-40
-		md:py-32
-		py-20
+		lg:py-24
+		md:py-16
+		py-8
 	">
 		<h3 class="
 			font-bold text-dark
-			text-5xl
-			lg:mb-16
-			md:mb-12
-			mb-8
+			text-4xl
+			lg:mb-10
+			md:mb-8
+			mb-4
 		">Our Values</h3>
 		<p class="
-			text-lg text-slate-500
+			text-base text-slate-500
 			md:w-[65vw] md:px-0
 			sm:w-auto sm:px-24
 			px-12
