@@ -31,7 +31,7 @@ onMounted(() => {
 	})
 
 	const animation = anime.timeline({
-		duration: 2000/1,
+		duration: 2000/20,
 		direction: 'normal',
 		easing: 'easeInOutSine',
 		loop: false,
@@ -123,7 +123,7 @@ onMounted(() => {
 
 <template>
 	<div id="hero" class="
-		relative flex bg-light items-center justify-center h-[90vh]
+		relative flex bg-light items-center justify-center h-[100vh]
 	">
 		<svg viewBox="0 0 9629.1094 2123.3979" id="text" class="relative -top-[8vh] sm:top-0">
 			<path
@@ -150,10 +150,10 @@ onMounted(() => {
 				mb-1
 				hidden
 			">See More</button>
-			<img src="../assets/icons/down-arrow.svg" class="
+			<img src="../assets/icons/down-arrow-2.svg" class="
 				opacity-0
-				2xl:h-[2.5rem]
-				md:h-[1.85rem]
+				2xl:h-[2.85rem]
+				md:h-[2.245rem]
 				h-[1.2rem]
 			" />
 		</div>
