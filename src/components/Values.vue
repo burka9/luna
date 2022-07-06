@@ -2,9 +2,9 @@
 	<div id="our-values" class="
 		bg-light
 		hidden flex-col justify-center items-center
-		lg:py-24
-		md:py-16
-		py-8
+		lg:py-16
+		md:py-12
+		py-4
 	">
 		<h3 class="
 			font-bold text-dark

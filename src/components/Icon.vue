@@ -13,7 +13,7 @@ const all_path = [
 	{ fill: '#bd1e30', d: 'm 3977.4241,109.3839 -69.9358,804.1056 h -261.1626 l 79.8079,-804.825 z', },
 ]
 
-const props = defineProps(['colorful', 'darker'])
+const props = defineProps(['colorful', 'darker', 'blurry'])
 
 </script>
 

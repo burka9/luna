@@ -13,15 +13,15 @@ import BackToTop from './components/BackToTop.vue'
 </script>
 
 <template>
-  <Header  />
+  <Header />
   <Hero />
   <Brands />
-  <List  />
-  <Who  />
-  <Icons  />
-  <Values  />
-  <Feed  />
-  <Footer  />
+  <List />
+  <Who />
+  <Values />
+  <Icons />
+  <Feed />
+  <Footer></Footer>
   <BackToTop />
 </template>
 

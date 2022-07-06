@@ -22,6 +22,27 @@ const animateScrollButton = () => {
 	})
 }
 
+const loadObserver = () => {
+	const callback = (entries, observer) => {
+		entries.forEach((entry, i) => {
+			if (entry.isIntersecting) {
+				// animejs({
+				// 	targets: entry.target.children[0],
+				// })
+				intersection.unobserve(entry.target)
+			}
+		})
+	}
+	
+	const intersection = new IntersectionObserver(callback, {
+		rootMargin: '0px 0px -150px 0px',
+	})
+
+	document.querySelectorAll('.my-list-item').forEach(el => {
+		intersection.observe(el)
+	})
+}
+
 onMounted(() => {
 	const paths = document.querySelectorAll('#hero path')
 
@@ -63,6 +84,7 @@ onMounted(() => {
 				document.getElementById(hidden_views[view]['id']).style.display = hidden_views[view]['display']
 
 				window.addEventListener('scroll', () => {
+					loadObserver()
 					loadParallax()
 				})
 		}, 800)

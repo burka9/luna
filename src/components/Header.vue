@@ -4,31 +4,6 @@ import { reactive, computed } from 'vue';
 import Icon from './Icon.vue'
 import Text from './Text.vue'
 
-let show_screen_size = false
-
-const screens = {
-	'sm': 640,
-	'md': 768,
-	'lg': 1024,
-	'xl': 1280,
-	'2xl': 1536,
-}
-
-let this_screen_size = reactive('')
-
-const screenSize = () => {
-	let s = window.innerWidth
-	let size = ''
-
-	Object.entries(screens).every(screen => {
-		size = s < screen[1] ? screen[0] : ''
-		return size == ''
-	})
-	
-	this_screen_size = size
-}
-
-window.addEventListener('resize', () => screenSize())
 
 const links = [
 	{ text: 'Home', href: '#' },
@@ -83,10 +58,6 @@ const toggleBurger = () => {
 			sm:flex-row sm:p-6
 			flex-col p-5
 		">
-
-		<div id="screen-size" class="fixed top-5 right-5 p-2 bg-white rounded" v-if="show_screen_size">
-			<p>{{ this_screen_size }}</p>
-		</div>
 		
 		<div class="
 			logo flex items-center justify-between w-full sm:w-auto overflow-hidden
@@ -131,11 +102,11 @@ const toggleBurger = () => {
 				link relative flex flex-col items-center justify-center mx-2
 			" v-for="link in links" :key="link.text">
 				<a class="
-					text-dark
+					text-dark font-bold
 					2xl:text-3xl 2xl:mx-5
-					lg:text-lg lg:mx-3
-					md:text-sm md:mx-2
-					sm:text-xs sm:mx-1
+					lg:text-[16px] lg:mx-1
+					md:text-[12px] md:mx-1
+					sm:text-xs sm:mx-0.5
 					text-xs mx-0.5
 				" :href="link.href">{{ link.text }}</a>
 				<div class="hover-line hidden sm:flex transition-all w-0 absolute -bottom-1 left-0 h-[2px] bg-dark"></div>

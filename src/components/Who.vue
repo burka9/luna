@@ -8,9 +8,10 @@
 	">
 		<h3 class="
 			font-bold
-			xl:text-5xl
+			2xl:text-6xl
 			lg:text-4xl
-			text-2xl
+			md:text-3xl
+			text-1xl
 		
 			text-dark
 		">Who we are</h3>
@@ -29,7 +30,7 @@
 			grid-cols-1 gap-x-5
 		">
 			<div class="left">
-				<p class="text-base mb-12 md:mb-0">
+				<p class="text-2xl mb-12 md:mb-0 font-[300]">
 					Luna, established in 2003, is a parent company for a group of business units engaged in production, processing, and import-export activities
 				</p>
 			</div>
@@ -41,7 +42,7 @@
 				<p class="text-base text-justify mb-6">
 					We use cutting-edge technology to grow and prepare your fruits, vegetables, meat, and wine throughout our facilities. Our farms, feedlots, and export abattoir align with international standards, to ensure that we supply the highest quality, and traceable foods to our clients in Ethiopia and the rest of the world.
 				</p>
-				<button class="uppercase font-bold">See More</button>
+				<button class="uppercase text-sm font-bold">See More</button>
 			</div>
 		</div>
 	</div>

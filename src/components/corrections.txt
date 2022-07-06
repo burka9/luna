@@ -1,0 +1,14 @@
+header-links
+	- decrease mx
+	- font - black
+
+hero
+	- height: 100vh
+	- change arrow
+
+brands
+	- thicken stroke-width
+	- implement some lit animations
+
+who_we_are.height = values.height + icon_section.height
+icon_section.height = values.height

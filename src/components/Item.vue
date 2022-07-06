@@ -7,28 +7,22 @@ const props = defineProps(['item', 'dark'])
 const className = () => props.dark ? 'border-white text-white' : 'border-dark text-dark'
 const svgClassName = () => props.dark ? 'fill-white' : 'fill-dark'
 
-const showing = (isVisible, entry) => {
-	console.log('showing')
-	console.log(isVisible)
-	console.log(entry)
-}
-
 </script>
 
 <template>
-	<div :class="`item grid grid-rows-2 items-start justify-items-center
+	<div :class="`my-list-item grid grid-rows-2 items-start justify-items-center
 		cursor-pointer overflow-hidden
-			xl:rounded-3xl xl:border-[3px] xl:h-[380px] xl:w-64
-			lg:rounded-2xl lg:border-[3px] lg:h-[350px] lg:w-60
-			md:rounded-xl md:border-[2px] md:h-[270px] md:w-52
+			xl:rounded-3xl xl:border-[3px] xl:h-[300px] xl:w-64
+			lg:rounded-2xl lg:border-[3px] lg:h-[240px] lg:w-60
+			md:rounded-xl md:border-[2px] md:h-[200px] md:w-52
 			rounded-xl border-[1px] h-[300px] w-60
 		` + className()"
-		v-observe-visibility="showing">
+		>
 		<component :class="
 			`
-			xl:w-40
-			lg:w-36
-			md:w-28 md:mb-3
+			xl:w-32
+			lg:w-28
+			md:w-20 md:mb-3
 			m-6 mb-0 w-32
 			 `
 			+ svgClassName()"
@@ -45,12 +39,13 @@ const showing = (isVisible, entry) => {
 				text-base mb-1
 			">{{ props.item.title }}</h3>
 			<p class="
+				font-[600]
 				text-center
 				xl:mx-5
 				lg:mx-4
 				md:text-xs md:mx-4 md:px-0
 				text-xs mx-2 px-3
-			">{{ props.item.content.slice(0, 75) }}</p>
+			">{{ props.item.content }}</p>
 			<button class="
 				uppercase
 				xl:my-3

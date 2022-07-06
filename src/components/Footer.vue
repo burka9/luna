@@ -6,11 +6,11 @@ import Text from './Text.vue'
 
 <template>
 	<div id="footer" class="
-		bg-dark
+		bg-lighter
 		hidden flex-col items-center justify-center
-		lg:py-16
-		md:py-12
-		py-8
+		lg:py-8
+		md:py-6
+		py-4
 	">
 		<div class="
 			logo flex items-center

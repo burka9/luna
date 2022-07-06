@@ -5,8 +5,8 @@ import Innovation from './Icons/Innovation.vue'
 
 <template>
 	<div id="icon-section" class="
-		hidden bg-dark justify-center relative
-		lg:py-16 lg:pb-8
+		hidden bg-lighter justify-center relative
+		lg:py-12 lg:pb-6
 		md:py-8 md:pb-4
 		sm:flex-row sm:py-4 sm:pb-2
 		flex-col py-4 pb-2
@@ -17,9 +17,9 @@ import Innovation from './Icons/Innovation.vue'
 			mb-8
 		">
 			<innovation class="
-				lg:w-40
-				md:w-36
-				sm:w-28
+				lg:w-28
+				md:w-24
+				sm:w-16
 				w-36 mb-2
 			" />
 			<p class="text-white text-lg">Innovation</p>
@@ -27,12 +27,12 @@ import Innovation from './Icons/Innovation.vue'
 		<div class="
 			flex flex-col items-center
 			mb-8
-			-mx-6
+			-mx-3
 		">
 			<innovation class="
-				lg:w-40
-				md:w-36
-				sm:w-28
+				lg:w-28
+				md:w-24
+				sm:w-16
 				w-36 mb-2
 			" />
 			<p class="text-white text-lg">Innovation</p>
@@ -41,9 +41,9 @@ import Innovation from './Icons/Innovation.vue'
 			flex flex-col items-center
 		">
 			<innovation class="
-				lg:w-40
-				md:w-36
-				sm:w-28
+				lg:w-28
+				md:w-24
+				sm:w-16
 				w-36 mb-2
 			" />
 			<p class="text-white text-lg">Innovation</p>

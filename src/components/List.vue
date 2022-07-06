@@ -8,6 +8,7 @@ import EzanaWinery from './Brands/EzanaWinery.vue';
 import LunaFarms from './Brands/LunaFarms.vue';
 import WaterWellDrilling from './Brands/WaterWellDrilling.vue';
 import AutoParts from './Brands/AutoParts.vue';
+import Icon from './Icon.vue';
 
 const lorem = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis sunt, accusantium unde labore ullam adipisci tempora nihil quibusdam perferendis reprehenderit. Cum ab sapiente minima, illum odit voluptatem quasi.'
 
@@ -29,23 +30,35 @@ const showing = () => console.log('showing')
 </script>
 
 <template>
-	<div id="brands" class="
-		hidden bg-light place-items-center
-		xl:gap-20 xl:gap-y-16
-		lg:gap-16 lg:gap-y-12 lg:p-24
-		md:grid-cols-3 md:gap-24 md:gap-y-16 md:p-24
-		sm:grid-cols-2 sm:gap-16 sm:gap-y-8 sm:p-16
-		grid-cols-1 gap-16 p-20
-	">
-		<Item v-for="item in items" :key="item.title" :item="item" />
-	</div>
-	<div id="brands-2" class="
-		hidden bg-dark place-items-center
-		xl:gap-24 xl:px-64
-		lg:px-56
-		md:grid-cols-2 md:gap-32 md:p-24 md:px-60
-		grid-cols-1 gap-16 p-20
-	">
-		<Item v-for="item in items2" :key="item.title" :item="item" :dark="true" />
+	<div class="bg-light flex flex-col relative overflow-hidden">
+
+
+		<div id="watermark" class="hidden absolute z-[-1	] -top-32 left-16 scroll" data-rate=".4">
+			<div class="w-[60vw] relative z-0">
+				<Icon :blurry="true" />
+			</div>
+		</div>
+		
+		
+		<div id="brands" class="scroll
+		relative z-10
+			hidden place-items-center
+			xl:gap-8 xl:gap-y-12
+			lg:-gap-2 lg:gap-y-8 lg:p-12 lg:pt-8 lg:px-52
+			md:grid-cols-3 md:gap-12 md:gap-y-16 md:p-24 md:pt-6
+			sm:grid-cols-2 sm:gap-16 sm:gap-y-8 sm:p-16
+			grid-cols-1 gap-16 p-20
+		">
+			<Item v-for="item in items" :key="item.title" :item="item" />
+		</div>
+		<div id="brands-2" class="relative z-10
+			hidden bg-lighter place-items-center
+			xl:gap-24 xl:px-64
+			lg:px-56
+			md:grid-cols-2 md:gap-32 md:p-24 md:px-60
+			grid-cols-1 gap-16 p-20
+		">
+			<Item v-for="item in items2" :key="item.title" :item="item" :dark="true" />
+		</div>
 	</div>
 </template>
