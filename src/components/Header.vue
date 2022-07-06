@@ -6,9 +6,9 @@ import Text from './Text.vue'
 
 
 const links = [
-	{ text: 'Home', href: '#' },
+	{ text: 'Home', href: '/' },
 	{ text: 'About', href: '#' },
-	{ text: 'Our Brands', href: '#' },
+	{ text: 'Our Brands', href: '/brands' },
 	{ text: 'Contact', href: '#' },
 ]
 
