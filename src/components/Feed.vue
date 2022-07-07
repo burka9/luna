@@ -4,7 +4,7 @@
 			Our School Feeding Program
 		</h3>
 
-		<p class="text-lighter font-[200] text-xl txt-justify">
+		<p class="text-lighter font-[300] text-xl txt-justify">
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat omnis ipsum iste debitis. Doloribus a nisi ipsum voluptas laboriosam est beatae.  consectetur adipisicing elit. Fugiat omnis ipsum iste debitis. Doloribus a nisi ipsum voluptas laboriosam est beatae? Inventore esse labore nihil. Facere, numquam vero? Perferendis, recusandae.
 		</p>
 	</div>

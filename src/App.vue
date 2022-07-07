@@ -17,6 +17,7 @@ import Feed from './components/Feed.vue';
   <Info />
   <Pic />
   <Feed />
+  <Footer />
 </template>
 
 <style>
