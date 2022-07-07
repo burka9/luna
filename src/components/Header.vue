@@ -7,10 +7,12 @@ import Text from './Text.vue'
 
 const links = [
 	{ text: 'Home', href: '/' },
-	{ text: 'About', href: '#' },
+	{ text: 'About', href: '/about' },
 	{ text: 'Our Brands', href: '/brands', active: true },
-	{ text: 'Contact', href: '#' },
+	{ text: 'Contact', href: '/contact' },
 ]
+
+const goToHome = () => document.location.assign('/')
 
 let showing_burger = false
 const toggleBurger = () => {
@@ -60,8 +62,8 @@ const toggleBurger = () => {
 		">
 		
 		<div class="
-			logo flex items-center justify-between w-full sm:w-auto overflow-hidden
-		">
+			logo flex items-center justify-between w-full sm:w-auto overflow-hidden cursor-pointer
+		" title="Luna Group" @click="goToHome">
 			<div id="logo-box" class="flex items-center">
 				<div class="
 					icon
