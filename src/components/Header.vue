@@ -12,6 +12,8 @@ const links = [
 	{ text: 'Contact', href: '/contact' },
 ]
 
+const goToHome = () => document.location.assign('/')
+
 let showing_burger = false
 const toggleBurger = () => {
 	showing_burger = !showing_burger
@@ -60,8 +62,8 @@ const toggleBurger = () => {
 		">
 		
 		<div class="
-			logo flex items-center justify-between w-full sm:w-auto overflow-hidden
-		">
+			logo flex items-center justify-between w-full sm:w-auto overflow-hidden cursor-pointer
+		" title="Luna Group" @click="goToHome">
 			<div id="logo-box" class="flex items-center">
 				<div class="
 					icon
