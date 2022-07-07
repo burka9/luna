@@ -52,7 +52,7 @@ onMounted(() => {
 	})
 
 	const animation = anime.timeline({
-		duration: 2000/20,
+		duration: 2000/1,
 		direction: 'normal',
 		easing: 'easeInOutSine',
 		loop: false,

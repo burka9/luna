@@ -7,9 +7,9 @@ import Text from './Text.vue'
 
 const links = [
 	{ text: 'Home', href: '/' },
-	{ text: 'About', href: '#' },
+	{ text: 'About', href: '/about' },
 	{ text: 'Our Brands', href: '/brands' },
-	{ text: 'Contact', href: '#' },
+	{ text: 'Contact', href: '/contact' },
 ]
 
 let showing_burger = false
