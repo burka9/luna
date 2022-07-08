@@ -2,7 +2,7 @@
 	<div id="our-values" class="
 		bg-light
 		hidden flex-col justify-center items-center
-		lg:py-16
+		lg:py-16 lg:p-0 lg:h-60
 		md:py-12
 		py-4
 	">

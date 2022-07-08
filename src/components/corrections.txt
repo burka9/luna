@@ -10,5 +10,5 @@ brands
 	- thicken stroke-width
 	- implement some lit animations
 
-who_we_are.height = values.height + icon_section.height
-icon_section.height = values.height
+# who_we_are.height = values.height + icon_section.height
+# icon_section.height = values.height

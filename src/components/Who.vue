@@ -1,7 +1,7 @@
 <template>
 	<div id="who-are-we" class="
-		hidden flex-col 
-		lg:p-16 lg:px-24
+		hidden flex-col justify-center
+		lg:p-16 lg:px-24 lg:p-0 h-[30rem]
 		md:px-20
 		sm:px-16
 		p-12 px-10
@@ -18,9 +18,9 @@
 
 		<div class="
 			spacer w-full h-[2px] bg-dark
-			lg:my-10
-			md:my-6
-			my-8
+			lg:my-5
+			md:my-3
+			my-5
 		"></div>
 
 		<div class="

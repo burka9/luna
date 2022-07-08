@@ -11,7 +11,8 @@ const svgClassName = () => props.dark ? 'fill-white' : 'fill-dark'
 
 <template>
 	<div :class="`my-list-item grid grid-rows-2 items-start justify-items-center
-		cursor-pointer overflow-hidden
+			cursor-pointer overflow-hidden
+			opacity-0
 			xl:rounded-3xl xl:border-[3px] xl:h-[300px] xl:w-64
 			lg:rounded-2xl lg:border-[3px] lg:h-[240px] lg:w-60
 			md:rounded-xl md:border-[2px] md:h-[200px] md:w-52
@@ -25,7 +26,7 @@ const svgClassName = () => props.dark ? 'fill-white' : 'fill-dark'
 			md:w-20 md:mb-3
 			m-6 mb-0 w-32
 			 `
-			+ svgClassName()"
+			"
 		:is="props.item.icon"></component>
 
 		<div class="
@@ -78,7 +79,8 @@ const svgClassName = () => props.dark ? 'fill-white' : 'fill-dark'
 	fill: white;
 } */
 
-.content:hover svg {
-	transform: rotateX(360deg);
+path, rect {
+	stroke-width: 2;
+	fill: transparent;
 }
 </style>

@@ -26,7 +26,6 @@ const items2 = [
 	{ icon: AutoParts, title: 'Auto Parts', content: lorem.slice(0, lorem.length-68)+'.', route: '' },
 ]
 
-const showing = () => console.log('showing')
 </script>
 
 <template>
@@ -58,7 +57,7 @@ const showing = () => console.log('showing')
 			md:grid-cols-2 md:gap-32 md:p-24 md:px-60
 			grid-cols-1 gap-16 p-20
 		">
-			<Item v-for="item in items2" :key="item.title" :item="item" :dark="true" />
+			<Item v-for="item in items2" :key="item.title" :item="item" :dark="true" data-dark="true" />
 		</div>
 	</div>
 </template>

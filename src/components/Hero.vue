@@ -23,19 +23,49 @@ const animateScrollButton = () => {
 }
 
 const loadObserver = () => {
+
 	const callback = (entries, observer) => {
 		entries.forEach((entry, i) => {
 			if (entry.isIntersecting) {
-				// animejs({
-				// 	targets: entry.target.children[0],
-				// })
 				intersection.unobserve(entry.target)
+				let temp = `id-${new Date().getTime().toString()}`
+				entry.target.id = temp
+				let svgs = document.querySelectorAll(`#${temp} path, #${temp} rect`)
+				svgs.forEach(svg => {
+					svg.style.fill = 'transparent'
+					svg.temp__fill = entry.target.dataset.dark ? 'white' : 'var(--dark)'
+					svg.style.stroke = entry.target.dataset.dark ? 'white' : 'var(--dark)'
+					svg.style.strokeDasharray = svg.getTotalLength()
+					svg.style.strokeDashoffset = svg.getTotalLength()
+				})
+
+				const tl = anime.timeline({
+					duration: 2000,
+					easing: 'easeInOutSine',
+					delay: 250 * (i%3)
+				})
+
+				tl
+					.add({
+						targets: entry.target,
+						opacity: [0, 1],
+						translateY: [35, 0],
+						duration: 750
+					})
+					.add({
+						targets: svgs,
+						strokeDashoffset: (el, i) => ([el.getTotalLength(), 0]),
+					}, 250)
+					.add({
+						targets: svgs,
+						fill: ['transparent', 'red'],
+					})
 			}
 		})
 	}
 	
 	const intersection = new IntersectionObserver(callback, {
-		rootMargin: '0px 0px -150px 0px',
+		rootMargin: '0px 0px -65px 0px',
 	})
 
 	document.querySelectorAll('.my-list-item').forEach(el => {
@@ -52,7 +82,7 @@ onMounted(() => {
 	})
 
 	const animation = anime.timeline({
-		duration: 2000/1,
+		duration: 2000/50,
 		direction: 'normal',
 		easing: 'easeInOutSine',
 		loop: false,
@@ -66,7 +96,7 @@ onMounted(() => {
 		{ id: 'our-values', display: 'flex' },
 		{ id: 'icon-section', display: 'flex' },
 		{ id: 'feeding-program', display: 'flex' },
-		{ id: 'footer', display: 'flex' },
+		{ id: 'footer', display: 'grid' },
 	]
 
 	const loadParallax = () => {
@@ -82,9 +112,9 @@ onMounted(() => {
 			document.body.style.overflowY = 'auto'
 			for (const view in hidden_views)
 				document.getElementById(hidden_views[view]['id']).style.display = hidden_views[view]['display']
+				loadObserver()
 
 				window.addEventListener('scroll', () => {
-					loadObserver()
 					loadParallax()
 				})
 		}, 800)

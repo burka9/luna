@@ -13,7 +13,7 @@ const info = [
 <template>
 	<div id="footer" class="
 		bg-lighter
-		grid grid-cols-2
+		hidden grid-cols-2
 		px-32
 		lg:py-10
 		md:py-8
