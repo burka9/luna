@@ -5,7 +5,7 @@
 
 <style scoped>
 #pic {
-	background-image: url('../assets/imgs/feeding.png');
+	background-image: url('../assets/imgs/feeding_2.jpeg');
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
