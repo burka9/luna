@@ -13,17 +13,17 @@ import Icon from './Icon.vue';
 const lorem = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis sunt, accusantium unde labore ullam adipisci tempora nihil quibusdam perferendis reprehenderit. Cum ab sapiente minima, illum odit voluptatem quasi.'
 
 const items = [
-	{ icon: Kitchen, title: 'Kitchen', content: 'We offer our customers a variety of unique meals and juices at affordable prices. We work hard to continuously provide our customers with ready to eat food', route: '' },
-	{ icon: FreshCorner, title: 'Fresh Corner', content: 'We have 12 Fresh Corner retail stores in different locations of Addis Ababa that offer a wide range of fresh grocery products at a reasonableprice', route: '' },
-	{ icon: SlaughterHouse, title: 'Slaughter House', content: 'Luna livestock has been a leading supplier of chilled and frozen sheep, goat, beef,and veal from Ethiopia. since 2003', route: '' },
-	{ icon: DebreBerhanHoney, title: 'Debre Berhan Honey', content: 'For our state-of-the-art LUNA processing plant bases in Debre Birhan, we are able to receive Fresh Honey direct from the source for our local/global markets.', route: '' },
-	{ icon: EzanaWinery, title: 'Ezana Winery', content: 'The semi-arid ago ecologies of our farm give our wine its elegant taste. Our grapes are grown with the utmost care to be healthy and environment friendly', route: '' },
-	{ icon: LunaFarms, title: 'Luna Farms', content: 'On a total of 500 hectares of land in Ethiopia\'s Oromia, Tigray, and south regions,the company grows vegetables and fruits.', route: '' },
+	{ icon: Kitchen, title: 'Kitchen', content: 'We offer our customers a variety of unique meals and juices at affordable prices. We work hard to continuously provide our customers with ready to eat food', route: '/brands' },
+	{ icon: FreshCorner, title: 'Fresh Corner', content: 'We have 12 Fresh Corner retail stores in different locations of Addis Ababa that offer a wide range of fresh grocery products at a reasonableprice', route: '/brands' },
+	{ icon: SlaughterHouse, title: 'Slaughter House', content: 'Luna livestock has been a leading supplier of chilled and frozen sheep, goat, beef,and veal from Ethiopia. since 2003', route: '/brands' },
+	{ icon: DebreBerhanHoney, title: 'Debre Berhan Honey', content: 'For our state-of-the-art LUNA processing plant bases in Debre Birhan, we are able to receive Fresh Honey direct from the source for our local/global markets.', route: '/brands' },
+	{ icon: EzanaWinery, title: 'Ezana Winery', content: 'The semi-arid ago ecologies of our farm give our wine its elegant taste. Our grapes are grown with the utmost care to be healthy and environment friendly', route: '/brands' },
+	{ icon: LunaFarms, title: 'Luna Farms', content: 'On a total of 500 hectares of land in Ethiopia\'s Oromia, Tigray, and south regions,the company grows vegetables and fruits.', route: '/brands' },
 ]
 
 const items2 = [
-	{ icon: WaterWellDrilling, title: 'Water Well Drilling', content: 'LUNA Drilling for water wells drilling is one of the borehole drilling contractors in the Federal Democratic Republic of Ethiopia', route: '' },
-	{ icon: AutoParts, title: 'Auto Parts', content: lorem.slice(0, lorem.length-68)+'.', route: '' },
+	{ icon: WaterWellDrilling, title: 'Water Well Drilling', content: 'LUNA Drilling for water wells drilling is one of the borehole drilling contractors in the Federal Democratic Republic of Ethiopia', route: '/brands' },
+	{ icon: AutoParts, title: 'Auto Parts', content: lorem.slice(0, lorem.length-68)+'.', route: '/brands' },
 ]
 
 </script>

@@ -7,6 +7,8 @@ const props = defineProps(['item', 'dark'])
 const className = () => props.dark ? 'border-white text-white' : 'border-dark text-dark'
 const svgClassName = () => props.dark ? 'fill-white' : 'fill-dark'
 
+const see_more = () => location.assign('/brands')
+
 </script>
 
 <template>
@@ -54,7 +56,7 @@ const svgClassName = () => props.dark ? 'fill-white' : 'fill-dark'
 				lg:my-2
 				md:text-[11px] md:my-1
 				text-xs my-2
-			">see more</button>
+			" @click="see_more">see more</button>
 		</div>
 	</div>
 </template>

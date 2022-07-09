@@ -1,3 +1,9 @@
+<script setup>
+
+const see_more = () => location.assign('/brands')
+
+</script>
+
 <template>
 	<div id="who-are-we" class="
 		hidden flex-col justify-center
@@ -42,7 +48,7 @@
 				<p class="text-base text-justify mb-6">
 					We use cutting-edge technology to grow and prepare your fruits, vegetables, meat, and wine throughout our facilities. Our farms, feedlots, and export abattoir align with international standards, to ensure that we supply the highest quality, and traceable foods to our clients in Ethiopia and the rest of the world.
 				</p>
-				<button class="uppercase text-sm font-bold">See More</button>
+				<button class="uppercase text-sm font-bold" @click="see_more">See More</button>
 			</div>
 		</div>
 	</div>
