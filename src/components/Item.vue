@@ -1,5 +1,5 @@
 <script setup>
-import { getCurrentInstance, onMounted } from 'vue';
+import { onMounted } from 'vue';
 
 
 const props = defineProps(['item', 'dark'])
@@ -11,7 +11,7 @@ const svgClassName = () => props.dark ? 'fill-white' : 'fill-dark'
 
 <template>
 	<div :class="`my-list-item grid grid-rows-2 items-start justify-items-center
-			cursor-pointer overflow-hidden
+			cursor-pointer overflow-hidden relative
 			opacity-0
 			xl:rounded-3xl xl:border-[3px] xl:h-[300px] xl:w-64
 			lg:rounded-2xl lg:border-[3px] lg:h-[240px] lg:w-60
@@ -19,13 +19,14 @@ const svgClassName = () => props.dark ? 'fill-white' : 'fill-dark'
 			rounded-xl border-[1px] h-[300px] w-60
 		` + className()"
 		>
+		
 		<component :class="
 			`
 			xl:w-32
 			lg:w-28
 			md:w-20 md:mb-3
 			m-6 mb-0 w-32
-			 `
+			`
 			"
 		:is="props.item.icon"></component>
 
@@ -78,9 +79,8 @@ const svgClassName = () => props.dark ? 'fill-white' : 'fill-dark'
 .item:hover svg {
 	fill: white;
 } */
-
-path, rect {
-	stroke-width: 2;
-	fill: transparent;
+.my-list-item {
+	border: none;
+	border-radius: 11px;
 }
 </style>

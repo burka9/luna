@@ -22,27 +22,77 @@ const animateScrollButton = () => {
 	})
 }
 
+const xmlns = "http://www.w3.org/2000/svg"
+
+const draw_border = parent => {
+	const box = parent.getBoundingClientRect()
+	let width = box.width * 5
+	let height = box.height * 5
+	let x = width * 0.05
+	let y = height * 0.05
+
+	const svg = document.createElementNS(xmlns, 'svg')
+	const path = document.createElementNS(xmlns, 'path')
+
+	let d = `
+		M ${x} 0
+		L ${width - x} 0
+		Q ${width} 0 ${width} ${y}
+		L ${width} ${height - y}
+		Q ${width} ${height} ${width - x} ${height}
+		L ${x} ${height}
+		Q 0 ${height} 0 ${height - y}
+		L 0 ${y}
+		Q 0 0 ${x} 0
+	`
+
+	path.setAttribute('d', d)
+	svg.setAttribute('viewBox', `0 0 ${width} ${height}`)
+	
+	svg.style.position = 'absolute'
+	svg.style.zIndex = -1
+	svg.style.fill = 'transparent'
+	svg.style.fillOpacity = 0
+
+	path.style.stroke = parent.dataset.dark ? 'white' : '#52717bff'
+	path.style.strokeWidth = 30
+	path.style.fill = 'transparent'
+
+	path.style.strokeDasharray = path.getTotalLength()
+	path.style.strokeDashoffset = path.getTotalLength()
+
+	svg.appendChild(path)
+	parent.appendChild(svg)
+
+	return path
+}
+
+
 const loadObserver = () => {
 
 	const callback = (entries, observer) => {
 		entries.forEach((entry, i) => {
 			if (entry.isIntersecting) {
 				intersection.unobserve(entry.target)
+
 				let temp = `id-${new Date().getTime().toString()}`
-				entry.target.id = temp
-				let svgs = document.querySelectorAll(`#${temp} path, #${temp} rect`)
+				let temp2 = `border-id-${new Date().getTime().toString()}`
+				
+				entry.target.children[0].id = temp
+
+				const svgs = document.querySelectorAll(`#${temp} path, #${temp} rect`)
 				svgs.forEach(svg => {
 					svg.style.fill = 'transparent'
-					svg.temp__fill = entry.target.dataset.dark ? 'white' : 'var(--dark)'
-					svg.style.stroke = entry.target.dataset.dark ? 'white' : 'var(--dark)'
+					svg.style.stroke = entry.target.dataset.dark ? 'white' : '#52717bff'
 					svg.style.strokeDasharray = svg.getTotalLength()
 					svg.style.strokeDashoffset = svg.getTotalLength()
 				})
 
+				let border = draw_border(entry.target)
+
 				const tl = anime.timeline({
 					duration: 2000,
 					easing: 'easeInOutSine',
-					delay: 250 * (i%3)
 				})
 
 				tl
@@ -50,16 +100,23 @@ const loadObserver = () => {
 						targets: entry.target,
 						opacity: [0, 1],
 						translateY: [35, 0],
-						duration: 750
+						duration: 900,
+						delay: 400 * (i%3),
 					})
 					.add({
 						targets: svgs,
 						strokeDashoffset: (el, i) => ([el.getTotalLength(), 0]),
 					}, 250)
 					.add({
+						targets: border,
+						strokeDashoffset: (el, i) => ([el.getTotalLength(), 0]),
+						duration: 2300,
+						delay: 250 * (i%3),
+					}, 300)
+					.add({
 						targets: svgs,
-						fill: ['transparent', 'red'],
-					})
+						fill: ['transparent', entry.target.dataset.dark ? '#ffffff' : '#52717b'],
+					}, 500)
 			}
 		})
 	}
@@ -82,7 +139,7 @@ onMounted(() => {
 	})
 
 	const animation = anime.timeline({
-		duration: 2000/50,
+		duration: 2000/1,
 		direction: 'normal',
 		easing: 'easeInOutSine',
 		loop: false,
@@ -95,7 +152,7 @@ onMounted(() => {
 		{ id: 'who-are-we', display: 'flex' },
 		{ id: 'our-values', display: 'flex' },
 		{ id: 'icon-section', display: 'flex' },
-		{ id: 'feeding-program', display: 'flex' },
+		{ id: 'feeding-program', display: 'grid' },
 		{ id: 'footer', display: 'grid' },
 	]
 
@@ -122,7 +179,7 @@ onMounted(() => {
 			targets: '#hero img',
 			opacity: 1,
 			easing: 'easeInSine',
-			duration: 1000,
+			duration: 1000/1,
 		})
 	}
 
@@ -142,13 +199,13 @@ onMounted(() => {
 			fill: ['transparent', '#53717b'],
 			svgStroke: ['#53717b', 'transparent'],
 			delay: (el, i) => 70 * i,
-			duration: 1250
+			duration: 1250/1
 		})
 		.add({
 			targets: '#header',
 			top: 0,
 			opacity: [0, 1],
-			duration: 1000,
+			duration: 1000/1,
 			complete: () => {
 				document.getElementById('header').style.maxWidth = `${window.innerWidth}px`
 			},
@@ -162,7 +219,7 @@ onMounted(() => {
 				anime({
 					targets: '#hero button',
 					opacity: 1,
-					duration: 1000
+					duration: 1000/1
 				})
 			},
 			complete: () => {

@@ -41,7 +41,7 @@ const items2 = [
 		
 		<div id="brands" class="scroll
 		relative z-10
-			hidden place-items-center
+			hidden grid place-items-center
 			xl:gap-8 xl:gap-y-12
 			lg:-gap-2 lg:gap-y-8 lg:p-12 lg:pt-8 lg:px-52
 			md:grid-cols-3 md:gap-12 md:gap-y-16 md:p-24 md:pt-6
