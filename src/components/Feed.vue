@@ -32,7 +32,7 @@ const see_more = () => location.assign('/about')
 
 
 		<div class="right mr-32 my-8">
-			<img src="../assets/imgs/feeding.png" alt="">
+			<img src="../assets/imgs/feeding_2.jpeg" alt="">
 		</div>
 
 
