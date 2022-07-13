@@ -33,8 +33,8 @@ const items = [
 
 		
 
-		<div class="list grid grid-cols-2">
-			<Item v-for="item in items" :key="item.title" :item="item" />
+		<div class="list grid grid-cols-1 gap-y-10 px-16">
+			<Item v-for="(item, i) in items" :key="item.title" :_id="`item-${i}`" :item="item" :left="i%2==0" />
 		</div>
 		
 		
