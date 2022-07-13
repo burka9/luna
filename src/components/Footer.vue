@@ -13,14 +13,14 @@ const info = [
 <template>
 	<div id="footer" class="
 		bg-lighter
-		hidden grid-cols-2
+		flex items-center justify-center
 		px-32
 		lg:py-10
 		md:py-8
 		py-6
 	">
 		
-		<div class="left flex flex-col items-start justify-center">
+		<div class="left flex flex-col items-center justify-center">
 			<div class="
 				logo flex items-center
 				lg:my-5
@@ -41,12 +41,12 @@ const info = [
 			<p class="
 				text-light tracking-[3px] font-bold uppercase
 				md:text-[15px]
-				text-sm
+				text-sm text-center
 			">&copy; Luna group 2022</p>
 		</div>
 
 
-	<div class="right flex flex-col">
+	<div class="right flex flex-col hidden">
 
 		<div class="flex flex-col" v-for="(i, j) in info" :key="j">
 			<p class="text-dark font-bold uppercase tracking-widest mb-1.5">{{ i.heading }}</p>
