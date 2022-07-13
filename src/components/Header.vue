@@ -9,7 +9,7 @@ const links = [
 	{ text: 'Home', href: '/' },
 	{ text: 'About', href: '/about' },
 	{ text: 'Our Brands', href: '/brands' },
-	{ text: 'Contact', href: '/contact' },
+	{ text: 'Contact', href: '/contact', active: true },
 ]
 
 const goToHome = () => document.location.assign('/')
@@ -52,7 +52,7 @@ const toggleBurger = () => {
 <template>
 	<div id="header" class="
 			bg-transprent flex sm:items-center justify-between absolute z-10 w-screen
-			opactiy-0 top-[-15vh]
+			opactiy-0 top-0
 
 			2xl:p-28 2xl:px-32
 			lg:p-12 lg:px-24
@@ -67,24 +67,23 @@ const toggleBurger = () => {
 			<div id="logo-box" class="flex items-center">
 				<div class="
 					icon
-					2xl:w-20 2xl:mx-10
-					xl:w-12 xl:mr-8
-					lg:w-10 lg:mr-6
-					md:w-8 md:mr-4
-					sm:w-6 sm:mr-2
-					w-7 mr-2
+					2xl:w-16 2xl:mx-8
+					xl:w-10 xl:mr-5
+					lg:w-10 lg:mr-3
+					md:w-8 md:mr-2
+					sm:w-6 sm:mr-1
+					w-7 mr-1
 				">
 					<Icon />
 				</div>
 				<div class="
-				hidden
 					text
-					2xl:w-56
-					xl:w-44
-					lg:w-32
-					md:w-24
-					sm:w-20
-					w-16
+					2xl:w-40
+					xl:w-32
+					lg:w-20
+					md:w-10
+					sm:w-8
+					w-8
 				">
 					<Text />
 				</div>
@@ -100,9 +99,9 @@ const toggleBurger = () => {
 			sm:relative sm:opacity-1 sm:top-0
 			absolute -top-8 opactiy-0
 		">
-			<div class="
-				link relative flex flex-col items-center justify-center mx-2
-			" v-for="link in links" :key="link.text">
+			<div :class="`
+				link relative flex flex-col items-center justify-center mx-2 ${link.active ? 'active' : ''}
+			`" v-for="link in links" :key="link.text">
 				<a class="
 					text-dark font-bold
 					2xl:text-3xl 2xl:mx-5
@@ -120,6 +119,10 @@ const toggleBurger = () => {
 <style scoped>
 .text {
 	fill: var(--dark);
+}
+
+.links .active .hover-line {
+	width: 100%;
 }
 
 .links .link:hover .hover-line {
