@@ -74,7 +74,7 @@ const toggleBurger = () => {
 					sm:w-6 sm:mr-1
 					w-7 mr-1
 				">
-					<Icon />
+					<Icon colorful />
 				</div>
 				<div class="
 					text

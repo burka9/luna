@@ -11,7 +11,7 @@ import LunaFarms from './Brands/LunaFarms.vue';
 import WaterWellDrilling from './Brands/WaterWellDrilling.vue';
 import AutoParts from './Brands/AutoParts.vue';
 
-
+const colored = true
 const lorem = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis sunt, accusantium unde labore ullam adipisci tempora nihil quibusdam perferendis reprehenderit. Cum ab sapiente minima, illum odit voluptatem quasi.'
 
 const items = [
@@ -77,7 +77,7 @@ onMounted(() => {
 					:_id="`item-${i}`"
 					:item="item"
 					:left="i % 2 == 0"
-					:color="item.color"
+					:color="colored ? item.color : 'dark'"
 				/>
 			</div>
 
