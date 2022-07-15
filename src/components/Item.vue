@@ -2,11 +2,21 @@
 import { onMounted } from 'vue';
 import anime from 'animejs'
 
-const color = {
-	dark: '#52717b',
+const tailwind_colors = {
+	'luna-pink': '#E95DB8',
+	'luna-blue': '#017EC3',
+	'luna-green': '#00A874',
+	'luna-yellow': '#FBC80A',
+	'luna-orange': '#F5811F',
+	'luna-red': '#EF5A43',
 }
 
-const props = defineProps(['_id', 'item', 'left'])
+const color = {
+	dark: '#52717b',
+	color: tailwind_colors[props.color],
+}
+
+const props = defineProps(['_id', 'item', 'left', 'color'])
 
 const className = () => defaultClassName.concat(props.left ? leftClassName : rightClassName)
 
@@ -35,11 +45,11 @@ const appear = el => {
 	})
 	.add({
 		targets: `${tmp} svg`,
-		translateX: [25 * props.left ? -1 : 1, 0],
+		translateY: [35 * (props.left ? 1 : 1), 0],
 	}, 0)
 	.add({
 		targets: paths,
-		fill: ['none', color.dark],
+		fill: ['none', color.color],
 		strokeWidth: [1, 0],
 	}, '-=350')
 	.add({
@@ -79,7 +89,7 @@ onMounted(() => {
 	document.querySelectorAll(`#${props._id} path, #${props._id} rect`).forEach(path => {
 		path.style.fill = 'none'
 		path.style.strokeWidth = 1
-		path.style.stroke = color.dark
+		path.style.stroke = color.color
 		path.style.strokeDasharray = path.getTotalLength()
 		path.style.strokeDashoffset = path.getTotalLength()
 	})
@@ -90,11 +100,15 @@ onMounted(() => {
 </script>
 
 <template>
-	<div class="flex flex-col items-center my-24" :id="props._id">
+	<div class="flex flex-col items-center my-12 bg-light" :id="props._id">
 		<div :class="className()">
 
+		<component class="
+			watermark absolute w-[70%] left-0 opacity-20
+		" :is="props.item.icon" v-if="false"></component>
+
 			<div class="
-				flex items-center justify-center mr-5
+				flex items-center justify-center
 			">
 				<component class="
 					w-96
@@ -103,12 +117,14 @@ onMounted(() => {
 
 
 			<div :class="`
-				content flex flex-col items-start max-w-[45%]
-			`">
+				content flex flex-col items-start max-w-[50%]
+			`" :style="`--color: ${color.color}`">
 				<h3 class="font-[800] uppercase tracking-wider text-lg mb-1">{{ props.item.title }}</h3>
 				<p class="opacity-0 text-[14px] my-3.5">{{ props.item.content }}</p>
 				<div class="overflow-hidden">
-					<button class="text-dark uppercase text-sm mt-2 tracking-wider font-[700]">Visit</button>
+					<button :class="`
+						uppercase text-sm mt-2 tracking-wider font-[700]
+					`">Visit</button>
 				</div>
 			</div>
 		
@@ -119,21 +135,27 @@ onMounted(() => {
 
 <style scoped>
 svg {
-	fill: var(--dark);
+	/* fill: var(--color); */
 }
 h3 {
-	background: linear-gradient(135deg, var(--dark) 0 50%, transparent 50% 100%);
+	background: linear-gradient(135deg, var(--color) 0 50%, transparent 50% 100%);
 	background-size: 210% 100%;
 	background-position-x: 100%;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 p {
-	background: linear-gradient(180deg, var(--dark) 0 50%, transparent 50% 100%);
+	background: linear-gradient(180deg, var(--color) 0 50%, transparent 50% 100%);
 	background-size: 100% 200%;
 	/* background-position-y: 100%; */
 	background-position-y: 0;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
+}
+button {
+	color: var(--color);
+}
+div {
+	/* border: 1px solid #0007; */
 }
 </style>

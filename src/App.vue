@@ -3,6 +3,7 @@ import Header from './components/Header.vue'
 import OurBrands from './components/OurBrands.vue';
 import List from './components/List.vue';
 import Footer from './components/Footer.vue';
+import GridLines from './components/GridLines.vue';
 
 </script>
 
@@ -11,6 +12,10 @@ import Footer from './components/Footer.vue';
   <OurBrands />
   <List />
   <Footer />
+  <svg id="list-path" class="w-full h-full absolute top-0 left-0 z-0">
+    <path style="fill: none; stroke: blue; stroke-width: 5" d="" />
+  </svg>
+  <!-- <GridLines /> -->
 </template>
 
 <style>

@@ -11,6 +11,14 @@ module.exports = {
         'lighter': '#91acb6ff ',
         'normal': '#251c18ff',
         'light': '#dae3e7ff',
+        luna: {
+          'pink': '#E95DB8ff',
+          'blue': '#017EC3ff',
+          'green': '#00A874ff',
+          'yellow': '#FBC80Aff',
+          'orange': '#F5811Fff',
+          'red': '#EF5A43ff',
+        }
       }
     },
   },
