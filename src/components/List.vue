@@ -23,34 +23,54 @@ const items = [
 	{ icon: WaterWellDrilling, title: 'Water Well Drilling', content: 'LUNA Drilling for water wells drilling is one of the borehole drilling contractors in the Federal Democratic Republic of Ethiopia', route: '', last: true, color: 'luna-blue' },
 	{ icon: AutoParts, title: 'Auto Parts', content: lorem.slice(0, lorem.length - 68) + '.', route: '', last: true, color: 'luna-green' },
 ]
-var aBox = function (element) {
-	let box = element.getBoundingClientRect()
-	return box
-	var top = 0, left = 0;
-	do {
-		top += element.offsetTop || 0;
-		left += element.offsetLeft || 0;
-		element = element.offsetParent;
-	} while (element);
-	return {
-		x: top,
-		y: left,
-		width: box.width,
-		height: box.height,
-	};
-};
-const item = (index, child) => aBox(document.querySelector(`#item-${index} ${child}`))
-const content = index => item(index, '.content')
+
+
+const item = index => document.querySelector(`#item-${index}`)
+const itemBox = (index, child) => document.querySelector(`#item-${index} ${child}`).getBoundingClientRect()
+const content = index => itemBox(index, '.content')
+
 const drawPath = () => {
 	const listBox = document.getElementById('list-box')
 	const list = document.getElementById('list')
 	const path = document.querySelector('#list-path path')
+
 	let l = list.getBoundingClientRect()
 	let lb = listBox.getBoundingClientRect()
+
+	let the_path = [
+		`M ${content(0).x} ${lb.y}`, // starting point
+	]
+
+	for (let i=0; i<items.length; i+= 2) {
+		if (content(i)) {
+			the_path.push(`L ${content(i).x} ${content(i).y}`) // vertical line
+			the_path.push(`L ${content(i).x + content(i).width} ${content(i).y}`) // top horizontal
+			the_path.push(`L ${content(i).x + content(i).width} ${content(i).y + content(i).height}`) // birdge
+			the_path.push(`L ${content(i).x} ${content(i).y + content(i).height}`) // bottom horizontal
+		}
+
+		if (content(i+1)) {
+				the_path.push(`L ${content(i+1).x + content(i+1).width} ${content(i+1).y}`) // vertical line
+				the_path.push(`L ${content(i+1).x} ${content(i+1).y}`) // top horizontal
+				the_path.push(`L ${content(i+1).x} ${content(i+1).y + content(i+1).height}`) // birdge
+				the_path.push(`L ${content(i+1).x + content(i+1).width} ${content(i+1).y + content(i+1).height}`) // bottom horizontal
+		}
+	}
+
+	the_path.push(`${content(0).x} ${lb.bottom}`)
+
+	let d = the_path.join(' ')
+
+	path.setAttribute('d', d)
 }
+
 onMounted(() => {
-	drawPath()
+	// window.scrollTo({
+	// 	top: 0
+	// })
+	// drawPath()
 })
+
 </script>
 
 <template>
@@ -61,15 +81,14 @@ onMounted(() => {
 		">
 
 			<div class="
-				relative z-10 grid grid-cols-1 gap-y-10
+				z-10 grid grid-cols-1 gap-y-10
 			">
-				<Item
-					v-for="(item, i) in items" :key="item.title"
+				<Item v-for="(item, i) in items" :key="item.title"
+					class="sticky top-[0%]"
 					:_id="`item-${i}`"
 					:item="item"
 					:left="i % 2 == 0"
-					:color="colored ? item.color : 'dark'"
-				/>
+					:color="colored ? item.color : 'dark'" />
 			</div>
 
 

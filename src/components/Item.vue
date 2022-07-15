@@ -33,7 +33,7 @@ const appear = el => {
 
 	const tmp = `#${el.id}`
 
-	const paths = `${tmp} path, ${tmp} rect`
+	const paths = `${tmp} .icon-component path, ${tmp} .icon-component rect`
 	
 	tl
 	.add({
@@ -42,8 +42,12 @@ const appear = el => {
 		duration: 1700
 	})
 	.add({
-		targets: `${tmp} svg`,
+		targets: `${tmp} svg.icon`,
 		translateY: [35 * (props.left ? 1 : 1), 0],
+	}, 0)
+	.add({
+		targets: `${tmp} svg.watermark`,
+		opacity: [0, .17],
 	}, 0)
 	.add({
 		targets: paths,
@@ -84,7 +88,7 @@ const intersection = new IntersectionObserver(callback, {
 onMounted(() => {
 	root = document.getElementById(props._id)
 
-	document.querySelectorAll(`#${props._id} path, #${props._id} rect`).forEach(path => {
+	document.querySelectorAll(`#${props._id} .icon-component path, #${props._id} .icon-component rect`).forEach(path => {
 		path.style.fill = 'none'
 		path.style.strokeWidth = 1
 		path.style.stroke = color()
@@ -98,25 +102,26 @@ onMounted(() => {
 </script>
 
 <template>
-	<div class="flex flex-col items-center my-12 bg-light" :id="props._id">
+	<div class="brands-list-item flex flex-col items-center py-12 bg-light" :id="props._id">
 		<div :class="className()">
-
-		<component class="
-			watermark absolute w-[70%] left-0 opacity-20
-		" :is="props.item.icon" v-if="false"></component>
 
 			<div class="
 				flex items-center justify-center
 			">
 				<component class="
+					icon-component
 					w-96
 				" :is="props.item.icon"></component>
 			</div>
 
 
 			<div :class="`
-				content flex flex-col items-start max-w-[50%]
+				relative content flex flex-col items-start max-w-[50%] p-5 py-8
 			`" :style="`--color: ${color()}`">
+				<component class="
+					watermark absolute w-[70%] left-16 top-0 opacity-0
+				" data-rate=".2" :is="props.item.icon" v-if="true"></component>
+
 				<h3 class="font-[800] uppercase tracking-wider text-lg mb-1">{{ props.item.title }}</h3>
 				<p class="opacity-0 text-[14px] my-3.5">{{ props.item.content }}</p>
 				<div class="overflow-hidden">
@@ -132,8 +137,10 @@ onMounted(() => {
 </template>
 
 <style scoped>
-svg {
-	/* fill: var(--color); */
+.brands-list-item {
+}
+svg.watermark {
+	fill: var(--dark);
 }
 h3 {
 	background: linear-gradient(135deg, var(--color) 0 50%, transparent 50% 100%);
