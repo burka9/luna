@@ -1,6 +1,5 @@
 <script setup>
 import { onMounted } from 'vue';
-
 import Item from './Item.vue'
 import Kitchen from './Brands/Kitchen.vue'
 import FreshCorner from './Brands/FreshCorner.vue';
@@ -11,7 +10,7 @@ import LunaFarms from './Brands/LunaFarms.vue';
 import WaterWellDrilling from './Brands/WaterWellDrilling.vue';
 import AutoParts from './Brands/AutoParts.vue';
 
-
+const colored = false
 const lorem = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis sunt, accusantium unde labore ullam adipisci tempora nihil quibusdam perferendis reprehenderit. Cum ab sapiente minima, illum odit voluptatem quasi.'
 
 const items = [
@@ -24,7 +23,6 @@ const items = [
 	{ icon: WaterWellDrilling, title: 'Water Well Drilling', content: 'LUNA Drilling for water wells drilling is one of the borehole drilling contractors in the Federal Democratic Republic of Ethiopia', route: '', last: true, color: 'luna-blue' },
 	{ icon: AutoParts, title: 'Auto Parts', content: lorem.slice(0, lorem.length - 68) + '.', route: '', last: true, color: 'luna-green' },
 ]
-
 var aBox = function (element) {
 	let box = element.getBoundingClientRect()
 	return box
@@ -34,7 +32,6 @@ var aBox = function (element) {
 		left += element.offsetLeft || 0;
 		element = element.offsetParent;
 	} while (element);
-
 	return {
 		x: top,
 		y: left,
@@ -42,24 +39,18 @@ var aBox = function (element) {
 		height: box.height,
 	};
 };
-
 const item = (index, child) => aBox(document.querySelector(`#item-${index} ${child}`))
 const content = index => item(index, '.content')
-
-
 const drawPath = () => {
 	const listBox = document.getElementById('list-box')
 	const list = document.getElementById('list')
 	const path = document.querySelector('#list-path path')
-
 	let l = list.getBoundingClientRect()
 	let lb = listBox.getBoundingClientRect()
 }
-
 onMounted(() => {
 	drawPath()
 })
-
 </script>
 
 <template>
@@ -77,7 +68,7 @@ onMounted(() => {
 					:_id="`item-${i}`"
 					:item="item"
 					:left="i % 2 == 0"
-					:color="item.color"
+					:color="colored ? item.color : 'dark'"
 				/>
 			</div>
 

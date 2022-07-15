@@ -3,6 +3,7 @@ import { onMounted } from 'vue';
 import anime from 'animejs'
 
 const tailwind_colors = {
+	'dark': '#52717b',
 	'luna-pink': '#E95DB8',
 	'luna-blue': '#017EC3',
 	'luna-green': '#00A874',
@@ -11,10 +12,7 @@ const tailwind_colors = {
 	'luna-red': '#EF5A43',
 }
 
-const color = {
-	dark: '#52717b',
-	color: tailwind_colors[props.color],
-}
+const color = () => tailwind_colors[props.color]
 
 const props = defineProps(['_id', 'item', 'left', 'color'])
 
@@ -49,7 +47,7 @@ const appear = el => {
 	}, 0)
 	.add({
 		targets: paths,
-		fill: ['none', color.color],
+		fill: ['none', color()],
 		strokeWidth: [1, 0],
 	}, '-=350')
 	.add({
@@ -89,7 +87,7 @@ onMounted(() => {
 	document.querySelectorAll(`#${props._id} path, #${props._id} rect`).forEach(path => {
 		path.style.fill = 'none'
 		path.style.strokeWidth = 1
-		path.style.stroke = color.color
+		path.style.stroke = color()
 		path.style.strokeDasharray = path.getTotalLength()
 		path.style.strokeDashoffset = path.getTotalLength()
 	})
@@ -118,7 +116,7 @@ onMounted(() => {
 
 			<div :class="`
 				content flex flex-col items-start max-w-[50%]
-			`" :style="`--color: ${color.color}`">
+			`" :style="`--color: ${color()}`">
 				<h3 class="font-[800] uppercase tracking-wider text-lg mb-1">{{ props.item.title }}</h3>
 				<p class="opacity-0 text-[14px] my-3.5">{{ props.item.content }}</p>
 				<div class="overflow-hidden">
@@ -151,9 +149,11 @@ p {
 	background-position-y: 0;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
+	filter: grayscale(.7);
 }
 button {
 	color: var(--color);
+	filter: grayscale(.45);
 }
 div {
 	/* border: 1px solid #0007; */
