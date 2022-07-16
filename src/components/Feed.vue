@@ -31,8 +31,8 @@ const see_more = () => location.assign('/about')
 		</div>
 
 
-		<div class="right mr-32 my-8">
-			<img src="../assets/imgs/feeding_2.jpeg" alt="">
+		<div class="right mr-32 my-8 h-[80%]">
+			<img src="../assets/imgs/feeding_2.jpeg" alt="" class="max-h-full">
 		</div>
 
 

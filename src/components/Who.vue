@@ -1,6 +1,6 @@
 <script setup>
 
-const see_more = () => location.assign('/brands')
+const see_more = () => location.assign('/about')
 
 </script>
 
@@ -37,16 +37,16 @@ const see_more = () => location.assign('/brands')
 		">
 			<div class="left">
 				<p class="text-2xl mb-12 md:mb-0 font-[300]">
-					Luna, established in 2003, is a parent company for a group of business units engaged in production, processing, and import-export activities
+					Luna is a mother company for the collaboration of various business units engaged in the import-export process of numerous countries.
 				</p>
 			</div>
 
 			<div class="right">
 				<p class="text-base text-justify mb-6">
-					Meat Processing, farm, food retail grocery chains, food catering service, winery, honey, and wax processing, heavy machinery spare parts supply, and deep-well drilling. The company employs over 1000 employees.
+					The company was established in 2003, and the first one to introduce employee share ownership program (ESOP) which is a mechanism that enables and facilitates employee ownership in both the country and the company.
 				</p>
 				<p class="text-base text-justify mb-6">
-					We use cutting-edge technology to grow and prepare your fruits, vegetables, meat, and wine throughout our facilities. Our farms, feedlots, and export abattoir align with international standards, to ensure that we supply the highest quality, and traceable foods to our clients in Ethiopia and the rest of the world.
+					We care about the environment is one of our positive impact approach to do well on behalf of mother earth.
 				</p>
 				<button class="uppercase text-sm font-bold" @click="see_more">See More</button>
 			</div>

@@ -9,17 +9,17 @@
 		<h3 class="
 			font-bold text-dark
 			text-4xl
-			lg:mb-10
-			md:mb-8
-			mb-4
+			lg:mb-8
+			md:mb-6
+			mb-2
 		">Our Values</h3>
 		<p class="
 			text-base text-slate-500
-			md:w-[65vw] md:px-0
+			md:w-[69vw] md:px-0
 			sm:w-auto sm:px-24
 			px-12
 		">
-			We strongly believe that healthy ecosystems clean our water, purify our air, maintain our soil, regulate the climate, recycle nutrients and provide us with favorable conditions to produce our food.
+				We value the lasting reputation we have built, more than the short term financial success we could get. We value the irreplaceable human relation we have with everyone. We value the dedication of our employees, their energy and the growing intention to improve. We value the rewarding performance and the long-term relationship with our customers
 		</p>
 	</div>
 </template>
