@@ -7,7 +7,7 @@ const see_more = () => location.assign('/about')
 <template>
 	<div id="who-are-we" class="
 		hidden flex-col justify-center
-		lg:p-16 lg:px-24 lg:p-0 h-[30rem]
+		lg:p-16 lg:px-24 lg:p-0 h-[30rem] flex
 		md:px-20
 		sm:px-16
 		p-12 px-10
@@ -18,12 +18,10 @@ const see_more = () => location.assign('/about')
 			lg:text-4xl
 			md:text-3xl
 			text-1xl
-		
-			text-dark
 		">Who we are</h3>
 
 		<div class="
-			spacer w-full h-[2px] bg-dark
+			spacer w-0 h-[2px] bg-dark
 			lg:my-5
 			md:my-3
 			my-5
@@ -53,3 +51,15 @@ const see_more = () => location.assign('/about')
 		</div>
 	</div>
 </template>
+
+<style scoped>
+h3 {
+	align-self: flex-start;
+	background: linear-gradient(120deg, var(--dark) 0 50%, transparent 50% 100%);
+	background-size: 225%;
+	background-position-x: 100%;
+	transform: translateX(25px);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+</style>

@@ -25,6 +25,14 @@
 </template>
 
 <style scoped>
+h3 {
+	background: linear-gradient(120deg, var(--dark) 0 50%, transparent 50% 100%);
+	background-size: 225%;
+	background-position-x: 100%;
+	transform: translateX(25px);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
 p {
 	text-align: justify;
 	text-align-last: center;

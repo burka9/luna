@@ -77,7 +77,7 @@ const loadObserver = () => {
 
 				let temp = `id-${new Date().getTime().toString()}`
 				let temp2 = `border-id-${new Date().getTime().toString()}`
-				
+
 				entry.target.children[0].id = temp
 
 				const svgs = document.querySelectorAll(`#${temp} path, #${temp} rect`)
@@ -128,6 +128,136 @@ const loadObserver = () => {
 	document.querySelectorAll('.my-list-item').forEach(el => {
 		intersection.observe(el)
 	})
+
+	let who_we_are = new IntersectionObserver((entries, observer) => {
+		if (entries[0])
+			if (entries[0].isIntersecting) {
+				let { children } = entries[0].target
+				let duration = 1100
+				let w_timeline = anime.timeline({
+					duration,
+					direction: 'normal',
+					easing: 'easeInOutSine'
+				})
+				w_timeline
+					.add({
+						targets: children[2].children[0],
+						opacity: [0, 1],
+						translateY: [30, 0],
+					})
+					.add({
+						targets: children[2].children[1],
+						opacity: [0, 1],
+						// translateY: [30, 0],
+					})
+					.add({
+						targets: children[0],
+						backgroundPositionX: ['100%', '0%'],
+						translateX: ['25px', 0],
+					}, 0)
+					.add({
+						targets: children[1],
+						width: [0, '100%'],
+						duration: duration/2,
+					}, 0)
+				// who_we_are.unobserve(entries[0])
+			}
+	}, {
+		rootMargin: '0px 0px -70px 0px',
+	})
+
+	let our_values = new IntersectionObserver((entries, observer) => {
+		if (entries[0])
+			if (entries[0].isIntersecting) {
+				let { children } = entries[0].target
+				let duration = 1050
+				let _timeline = anime.timeline({
+					duration,
+					direction: 'normal',
+					easing: 'easeInOutSine'
+				})
+				_timeline
+					.add({
+						targets: children[0],
+						backgroundPositionX: ['100%', '0%'],
+						translateX: ['25px', 0],
+					})
+					.add({
+						targets: children[1],
+						opacity: [0, 1],
+						translateY: [35, 0]
+					}, 250)
+				// our_values.unobserve(entries[0])
+			}
+	}, {
+		rootMargin: '0px 0px -70px 0px',
+	})
+
+	let icons = new IntersectionObserver((entries, observer) => {
+		if (entries[0])
+			if (entries[0].isIntersecting) {
+				let { children } = entries[0].target
+				let duration = 1750
+				let _timeline = anime.timeline({
+					duration,
+					direction: 'normal',
+					easing: 'easeInOutSine'
+				})
+				_timeline
+					.add({
+						targets: children[0],
+						// opacity: [0, 1],
+						top: [0, '100%']
+					})
+				// icons.unobserve(entries[0])
+			}
+	}, {
+		rootMargin: '0px 0px -30px 0px'
+	})
+
+	let feed = new IntersectionObserver((entries, observer) => {
+		if (entries[0])
+			if (entries[0].isIntersecting) {
+				let { children } = entries[0].target
+				let duration = 1250
+				let _timeline = anime.timeline({
+					duration,
+					direction: 'normal',
+					easing: 'easeInOutSine'
+				})
+				_timeline
+					.add({
+						targets: children[0].children[0],
+						backgroundPositionX: ['100%', '0%'],
+						translateX: ['25px', 0],
+					})
+					.add({
+						targets: children[0].children[1],
+						opacity: [0, 1],
+						translateY: [35, 0],
+						duration: duration/2,
+					}, 150)
+					.add({
+						targets: children[0].children[2],
+						backgroundPositionY: ['-100%', 0],
+						duration: duration/2,
+					}, 600)
+					.add({
+						targets: children[1].children[0],
+						width: [0, '100%'],
+						easing: 'easeOutCirc',
+						duration: 5000,
+					}, 250)
+				// feed.unobserve(entries[0])
+			}
+	}, {
+		rootMargin: '0px 0px -30px 0px'
+	})
+
+	who_we_are.observe(document.getElementById('who-are-we'))
+	our_values.observe(document.getElementById('our-values'))
+	icons.observe(document.getElementById('icon-section'))
+	feed.observe(document.getElementById('feeding-program'))
 }
 
 onMounted(() => {
