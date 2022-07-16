@@ -25,13 +25,10 @@
 			<div class="bg-slate-200 my-12 w-full h-[2px]"></div>
 
 			<p class="text-slate-200 mb-5">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi, impedit deleniti ratione veniam iste
-				perferendis, odit nulla libero cumque laborum quisquam rerum eaque quaerat fugit, minus obcaecati eius
-				laudantium?
+				Our service is more than a business. From the very beginning of our initiation we had been very clear about where we wanted to stand in the community. “It’s all about you” our motto to guide us through the long journey which made us who we are.
 			</p>
 			<p class="text-slate-200">
-				Lorem ipsum dolor sit amet consectetur aveniam iste perferendis, odit nulla libero cumque laborum quisquam
-				fugit, minus obcaecati eius laudantium?
+				Luna is a mother company collaboratively including various business units with an identical aim from the very start. Our brand expresses excellence and strength led by powerful women starting from top management, covering up 46% of our entire employee rate.
 			</p>
 		</div>
 	</div>

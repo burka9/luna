@@ -149,7 +149,7 @@ p {
 	background-position-y: 0;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
-	filter: grayscale(.7);
+	filter: grayscale(.7) contrast(.5);
 }
 button {
 	color: var(--color);
