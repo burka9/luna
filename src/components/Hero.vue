@@ -160,7 +160,7 @@ const loadObserver = () => {
 						width: [0, '100%'],
 						duration: duration/2,
 					}, 0)
-				// who_we_are.unobserve(entries[0])
+				who_we_are.unobserve(entries[0].target)
 			}
 	}, {
 		rootMargin: '0px 0px -70px 0px',
@@ -187,7 +187,7 @@ const loadObserver = () => {
 						opacity: [0, 1],
 						translateY: [35, 0]
 					}, 250)
-				// our_values.unobserve(entries[0])
+				our_values.unobserve(entries[0].target)
 			}
 	}, {
 		rootMargin: '0px 0px -70px 0px',
@@ -209,7 +209,7 @@ const loadObserver = () => {
 						// opacity: [0, 1],
 						top: [0, '100%']
 					})
-				// icons.unobserve(entries[0])
+				icons.unobserve(entries[0].target)
 			}
 	}, {
 		rootMargin: '0px 0px -30px 0px'
@@ -246,12 +246,12 @@ const loadObserver = () => {
 						targets: children[1].children[0],
 						width: [0, '100%'],
 						easing: 'easeOutCirc',
-						duration: 5000,
+						duration: 4000,
 					}, 250)
-				// feed.unobserve(entries[0])
+				feed.unobserve(entries[0].target)
 			}
 	}, {
-		rootMargin: '0px 0px -30px 0px'
+		rootMargin: '0px 0px -65px 0px'
 	})
 
 	who_we_are.observe(document.getElementById('who-are-we'))

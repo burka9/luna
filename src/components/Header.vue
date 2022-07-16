@@ -63,8 +63,8 @@ const toggleBurger = () => {
 		
 		<div class="
 			logo flex items-center justify-between w-full sm:w-auto overflow-hidden cursor-pointer
-		" title="Luna Group" @click="goToHome">
-			<div id="logo-box" class="flex items-center">
+		" title="Luna Group">
+			<div id="logo-box" class="flex items-center" @click="goToHome">
 				<div class="
 					icon
 					2xl:w-20 2xl:mx-10
