@@ -1,3 +1,12 @@
+<script setup>
+
+const left_top = `Luna is a mother company for the collaboration of various business units engaged in the import-export process of numerous countries.`
+const left_bottom = `The company was established in 2003, and the first one to introduce employee share ownership program (ESOP) which is a mechanism that enables and facilitates employee ownership in both the country and the company.`
+const right_top = `We care about the environment is one of our positive impact approach to do well on behalf of mother earth. Due to the growing industrialized way of life we are leading, it’s mandatory to care about the other polarities of life.`
+const right_bottom = `Keeping the natural state of our environment to the optimal level; by using biogas digestion technology, reducing and reusing the massive waste products, planting trees at a rate of 200 per hectare on each farmer’s land we use and introducing reusable shopping bags in each fresh corner shops are some of the instances.`
+
+</script>
+
 <template>
 	<div id="who-are-we" class="
 		bg-lighter flex flex-col text-slate-200
@@ -27,21 +36,21 @@
 			md:grid-cols-2 md:gap-x-10
 			grid-cols-1 gap-x-5
 		">
-			<div class="left">
+			<div class="left grid grid-rows-2">
 				<p class="text-base text-justify mb-6">
-					Meat Processing, farm, food retail grocery chains, food catering service, winery, honey, and wax processing, heavy machinery spare parts supply, and deep-well drilling. The company employs over 1000 employees.
+					{{ left_top }}
 				</p>
 				<p class="text-base text-justify mb-6">
-					We use cutting-edge technology to grow and prepare your fruits, vegetables, meat, and wine throughout our facilities. Our farms, feedlots, and export abattoir align with international standards, to ensure that we supply the highest quality, and traceable foods to our clients in Ethiopia and the rest of the world.
+					{{ left_bottom }}
 				</p>
 			</div>
 
-			<div class="right">
+			<div class="right grid grid-rows-2">
 				<p class="text-base text-justify mb-6">
-					Meat Processing, farm, food retail grocery chains, food catering service, winery, honey, and wax processing, heavy machinery spare parts supply, and deep-well drilling. The company employs over 1000 employees.
+					{{ right_top }}
 				</p>
 				<p class="text-base text-justify mb-6">
-					We use cutting-edge technology to grow and prepare your fruits, vegetables, meat, and wine throughout our facilities. Our farms, feedlots, and export abattoir align with international standards, to ensure that we supply the highest quality, and traceable foods to our clients in Ethiopia and the rest of the world.
+					{{ right_bottom }}
 				</p>
 			</div>
 		</div>
