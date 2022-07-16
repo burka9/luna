@@ -102,7 +102,7 @@ onMounted(() => {
 
 <template>
 	<div :class="`
-		flex flex-col items-center py-12 px-52
+		flex flex-col items-center py-10 px-52
 		${props.nth%3==2 ? 'bg-dark shadow-2xl' : '' }
 	`" :id="props._id">
 		<div :class="className()">
