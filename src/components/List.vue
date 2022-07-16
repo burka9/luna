@@ -65,12 +65,12 @@ onMounted(() => {
 <template>
 	<div id="list-box" class="relative bg-light ">
 		<div id="list" class="
-			relative flex flex-col relative overflow-hidden
-			mx-52 py-20
+			relative flex flex-col overflow-hidden
+			py-20
 		">
 
 			<div class="
-				relative z-10 grid grid-cols-1 gap-y-10
+				relative z-10 grid grid-cols-1
 			">
 				<Item
 					v-for="(item, i) in items" :key="item.title"
@@ -78,6 +78,7 @@ onMounted(() => {
 					:item="item"
 					:left="i % 2 == 0"
 					:color="colored ? item.color : 'dark'"
+					:nth="i"
 				/>
 			</div>
 
@@ -85,9 +86,3 @@ onMounted(() => {
 		</div>
 	</div>
 </template>
-
-<style scoped>
-div {
-	/* border: 1px solid #0007; */
-}
-</style>

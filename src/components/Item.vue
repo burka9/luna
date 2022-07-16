@@ -14,7 +14,7 @@ const tailwind_colors = {
 
 const color = () => tailwind_colors[props.color]
 
-const props = defineProps(['_id', 'item', 'left', 'color'])
+const props = defineProps(['_id', 'item', 'left', 'color', 'nth'])
 
 const className = () => defaultClassName.concat(props.left ? leftClassName : rightClassName)
 
@@ -33,7 +33,7 @@ const appear = el => {
 
 	const tmp = `#${el.id}`
 
-	const paths = `${tmp} path, ${tmp} rect`
+	const paths = `${tmp} path, ${tmp} rect, ${tmp} polygon`
 	
 	tl
 	.add({
@@ -48,8 +48,11 @@ const appear = el => {
 	.add({
 		targets: paths,
 		fill: ['none', color()],
+	}, '-=1250')
+	.add({
+		targets: paths,
 		strokeWidth: [1, 0],
-	}, '-=350')
+	}, '-=800')
 	.add({
 		targets: `${tmp} p`,
 		// backgroundPositionY: ['100%', '0%'],
@@ -84,7 +87,7 @@ const intersection = new IntersectionObserver(callback, {
 onMounted(() => {
 	root = document.getElementById(props._id)
 
-	document.querySelectorAll(`#${props._id} path, #${props._id} rect`).forEach(path => {
+	document.querySelectorAll(`#${props._id} path, #${props._id} rect, ${props._id} polygon`).forEach(path => {
 		path.style.fill = 'none'
 		path.style.strokeWidth = 1
 		path.style.stroke = color()
@@ -98,7 +101,10 @@ onMounted(() => {
 </script>
 
 <template>
-	<div class="flex flex-col items-center my-12 bg-light" :id="props._id">
+	<div :class="`
+		flex flex-col items-center py-12 px-52
+		${props.nth%3==2 ? 'bg-dark shadow-2xl' : '' }
+	`" :id="props._id">
 		<div :class="className()">
 
 		<component class="
@@ -149,7 +155,7 @@ p {
 	background-position-y: 0;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
-	filter: grayscale(.7) contrast(.5);
+	filter: grayscale(.25);
 }
 button {
 	color: var(--color);
