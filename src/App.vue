@@ -6,17 +6,24 @@ import Footer from './components/Footer.vue'
 import Info from './components/Info.vue';
 import Pic from './components/Pic.vue';
 import Feed from './components/Feed.vue';
+import You from './components/You.vue';
 
 
 </script>
 
 <template>
-  <Header />
-  <Hero />
-  <Who />
+  <div class="
+    bg-light
+  ">
+    <Header />
+    <Hero />
+  </div>
+  <!-- <div class="h-[55vh] bg-light relative -z-20"></div> -->
   <Info />
-  <Pic />
+  <Who />
+  <!-- <Pic /> -->
   <Feed />
+  <You />
   <Footer />
 </template>
 

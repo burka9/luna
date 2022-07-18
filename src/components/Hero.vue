@@ -4,16 +4,21 @@
 
 <template>
 	<div id="hero" class="
-		relative flex bg-light items-center justify-center h-[30vh]
+		relative flex flex-col bg-light items-center justify-center h-[45vh]
 	">
 
-		<h3 class="
+		<h1 class="
 			text-dark font-bold uppercase tracking-wide
 			2xl:text-6xl
 			lg:text-5xl
 			md:text-4xl
 			text-1xl
-		">About us</h3>
+			mb-5
+		">About us</h1>
+
+		<p class="font-[300] text-dark w-1/2 text-center">
+			Luna is a mother company for the collaboration of various business units engaged in the import-export process of numerous countries.
+		</p>
 		
 	</div>
 </template>
