@@ -1,4 +1,7 @@
 <script setup>
+import { onMounted } from 'vue';
+import anime from 'animejs'
+
 
 const items = [
 	{
@@ -41,6 +44,28 @@ const items = [
 	},
 ]
 
+onMounted(() => {
+	let intersection = new IntersectionObserver((entries, observer) => {
+		entries.forEach((entry, i) => {
+			if (entry.isIntersecting) {
+				anime({
+					targets: entry.target,
+					opacity: [0, 1],
+					translateY: [75, 0],
+					duration: 1100,
+					delay: 350 * i,
+					easing: 'easeInOutSine',
+				})
+				intersection.unobserve(entry.target)
+			}
+		})
+	}, {
+		rootMargin: '0px 0px -70px 0px',
+	})
+
+	document.querySelectorAll('#who-are-we .card').forEach(el => intersection.observe(el))
+})
+
 </script>
 
 <template>
@@ -70,7 +95,7 @@ const items = [
 
 			<div class="
 				card
-				flex flex-col items-center
+				flex flex-col items-center opacity-0
 			" v-for="(item, i) in items.slice(0)" :key="i">
 				<h2 class="
 					text-4xl font-[500] mb-8

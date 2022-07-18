@@ -4,11 +4,11 @@
 
 <template>
 	<div id="hero" class="
-		relative flex flex-col bg-light items-center justify-center h-[45vh]
+		relative flex flex-col bg-light items-center justify-center h-[45vh] mb-[50vh]
 	">
 
 		<h1 class="
-			text-dark font-bold uppercase tracking-wide
+			text-transparent font-bold uppercase tracking-wide
 			2xl:text-6xl
 			lg:text-5xl
 			md:text-4xl
@@ -24,4 +24,10 @@
 </template>
 
 <style scoped>
+h1 {
+	background: linear-gradient(120deg, transparent 0% 50%, var(--dark) 50% 100%);
+	background-size: 225% 100%;
+	background-position-x: 0%;
+	background-clip: text;
+}
 </style>

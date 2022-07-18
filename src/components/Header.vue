@@ -1,6 +1,6 @@
 <script setup>
 import anime from 'animejs'
-import { reactive, computed } from 'vue';
+import { reactive, computed, onMounted } from 'vue';
 import Icon from './Icon.vue'
 import Text from './Text.vue'
 
@@ -47,6 +47,7 @@ const toggleBurger = () => {
 		}
 	})
 }
+
 </script>
 
 <template>
