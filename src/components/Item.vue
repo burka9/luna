@@ -12,7 +12,7 @@ const tailwind_colors = {
 	'luna-red': '#EF5A43',
 }
 
-const color = () => tailwind_colors[props.color]
+const color = () => '#e0e0e0' //tailwind_colors[props.color]
 
 const props = defineProps(['_id', 'item', 'left', 'color', 'nth'])
 
@@ -81,11 +81,23 @@ const callback = (entries, observer) => {
 }
 
 const intersection = new IntersectionObserver(callback, {
-	rootMargin: '0px 0px -150px 0px',
+	rootMargin: '0px 0px -225px 0px',
 })
 
 onMounted(() => {
 	root = document.getElementById(props._id)
+
+	if (props.item.background && false) {
+		fetch(`/assets/imgs/${props.item.background}`)
+		.then(res => {
+			console.log(res)
+		})
+		.catch(err => console.error(err))
+	}
+
+	// dev code
+	const img = new URL(`../assets/imgs/${props.item.background}`, import.meta.url)
+	document.getElementById(props._id).style.backgroundImage = `url(${img})`
 
 	document.querySelectorAll(`#${props._id} path, #${props._id} rect, ${props._id} polygon`).forEach(path => {
 		path.style.fill = 'none'
@@ -102,9 +114,12 @@ onMounted(() => {
 
 <template>
 	<div :class="`
-		flex flex-col items-center py-10 px-52
-		${props.nth%3==2 ? 'bg-dark shadow-2xl' : '' }
-	`" :id="props._id">
+		brand-item
+		flex flex-col items-center py-24 px-52 my-16
+		${props.nth%3==2 && false ? 'bg-dark shadow-2xl' : '' }
+	`" :id="props._id" :style="`
+
+	`">
 		<div :class="className()">
 
 		<component class="
@@ -115,7 +130,7 @@ onMounted(() => {
 				flex items-center justify-center
 			">
 				<component class="
-					w-96
+					w-80
 				" :is="props.item.icon"></component>
 			</div>
 
