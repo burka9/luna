@@ -4,6 +4,17 @@ import OurBrands from './components/OurBrands.vue';
 import List from './components/List.vue';
 import Footer from './components/Footer.vue';
 import GridLines from './components/GridLines.vue';
+import { onMounted } from 'vue'
+import anime from 'animejs'
+
+onMounted(() => {
+  anime({
+    targets: '.logo, .link',
+		delay: (el, i) => 150 * (i+2),
+		scale: [0, 1],
+  })
+
+})
 
 </script>
 
