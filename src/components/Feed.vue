@@ -19,7 +19,7 @@ const see_more = () => location.assign('/about/#feed')
 				text-xl
 			">Our school feeding program</h3>
 
-			<p class="font-[100]">
+			<p class="font-[100] opacity-0">
 				We are passionate about the next generation of Ethiopians. We know that many across our great country go to school without the nourishment they need.
 			</p>
 

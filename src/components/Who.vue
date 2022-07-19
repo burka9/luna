@@ -33,13 +33,13 @@ const see_more = () => location.assign('/about')
 			md:grid-cols-2 md:gap-x-10
 			grid-cols-1 gap-x-5
 		">
-			<div class="left">
+			<div class="left opacity-0">
 				<p class="text-2xl mb-12 md:mb-0 font-[300]">
 					Luna is a mother company for the collaboration of various business units engaged in the import-export process of numerous countries.
 				</p>
 			</div>
 
-			<div class="right">
+			<div class="right opacity-0">
 				<p class="text-base text-justify mb-6">
 					The company was established in 2003, and the first one to introduce employee share ownership program (ESOP) which is a mechanism that enables and facilitates employee ownership in both the country and the company.
 				</p>

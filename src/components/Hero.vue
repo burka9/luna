@@ -122,7 +122,7 @@ const loadObserver = () => {
 	}
 	
 	const intersection = new IntersectionObserver(callback, {
-		rootMargin: '0px 0px -65px 0px',
+		rootMargin: '0px 0px -120px 0px',
 	})
 
 	document.querySelectorAll('.my-list-item').forEach(el => {
@@ -163,7 +163,7 @@ const loadObserver = () => {
 				who_we_are.unobserve(entries[0].target)
 			}
 	}, {
-		rootMargin: '0px 0px -70px 0px',
+		rootMargin: '0px 0px -300px 0px',
 	})
 
 	let our_values = new IntersectionObserver((entries, observer) => {
@@ -190,7 +190,7 @@ const loadObserver = () => {
 				our_values.unobserve(entries[0].target)
 			}
 	}, {
-		rootMargin: '0px 0px -70px 0px',
+		rootMargin: '0px 0px -225px 0px',
 	})
 
 	let icons = new IntersectionObserver((entries, observer) => {
@@ -212,7 +212,7 @@ const loadObserver = () => {
 				icons.unobserve(entries[0].target)
 			}
 	}, {
-		rootMargin: '0px 0px -30px 0px'
+		rootMargin: '0px 0px -150px 0px'
 	})
 
 	let feed = new IntersectionObserver((entries, observer) => {
@@ -251,7 +251,7 @@ const loadObserver = () => {
 				feed.unobserve(entries[0].target)
 			}
 	}, {
-		rootMargin: '0px 0px -65px 0px'
+		rootMargin: '0px 0px -225px 0px'
 	})
 
 	who_we_are.observe(document.getElementById('who-are-we'))
@@ -329,7 +329,17 @@ onMounted(() => {
 			fill: ['transparent', '#53717b'],
 			svgStroke: ['#53717b', 'transparent'],
 			delay: (el, i) => 70 * i,
-			duration: 1250/1
+			duration: 1250/1,
+			// complete() {
+			// 	anime({
+			// 		targets: '.logo, .link',
+			// 		delay: (el, i) => 150 * (i+2),
+			// 		scale: [0, 1],
+			// 		complete: () => {
+			// 			document.getElementById('header').style.maxWidth = `${window.innerWidth}px`
+			// 		},
+			// 	})
+			// },
 		})
 		.add({
 			targets: '#header',
