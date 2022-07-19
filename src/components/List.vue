@@ -63,7 +63,7 @@ onMounted(() => {
 </script>
 
 <template>
-	<div id="list-box" class="relative bg-light ">
+	<div id="list-box" class="relative bg-light z-0 ">
 		<div id="list" class="
 			relative flex flex-col overflow-hidden
 			py-20 pt-28

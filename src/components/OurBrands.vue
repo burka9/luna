@@ -14,27 +14,27 @@ onMounted(() => {
 
 <template>
 	<div id="our-brands" class="
-		relative flex items-center justify-stretch
+		bg-white relative flex items-center justify-stretch
 	">
 
+			<div class="
+				bg-light absolute w-full left-0 bottom-0 h-1/4
+				z-0
+			"></div>
+
 		<div id="brands" class="
-			bg-lighter flex flex-col items-center grow
-			lg:mt-24 lg:mx-32
-			md:mt-16 md:mx-24
+			bg-lighter flex flex-col items-center grow relative
+			lg:mt-20 lg:mx-32
+			md:mt-12 md:mx-24
 		">
 
 			<div class="
-				bg-light absolute w-full bottom-0 h-1/4
-				z-[-1]
-			"></div>
-
-			<div class="
-				flex flex-col items-center h-[50%] overflow-hidden relative
-				lg:m-28 lg:mx-40
-				md:m-20 md:mx-32
+				flex flex-col items-center h-[50%] overflow-hidden relative z-10
+				lg:m-24 lg:mx-40
+				md:m-16 md:mx-32
 			">
 
-				<div id="shade" class="absolute w-full h-full"></div>
+				<div id="shade" class="hidden absolute w-full h-full"></div>
 			
 				<h3 class="
 					text-slate-200 font-bold

@@ -12,7 +12,7 @@ import GridLines from './components/GridLines.vue';
   <OurBrands />
   <List />
   <Footer />
-  <svg id="list-path" class="w-full h-full absolute top-0 left-0 z-0">
+  <svg id="list-path" class="w-full h-full absolute top-0 left-0 z-0" v-if="false">
     <path style="fill: none; stroke: blue; stroke-width: 5" d="" />
   </svg>
   <!-- <GridLines /> -->
