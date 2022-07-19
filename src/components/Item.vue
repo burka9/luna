@@ -32,43 +32,24 @@ const appear = el => {
 	})
 
 	const tmp = `#${el.id}`
-
-	const paths = `${tmp} path, ${tmp} rect, ${tmp} polygon`
 	
 	tl
-	.add({
-		targets: paths,
-		strokeDashoffset: el => ([el.getTotalLength(), 0]),
-		duration: 1700
-	})
-	.add({
-		targets: `${tmp} svg`,
-		translateY: [35 * (props.left ? 1 : 1), 0],
-	}, 0)
-	.add({
-		targets: paths,
-		fill: ['none', color()],
-	}, '-=1250')
-	.add({
-		targets: paths,
-		strokeWidth: [1, 0],
-	}, '-=800')
-	.add({
-		targets: `${tmp} p`,
-		// backgroundPositionY: ['100%', '0%'],
-		opacity: [0, 1],
-		scaleX: [1.2, 1],
-	}, 0)
-	.add({
-		targets: `${tmp} h3`,
-		backgroundPositionX: ['100%', '0%'],
-		translateX: [50, 0],
-	}, 0)
-	.add({
-		targets: `${tmp} button`,
-		translateY: el => ([el.getBoundingClientRect().height + 10, 0]),
-		duration: 1000
-	}, 1100)
+		.add({
+			targets: `${tmp} p`,
+			// backgroundPositionY: ['100%', '0%'],
+			opacity: [0, 1],
+			scaleX: [1.2, 1],
+		}, 0)
+		.add({
+			targets: `${tmp} h3`,
+			backgroundPositionX: ['100%', '0%'],
+			translateX: [50, 0],
+		}, 0)
+		.add({
+			targets: `${tmp} button`,
+			translateY: el => ([el.getBoundingClientRect().height + 10, 0]),
+			duration: 1000
+		}, 1100)
 }
 
 const callback = (entries, observer) => {
@@ -87,25 +68,8 @@ const intersection = new IntersectionObserver(callback, {
 onMounted(() => {
 	root = document.getElementById(props._id)
 
-	if (props.item.background && false) {
-		fetch(`/assets/imgs/${props.item.background}`)
-		.then(res => {
-			console.log(res)
-		})
-		.catch(err => console.error(err))
-	}
-
-	// dev code
 	const img = new URL(`../assets/imgs/${props.item.background}`, import.meta.url)
 	document.getElementById(props._id).style.backgroundImage = `url(${img})`
-
-	document.querySelectorAll(`#${props._id} path, #${props._id} rect, ${props._id} polygon`).forEach(path => {
-		path.style.fill = 'none'
-		path.style.strokeWidth = 1
-		path.style.stroke = color()
-		path.style.strokeDasharray = path.getTotalLength()
-		path.style.strokeDashoffset = path.getTotalLength()
-	})
 
 	intersection.observe(root)
 })
@@ -114,20 +78,21 @@ onMounted(() => {
 
 <template>
 	<div :class="`
-		brand-item
-		flex flex-col items-center py-24 px-52 my-16
+		brand-item bg-light
+		flex flex-col items-center justify-center py-0 h-[65vh] px-52 mt-32
 		${props.nth%3==2 && false ? 'bg-dark shadow-2xl' : '' }
 	`" :id="props._id" :style="`
 
 	`">
-		<div :class="className()">
+		<div class="flex items-center justify-center">
+		<!-- <div :class="className()"> -->
 
 		<component class="
 			watermark absolute w-[70%] left-0 opacity-20
 		" :is="props.item.icon" v-if="false"></component>
 
 			<div class="
-				flex items-center justify-center
+				flex items-center justify-center hidden
 			">
 				<component class="
 					w-80
@@ -136,10 +101,10 @@ onMounted(() => {
 
 
 			<div :class="`
-				content flex flex-col items-start max-w-[50%]
+				content flex flex-col items-center max-w-[90%]
 			`" :style="`--color: ${color()}`">
 				<h3 class="font-[800] uppercase tracking-wider text-lg mb-1">{{ props.item.title }}</h3>
-				<p class="opacity-0 text-[14px] my-3.5">{{ props.item.content }}</p>
+				<p class="opacity-0 text-[14px] text-center my-3.5">{{ props.item.content }}</p>
 				<div class="overflow-hidden">
 					<button :class="`
 						uppercase text-sm mt-2 tracking-wider font-[700]

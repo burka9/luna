@@ -19,10 +19,10 @@ const items = [
 	/**/{ icon: SlaughterHouse, title: 'Slaughter House', content: 'Luna slaughterhouse is without any exclamation the leading slaughter supplier in Ethiopia. Boldly known for providing healthy, sufficient, satisfying and organic slaughter products.', route: '', color: 'luna-red', background: 'slaughter-house.jpg' },
 	/**/{ icon: FreshCorner, title: 'Fresh Corner', content: 'Fresh corner is a business unit under the mother company (Luna import and export) actively serving the community and envisioning to conquer a sustainable and adequate food supply for the society.', route: '', color: 'luna-orange', background: 'fresh-corner.jpg' },
 	/**/{ icon: Kitchen, title: 'Fresh Corner Kitchen', content: 'As an extensively community serving company, one of the other ways we reach out to the society is through our kitchen. Starting from the ingredient of every single meal we serve; quality, freshness and deliverability had been part of our identity.', route: '', color: 'luna-blue', background: 'kitchen.jpg' },
-	/**/{ icon: EzanaWinery, title: 'Ezana Winery', content: 'We are situated around Quha, mekelle, a place with semi-arid climate and the utmost location to create that elegant taste of grape.', route: '', color: 'luna-pink' },
-	/**/{ icon: DebreBerhanHoney, title: 'Luna Honey', content: 'The inspiration of Luna honey came from the idea of “from hive to home”. We wanted to create a platform collectively characterized by originality, trustworthy, transparency and deliverability.', route: '', color: 'luna-yellow' },
-	/**/{ icon: WaterWellDrilling, title: 'Water Well Drilling', content: 'Luna water will drilling, is one of the recent business unit under Luna import and export. Which had been fully functioning for the past two years, it’s one of the most prominent borehole drilling projects authorized under the Federal Democratic Republic of Ethiopia.', route: '', last: true, color: 'dark' },
-	/**/{ icon: AutoParts, title: 'LUNA CATERKOMAT MACHINERY', content: 'Luna CATERKOMAT machinery supply is the correspondent business unit of the Luna Export Slaughter House P.L.C. we had been serving the construction industry by supplying original spare parts for construction machineries including dozer, excavator, loader, grader, roller, forklift, generator and generator. Broadening the market freedom of our clients by importing; CATERPILLAR, KOMATSU, CUMMINS, and PERKINS engines approved by the “British quality products”, all the way from Italy.', route: '', last: true, color: 'dark' },
+	/**/{ icon: EzanaWinery, title: 'Ezana Winery', content: 'We are situated around Quha, mekelle, a place with semi-arid climate and the utmost location to create that elegant taste of grape.', route: '', color: 'luna-pink', background: 'winery.jpg' },
+	/**/{ icon: DebreBerhanHoney, title: 'Luna Honey', content: 'The inspiration of Luna honey came from the idea of “from hive to home”. We wanted to create a platform collectively characterized by originality, trustworthy, transparency and deliverability.', route: '', color: 'luna-yellow', background: 'honey.jpg' },
+	/**/{ icon: WaterWellDrilling, title: 'Water Well Drilling', content: 'Luna water will drilling, is one of the recent business unit under Luna import and export. Which had been fully functioning for the past two years, it’s one of the most prominent borehole drilling projects authorized under the Federal Democratic Republic of Ethiopia.', route: '', last: true, color: 'dark', background: 'waterwell.jpg' },
+	/**/{ icon: AutoParts, title: 'LUNA CATERKOMAT MACHINERY', content: 'Luna CATERKOMAT machinery supply is the correspondent business unit of the Luna Export Slaughter House P.L.C. we had been serving the construction industry by supplying original spare parts for construction machineries including dozer, excavator, loader, grader, roller, forklift, generator and generator. Broadening the market freedom of our clients by importing; CATERPILLAR, KOMATSU, CUMMINS, and PERKINS engines approved by the “British quality products”, all the way from Italy.', route: '', last: true, color: 'dark', background: 'parts.jpg' },
 ]
 
 var aBox = function (element) {
@@ -66,7 +66,6 @@ onMounted(() => {
 	<div id="list-box" class="relative bg-light z-0">
 		<div id="list" class="
 			relative flex flex-col overflow-hidden
-			py-20 pt-28
 		">
 
 			<div class="
@@ -89,7 +88,7 @@ onMounted(() => {
 
 <style scoped>
 .brand-item {
-	background-color: #0006;
+	background-color: #00000075;
 	background-attachment: fixed;
 	background-blend-mode: darken;
 	background-size: cover;

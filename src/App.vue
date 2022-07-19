@@ -4,6 +4,37 @@ import OurBrands from './components/OurBrands.vue';
 import List from './components/List.vue';
 import Footer from './components/Footer.vue';
 import GridLines from './components/GridLines.vue';
+import { onMounted } from 'vue'
+import anime from 'animejs'
+
+onMounted(() => {
+  const _tl = anime.timeline({
+    duration: 1000,
+    easing: 'easeInOutSine',
+    direction: 'normal',
+  })
+
+  anime({
+    targets: '.logo, .link',
+		delay: (el, i) => 150 * (i+2),
+		scale: [0, 1],
+  })
+
+  _tl
+    .add({
+      targets: '#brands',
+      opacity: [0, 1],
+      top: ['35vh', 0],
+      delay: 200 * 3,
+    })
+    .add({
+      targets: '.the-div',
+      bottom: el => ([(el.getBoundingClientRect().height + 25) * -1, '-30%']),
+      opacity: [0, 1],
+      duration: 1750
+    }, 0)
+
+})
 
 </script>
 

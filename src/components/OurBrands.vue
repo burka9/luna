@@ -1,17 +1,3 @@
-<script setup>
-import { onMounted } from 'vue'
-import anime from 'animejs'
-
-onMounted(() => {
-	anime({
-		targets: '#shade',
-		backgroundPositionY: ['75%', '-200%'],
-		easing: 'easeInOutSine',
-		duration: 2500,
-	})
-})
-</script>
-
 <template>
 	<div id="our-brands" class="
 		bg-light relative flex items-center justify-stretch z-10
