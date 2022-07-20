@@ -61,7 +61,7 @@ onMounted(() => {
 
 <template>
 	<div id="header" class="
-			bg-lighter flex sm:items-center justify-between relative z-10 w-screen
+			bg-white flex sm:items-center justify-between relative z-10 w-screen
 			opactiy-0
 
 			2xl:p-28 2xl:px-32

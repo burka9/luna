@@ -40,14 +40,14 @@ onMounted(() => {
 
 		<div id="brands" class="
 			bg-lighter flex flex-col items-center grow relative z-10
-			lg:mt-20 lg:mx-32
-			md:mt-12 md:mx-24
+			lg:mt-12 lg:mx-32
+			md:mt-8 md:mx-24
 		">
 
 			<div class="
 				flex flex-col items-center h-[50%] overflow-hidden relative z-10
-				lg:m-24 lg:mx-40
-				md:m-16 md:mx-32
+				lg:m-20 lg:mx-40
+				md:m-12 md:mx-32
 			">
 
 			
