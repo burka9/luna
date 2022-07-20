@@ -63,9 +63,9 @@ onMounted(() => {
 </script>
 
 <template>
-	<div id="list-box" class="relative bg-lighter z-0">
+	<div id="list-box" class="relative bg-light z-0 top-32">
 		<div id="list" class="
-			relative flex flex-col overflow-hidden 
+			relative flex flex-col overflow-hidden
 		">
 
 			<div class="

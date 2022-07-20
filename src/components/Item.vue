@@ -81,6 +81,7 @@ onMounted(() => {
 		brand-item bg-light
 		flex flex-col items-center justify-center py-0 h-[65vh] px-52 mt-32
 		${props.nth%3==2 && false ? 'bg-dark shadow-2xl' : '' }
+		z-[${props.nth}] shadow-2xl
 	`" :id="props._id" :style="`
 
 	`">

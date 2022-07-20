@@ -6,18 +6,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'dark': '#52717bff',
-        'dark_2': '#91a7b6ff',
-        'lighter': '#91acb6ff',
-        'normal': '#251c18ff',
-        'light': '#dae3e7ff',
+        'dark': '#52717b',
+        'dark_2': '#91a7b6',
+        'lighter': '#91acb6',
+        'normal': '#251c18',
+        'light': '#dae3e7',
         luna: {
-          'pink': '#E95DB8ff',
-          'blue': '#017EC3ff',
-          'green': '#00A874ff',
-          'yellow': '#FBC80Aff',
-          'orange': '#F5811Fff',
-          'red': '#EF5A43ff',
+          'pink': '#E95DB8',
+          'blue': '#017EC3',
+          'green': '#00A874',
+          'yellow': '#FBC80A',
+          'orange': '#F5811F',
+          'red': '#EF5A43',
         }
       }
     },

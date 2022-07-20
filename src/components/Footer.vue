@@ -12,7 +12,7 @@ const info = [
 
 <template>
 	<div id="footer" class="
-		bg-lighter
+		bg-lighter relative mt-32
 		grid grid-cols-2
 		px-32
 		lg:py-10
