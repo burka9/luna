@@ -12,7 +12,7 @@ const tailwind_colors = {
 	'luna-red': '#EF5A43',
 }
 
-const color = () => '#e0e0e0' //tailwind_colors[props.color]
+const color = () => '#c9c9c9' //tailwind_colors[props.color]
 
 const props = defineProps(['_id', 'item', 'left', 'color', 'nth'])
 
@@ -101,13 +101,14 @@ onMounted(() => {
 
 
 			<div :class="`
-				content flex flex-col items-center max-w-[90%]
+				content flex flex-col items-center max-w-[85%]
 			`" :style="`--color: ${color()}`">
-				<h3 class="font-[800] uppercase tracking-wider text-lg mb-1">{{ props.item.title }}</h3>
-				<p class="opacity-0 text-[14px] text-center my-3.5">{{ props.item.content }}</p>
+				<h3 class="font-[800] uppercase tracking-wider text-xl mb-1">{{ props.item.title }}</h3>
+				<p class="opacity-0 text-[14px] font-[400] text-center my-5">{{ props.item.content }}</p>
 				<div class="overflow-hidden">
 					<button :class="`
 						uppercase text-sm mt-2 tracking-wider font-[700]
+						p-1 px-2.5
 					`">Visit</button>
 				</div>
 			</div>
@@ -139,6 +140,9 @@ p {
 }
 button {
 	color: var(--color);
+	/* background: var(--color);
+	color: transparent;
+	mix-blend-mode: multiply; */
 	filter: grayscale(.45);
 }
 div {

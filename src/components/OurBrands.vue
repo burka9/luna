@@ -11,8 +11,8 @@
 
 		<div id="brands" class="
 			flex flex-col items-center grow relative
-			lg:mt-16 lg:mx-32
-			md:mt-8 md:mx-24
+			lg:mt-10 lg:mx-32
+			md:mt-6 md:mx-24
 		">
 
 			<div class="

@@ -33,6 +33,10 @@ onMounted(() => {
       opacity: [0, 1],
       duration: 1750
     }, 0)
+    .add({
+      targets: '#list-box',
+      opacity: [0, 1],
+    }, 1500)
 
 })
 
@@ -51,6 +55,7 @@ onMounted(() => {
 
 <style>
 #app {
+  background: var(--light);
   display: flex;
   flex-direction: column;
   width: 100vw;
