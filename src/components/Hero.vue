@@ -260,6 +260,10 @@ const loadObserver = () => {
 	feed.observe(document.getElementById('feeding-program'))
 }
 
+const loadCarousel = () => {
+	
+}
+
 onMounted(() => {
 	const paths = document.querySelectorAll('#hero path')
 
@@ -295,6 +299,7 @@ onMounted(() => {
 
 	const show_stuff = () => {
 		animateScrollButton()
+		loadCarousel()
 		setTimeout(() => {
 			document.body.style.overflowY = 'auto'
 			for (const view in hidden_views)
@@ -302,7 +307,7 @@ onMounted(() => {
 				loadObserver()
 
 				window.addEventListener('scroll', () => {
-					loadParallax()
+					// loadParallax()
 				})
 		}, 800)
 		anime({
