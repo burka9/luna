@@ -12,7 +12,7 @@ totalHeight -= window.innerHeight
 window.addEventListener('scroll', e => {
 	percentage = (window.scrollY || window.pageYOffset) / totalHeight
 
-	state.showButton = percentage >= (window.innerHeight / totalHeight * 1.075)
+	state.showButton = percentage >= ((window.innerHeight + (window.innerHeight * 0.1)) / totalHeight)
 })
 
 const goToTop = () => window.scrollTo({ top: 0 })
