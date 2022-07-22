@@ -12,13 +12,13 @@ const tailwind_colors = {
 	'luna-red': '#EF5A43',
 }
 
-const color = () => '#c9c9c9' //tailwind_colors[props.color]
+const color = () => tailwind_colors[props.color]
 
 const props = defineProps(['_id', 'item', 'left', 'color', 'nth'])
 
 const className = () => defaultClassName.concat(props.left ? leftClassName : rightClassName)
 
-const defaultClassName = 'flex justify-between items-center '
+const defaultClassName = 'flex justify-between items-center h-full w-full relative '
 const leftClassName = 'flex-row '
 const rightClassName = 'flex-row-reverse '
 
@@ -69,7 +69,7 @@ onMounted(() => {
 	root = document.getElementById(props._id)
 
 	const img = new URL(`../assets/imgs/${props.item.background}`, import.meta.url)
-	document.getElementById(props._id).style.backgroundImage = `url(${img})`
+	document.querySelector(`#${props._id} .image`).src = `${img}`
 
 	intersection.observe(root)
 })
@@ -79,30 +79,30 @@ onMounted(() => {
 <template>
 	<div :class="`
 		brand-item bg-light
-		flex flex-col items-center justify-center py-0 h-[65vh] px-52 mt-32
-		${props.nth%3==2 && false ? 'bg-dark shadow-2xl' : '' }
-		z-[${props.nth}] shadow-2xl
+		flex flex-col items-center justify-center py-0 h-[65vh] px-24 my-16
+		${props.nth%3==2 ? 'bg-dark shadow-2xl' : '' }
 	`" :id="props._id" :style="`
 
 	`">
-		<div class="flex items-center justify-center">
-		<!-- <div :class="className()"> -->
+		<!-- <div class="flex items-center justify-center"> -->
+		<div :class="className()">
 
-		<component class="
-			watermark absolute w-[70%] left-0 opacity-20
-		" :is="props.item.icon" v-if="false"></component>
+			<component class="
+				watermark absolute w-[70%] left-0 opacity-20
+			" :is="props.item.icon" v-if="false"></component>
 
-			<div class="
-				flex items-center justify-center hidden
-			">
-				<component class="
-					w-80
-				" :is="props.item.icon"></component>
+			<div class="relative w-full h-full flex items-center">
+				<div class="image-box w-full h-full flex items-center">
+					<img class="image" />
+				</div>
+				<svg class="clip absolute">
+				</svg>
 			</div>
 
 
 			<div :class="`
-				content flex flex-col items-center max-w-[85%]
+				content flex flex-col items-center max-w-[50%]
+				mx-12
 			`" :style="`--color: ${color()}`">
 				<h3 class="font-[800] uppercase tracking-wider text-xl mb-1">{{ props.item.title }}</h3>
 				<p class="opacity-0 text-[14px] font-[400] text-center my-5">{{ props.item.content }}</p>
@@ -148,5 +148,12 @@ button {
 }
 div {
 	/* border: 1px solid #0007; */
+}
+.image-box {
+	/* clip-path: polygon(50% 0%, 100% 23%, 100% 77%, 50% 100%, 0% 77%, 0% 23%); */
+	/* clip-path: path('M0.5,1 C0.5,1,0,0.7,0,0.3 A0.25,0.25,1,1,1,0.5,0.3 A0.25,0.25,1,1,1,1,0.3 C1,0.7,0.5,1,0.5,1 Z'); */
+}
+.image, .image-shadow {
+	/* clip-path: polygon(50% 0%, 100% 23%, 100% 77%, 50% 100%, 0% 77%, 0% 23%); */
 }
 </style>

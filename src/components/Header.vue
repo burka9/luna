@@ -84,7 +84,7 @@ onMounted(() => {
 					sm:w-6 sm:mr-1
 					w-7 mr-1
 				">
-					<Icon colorful />
+					<Icon colorful="true" />
 				</div>
 				<div class="
 					text

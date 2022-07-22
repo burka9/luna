@@ -11,7 +11,7 @@ import LunaFarms from './Brands/LunaFarms.vue';
 import WaterWellDrilling from './Brands/WaterWellDrilling.vue';
 import AutoParts from './Brands/AutoParts.vue';
 
-const colored = false
+const colored = true
 const lorem = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis sunt, accusantium unde labore ullam adipisci tempora nihil quibusdam perferendis reprehenderit. Cum ab sapiente minima, illum odit voluptatem quasi.'
 
 const items = [
@@ -88,7 +88,7 @@ onMounted(() => {
 
 <style scoped>
 .brand-item {
-	background-color: #00000075;
+	/* background-color: #00000075; */
 	background-attachment: fixed;
 	background-blend-mode: darken;
 	background-size: cover;

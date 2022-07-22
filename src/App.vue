@@ -6,6 +6,7 @@ import Footer from './components/Footer.vue';
 import GridLines from './components/GridLines.vue';
 import { onMounted } from 'vue'
 import anime from 'animejs'
+import BackToTop from './components/BackToTop.vue';
 
 onMounted(() => {
   const _tl = anime.timeline({
@@ -51,6 +52,7 @@ onMounted(() => {
     <path style="fill: none; stroke: blue; stroke-width: 5" d="" />
   </svg>
   <!-- <GridLines /> -->
+  <BackToTop />
 </template>
 
 <style>
