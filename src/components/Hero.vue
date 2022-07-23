@@ -1,6 +1,6 @@
 <script setup>
 import anime from 'animejs'
-import { onMounted } from 'vue';
+import { onMounted, reactive } from 'vue';
 
 const scrollToBrand = () => {
 	document.getElementById('our-brands').scrollIntoView(true)
@@ -260,9 +260,6 @@ const loadObserver = () => {
 	feed.observe(document.getElementById('feeding-program'))
 }
 
-const loadCarousel = () => {
-	
-}
 
 onMounted(() => {
 	const paths = document.querySelectorAll('#hero path')
@@ -299,7 +296,6 @@ onMounted(() => {
 
 	const show_stuff = () => {
 		animateScrollButton()
-		loadCarousel()
 		setTimeout(() => {
 			document.body.style.overflowY = 'auto'
 			for (const view in hidden_views)
@@ -379,7 +375,8 @@ onMounted(() => {
 	<div id="hero" class="
 		relative flex bg-light items-center justify-center h-[100vh]
 	">
-		<svg viewBox="0 0 9629.1094 2123.3979" id="text" class="relative -top-[8vh] sm:top-0">
+	
+		<svg viewBox="0 0 9629.1094 2123.3979" id="text" class="relative -top-[8vh] sm:top-0 z-10">
 			<path
 				d="M 513.67445,138.83827 V 1354.9274 c 0,0 -26.19526,271.0445 216.18513,271.0445 H 1921.9284 l -276.7655,358.5866 -881.96491,-6.0309 c 0,0 -658.2748,53.8081 -659.74976,-512.3826 L 100,142.32879 Z" />
 			<path
