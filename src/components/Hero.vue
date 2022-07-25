@@ -387,10 +387,11 @@ const state = reactive({
 
 
 const animate_carousel = () => {
+	setTimeout(() => state.cc = 2, 100)
 	setInterval(() => {
 		state.cc++
 		state.cc %= 3
-	}, 6000)
+	}, 3500)
 }
 </script>
 
