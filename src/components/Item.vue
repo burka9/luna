@@ -50,6 +50,11 @@ const appear = el => {
 			translateY: el => ([el.getBoundingClientRect().height + 10, 0]),
 			duration: 1000
 		}, 1100)
+		.add({
+			targets: `${tmp} .image`,
+			translateX: el => ([el.getBoundingClientRect().width * (props.left ? -1 : 1), 0]),
+			opacity: [0, 1]
+		}, 200)
 }
 
 const callback = (entries, observer) => {
@@ -92,8 +97,8 @@ onMounted(() => {
 			" :is="props.item.icon" v-if="false"></component>
 
 			<div class="relative w-full h-full flex items-center">
-				<div class="image-box w-full h-full flex items-center">
-					<img class="image" />
+				<div class="image-box max-h-[70%] w-[100%] flex items-center overflow-hidden">
+					<img class="image opacity-0" />
 				</div>
 				<svg class="clip absolute">
 				</svg>
