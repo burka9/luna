@@ -35,4 +35,24 @@ import BackToTop from './components/BackToTop.vue'
   overflow-y: hidden;
   overflow-x: hidden;
 }
+
+.carousel__item {
+  min-height: 200px;
+  width: 100%;
+  background-color: dodgerblue;
+  color: white;
+  font-size: 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel__slide {
+  padding: 10px;
+}
+.carousel_prev,
+.carousel_next {
+  box-sizing: content-box;
+  border: 5px solid white;
+}
 </style>

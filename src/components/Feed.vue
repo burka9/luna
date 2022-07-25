@@ -7,15 +7,21 @@ const see_more = () => location.assign('/about/#feed')
 
 <template>
 	<div id="feeding-program" class="
-		relative hidden grid-cols-2 gap-x-24 h-96
+		relative hidden
+		md:grid-cols-2 md:gap-x-24 md:h-96 md:p-0
+		p-10
 	">
 		
-		<div class="left flex flex-col justify-between items-start text-lighter pr-6 ml-32 h-[58%] my-8">
+		<div class="
+			left flex flex-col text-lighter
+			md:pr-6 md:ml-32 md:h-[58%] md:my-8 md:justify-between md:items-start
+			items-center
+		">
 			<h3 class="
 				font-bold uppercase tracking-wide
 				2xl:text-5xl
 				lg:text-3xl
-				md:text-xl
+				md:text-xl md:txt-start
 				text-xl
 			">Our school feeding program</h3>
 
@@ -29,11 +35,15 @@ const see_more = () => location.assign('/about/#feed')
 		</div>
 
 
-		<div class="right flex flex-row-reverse">
+		<div class="
+			right flex-row-reverse
+			md:flex
+			hidden
+		">
 			<div class="image mr-32 my-8 h-[80%] self-end"></div>
 		</div>
 
-		<div class="absolute bg-light w-full h-[27%] bottom-0 z-[-1]"></div>
+		<div class="absolute bg-light w-full h-[27%] bottom-0 z-[-1] hidden md:flex"></div>
 
 	</div>
 </template>
@@ -56,5 +66,11 @@ button {
 	background-image: url(../assets/imgs/feeding_2.jpeg);
 	background-size: auto 100%;
 	background-repeat: none;
+}
+
+@media screen and (max-width: 768px) {
+	#feeding-program {
+		/* background-image: url(../assets/imgs/feeding_2.jpeg); */
+	}
 }
 </style>

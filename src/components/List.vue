@@ -42,7 +42,7 @@ const items2 = [
 		<div id="brands" class="scroll
 		relative z-10
 			hidden grid place-items-center
-			xl:gap-8 xl:gap-y-12
+			xl:gap-6 xl:gap-y-12 xl:p-20 xl:pt-12 xl:px-60
 			lg:-gap-2 lg:gap-y-8 lg:p-12 lg:pt-8 lg:px-52
 			md:grid-cols-3 md:gap-12 md:gap-y-16 md:p-24 md:pt-6
 			sm:grid-cols-2 sm:gap-16 sm:gap-y-8 sm:p-16
@@ -52,7 +52,7 @@ const items2 = [
 		</div>
 		<div id="brands-2" class="relative z-10
 			hidden bg-lighter place-items-center
-			xl:gap-24 xl:px-64
+			xl:gap-1 xl:px-64
 			lg:px-56
 			md:grid-cols-2 md:gap-32 md:p-24 md:px-60
 			grid-cols-1 gap-16 p-20

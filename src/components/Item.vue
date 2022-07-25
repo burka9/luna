@@ -17,8 +17,8 @@ const see_more = () => location.assign('/brands')
 			opacity-0
 			xl:rounded-3xl xl:border-[3px] xl:h-[300px] xl:w-64
 			lg:rounded-2xl lg:border-[3px] lg:h-[240px] lg:w-60
-			md:rounded-xl md:border-[2px] md:h-[200px] md:w-52
-			rounded-xl border-[1px] h-[300px] w-60
+			md:rounded-xl md:border-[2px] md:h-[250px] md:w-52
+			rounded-lg border-[1px] h-[300px] w-60
 		` + className()"
 		>
 		

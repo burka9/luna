@@ -54,7 +54,8 @@ const toggleBurger = () => {
 			bg-transprent flex sm:items-center justify-between absolute z-10 w-screen
 			opactiy-0 top-[-15vh]
 
-			2xl:p-28 2xl:px-32
+
+			xl:p-10 xl:px-24
 			lg:p-12 lg:px-24
 			md:p-8
 			sm:flex-row sm:p-6
@@ -67,19 +68,19 @@ const toggleBurger = () => {
 			<div id="logo-box" class="flex items-center" @click="goToHome">
 				<div class="
 					icon
-					2xl:w-20 2xl:mx-10
+					2xl:w-14 2xl:mx-10
 					xl:w-12 xl:mr-8
 					lg:w-10 lg:mr-6
 					md:w-8 md:mr-4
 					sm:w-6 sm:mr-2
 					w-7 mr-2
 				">
-					<Icon />
+					<Icon colorful="true" />
 				</div>
 				<div class="
 				hidden
 					text
-					2xl:w-56
+					2xl:w-48
 					xl:w-44
 					lg:w-32
 					md:w-24
@@ -105,7 +106,7 @@ const toggleBurger = () => {
 			" v-for="link in links" :key="link.text">
 				<a class="
 					text-dark font-bold
-					2xl:text-3xl 2xl:mx-5
+					2xl:text-[20px] 2xl:mx-2
 					lg:text-[16px] lg:mx-1
 					md:text-[12px] md:mx-1
 					sm:text-xs sm:mx-0.5

@@ -12,7 +12,7 @@
 			2xl:text-6xl
 			lg:text-4xl
 			md:text-3xl
-			text-1xl
+			text-3xl
 			pt-8
 		">Our Brands</h3>
 

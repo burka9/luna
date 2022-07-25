@@ -375,6 +375,18 @@ onMounted(() => {
 	<div id="hero" class="
 		relative flex bg-light items-center justify-center h-[100vh]
 	">
+
+		<div id="carousel" class="
+			absolute z-0 w-full h-full hidden	
+		">
+
+			<div class="z-carousel-shade"></div>
+
+			<div class="box one"></div>
+			<div class="box two"></div>
+			<div class="box three"></div>
+			
+		</div>
 	
 		<svg viewBox="0 0 9629.1094 2123.3979" id="text" class="relative -top-[8vh] sm:top-0 z-10">
 			<path
@@ -412,6 +424,29 @@ onMounted(() => {
 </template>
 
 <style scoped>
+#hero {
+	/* background: #0007; */
+}
+#carousel {
+	opacity: .5;
+}
+#carousel div {
+	top: 0;
+	left: 0;
+}
+.box {
+	@apply w-full h-full absolute z-0;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+.z-carousel-shade {
+	background: #0007;
+	@apply absolute z-[100] w-full h-full;
+}
+.one {
+	background-image: url(../assets/imgs/luna-farm.jpg);
+}
 path {
 	fill: transparent;
 	stroke: var(--dark);
@@ -426,6 +461,11 @@ path {
 @media screen and (min-width: 1280px) {
 	svg {
 		width: 65%;
+	}
+}
+@media screen and (min-width: 1440px) {
+	svg {
+		width: 60%;
 	}
 }
 </style>
