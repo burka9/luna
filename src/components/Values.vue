@@ -27,7 +27,7 @@
 			md:w-[69vw] md:px-0 md:text-base md:leading-7 
 			sm:w-auto sm:px-24
 			px-12 text-sm
-			opacity-1
+			opacity-1 hidden
 		">
 			We value the lasting reputation we have built, more than the short term financial success we could get.
 		</p>

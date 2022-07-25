@@ -2,12 +2,17 @@
 import { onMounted } from 'vue';
 
 
-const props = defineProps(['item', 'dark'])
+const props = defineProps(['item', 'dark', '_id'])
 
 const className = () => props.dark ? 'border-white text-white' : 'border-dark text-dark'
 const svgClassName = () => props.dark ? 'fill-white' : 'fill-dark'
 
 const see_more = () => location.assign('/brands')
+
+onMounted(() => {
+	let img = new URL(`../assets/imgs/${props.item.background}`, import.meta.url)
+	document.querySelector(`#${props._id} .pic`).style.backgroundImage = `url(${img})`
+})
 
 </script>
 
@@ -15,14 +20,14 @@ const see_more = () => location.assign('/brands')
 	<div :class="`my-list-item grid grid-rows-2 items-start justify-items-center
 			cursor-pointer overflow-hidden relative
 			opacity-0
-			xl:rounded-3xl xl:border-[3px] xl:h-[300px] xl:w-64
-			lg:rounded-2xl lg:border-[3px] lg:h-[240px] lg:w-60
-			md:rounded-xl md:border-[2px] md:h-[250px] md:w-52
-			rounded-lg border-[1px] h-[300px] w-60
+			xl:rounded-3xl xl:border-[2px] xl:h-[330px] xl:w-64
+			lg:rounded-2xl lg:border-[2px] lg:h-[270px] lg:w-60
+			md:rounded-xl md:border-[1px] md:h-[280px] md:w-52
+			rounded-lg border-[1px] h-[330px] w-60 shadow-2xl
 		` + className()"
-		>
+		:id="props._id">
 		
-		<component :class="
+		<!-- <component :class="
 			`
 			xl:w-32
 			lg:w-28
@@ -30,10 +35,12 @@ const see_more = () => location.assign('/brands')
 			m-6 mb-0 w-32
 			`
 			"
-		:is="props.item.icon"></component>
+		:is="props.item.icon"></component> -->
+
+		<div class="pic w-full h-full"></div>
 
 		<div class="
-			content flex flex-col items-center justify-between h-full
+			content flex flex-col items-center justify-between h-full mt-3
 		">
 			<h3 class="
 				uppercase font-bold text-center
@@ -84,5 +91,8 @@ const see_more = () => location.assign('/brands')
 .my-list-item {
 	border: none;
 	border-radius: 11px;
+}
+.pic {
+	background-size: cover;
 }
 </style>

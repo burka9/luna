@@ -13,17 +13,17 @@ import Icon from './Icon.vue';
 const lorem = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis sunt, accusantium unde labore ullam adipisci tempora nihil quibusdam perferendis reprehenderit. Cum ab sapiente minima, illum odit voluptatem quasi.'
 
 const items = [
-	{ icon: Kitchen, title: 'Kitchen', content: 'We offer our customers a variety of unique meals and juices at affordable prices. We work hard to continuously provide our customers with ready to eat food', route: '/brands' },
-	{ icon: FreshCorner, title: 'Fresh Corner', content: 'We have 12 Fresh Corner retail stores in different locations of Addis Ababa that offer a wide range of fresh grocery products at a reasonableprice', route: '/brands' },
-	{ icon: SlaughterHouse, title: 'Slaughter House', content: 'Luna livestock has been a leading supplier of chilled and frozen sheep, goat, beef,and veal from Ethiopia. since 2003', route: '/brands' },
-	{ icon: DebreBerhanHoney, title: 'Debre Berhan Honey', content: 'For our state-of-the-art LUNA processing plant bases in Debre Birhan, we are able to receive Fresh Honey direct from the source for our local/global markets.', route: '/brands' },
-	{ icon: EzanaWinery, title: 'Ezana Winery', content: 'The semi-arid ago ecologies of our farm give our wine its elegant taste. Our grapes are grown with the utmost care to be healthy and environment friendly', route: '/brands' },
-	{ icon: LunaFarms, title: 'Luna Farms', content: 'On a total of 500 hectares of land in Ethiopia\'s Oromia, Tigray, and south regions,the company grows vegetables and fruits.', route: '/brands' },
+	{ icon: Kitchen, title: 'Kitchen', content: 'We offer our customers a variety of unique meals and juices at affordable prices. We work hard to continuously provide our customers with ready to eat food', route: '/brands', background: 'luna-farm.jpg' },
+	{ icon: FreshCorner, title: 'Fresh Corner', content: 'We have 12 Fresh Corner retail stores in different locations of Addis Ababa that offer a wide range of fresh grocery products at a reasonableprice', route: '/brands', background: 'slaughter-house.jpg' },
+	{ icon: SlaughterHouse, title: 'Slaughter House', content: 'Luna livestock has been a leading supplier of chilled and frozen sheep, goat, beef,and veal from Ethiopia. since 2003', route: '/brands', background: 'fresh-corner.jpg' },
+	{ icon: DebreBerhanHoney, title: 'Debre Berhan Honey', content: 'For our state-of-the-art LUNA processing plant bases in Debre Birhan, we are able to receive Fresh Honey direct from the source for our local/global markets.', route: '/brands', background: 'kitchen.jpg' },
+	{ icon: EzanaWinery, title: 'Ezana Winery', content: 'The semi-arid ago ecologies of our farm give our wine its elegant taste. Our grapes are grown with the utmost care to be healthy and environment friendly', route: '/brands', background: 'winery.jpg' },
+	{ icon: LunaFarms, title: 'Luna Farms', content: 'On a total of 500 hectares of land in Ethiopia\'s Oromia, Tigray, and south regions,the company grows vegetables and fruits.', route: '/brands', background: 'honey.jpg' },
 ]
 
 const items2 = [
-	{ icon: WaterWellDrilling, title: 'Water Well Drilling', content: 'LUNA Drilling for water wells drilling is one of the borehole drilling contractors in the Federal Democratic Republic of Ethiopia', route: '/brands' },
-	{ icon: AutoParts, title: 'Auto Parts', content: lorem.slice(0, lorem.length-68)+'.', route: '/brands' },
+	{ icon: WaterWellDrilling, title: 'Water Well Drilling', content: 'LUNA Drilling for water wells drilling is one of the borehole drilling contractors in the Federal Democratic Republic of Ethiopia', route: '/brands', background: 'waterwell.jpg' },
+	{ icon: AutoParts, title: 'Auto Parts', content: lorem.slice(0, lorem.length-68)+'.', route: '/brands', background: 'parts.jpg' },
 ]
 
 </script>
@@ -32,7 +32,7 @@ const items2 = [
 	<div class="bg-light flex flex-col relative overflow-hidden">
 
 
-		<div id="watermark" class="hidden absolute z-[-1	] -top-32 left-16 scroll" data-rate=".4">
+		<div id="watermark" class="hidden absolute z-[-1] -top-32 left-16 scroll" data-rate=".4">
 			<div class="w-[60vw] relative z-0">
 				<Icon :blurry="true" />
 			</div>
@@ -48,7 +48,7 @@ const items2 = [
 			sm:grid-cols-2 sm:gap-16 sm:gap-y-8 sm:p-16
 			grid-cols-1 gap-16 p-20
 		">
-			<Item v-for="item in items" :key="item.title" :item="item" />
+			<Item v-for="(item, i) in items" :key="item.title" :item="item" :_id="`item-${i}`" />
 		</div>
 		<div id="brands-2" class="relative z-10
 			hidden bg-lighter place-items-center
@@ -57,7 +57,7 @@ const items2 = [
 			md:grid-cols-2 md:gap-32 md:p-24 md:px-60
 			grid-cols-1 gap-16 p-20
 		">
-			<Item v-for="item in items2" :key="item.title" :item="item" :dark="true" data-dark="true" />
+			<Item v-for="(item, i) in items2" :key="item.title" :item="item" :_id="`item-2-${i}`" :dark="true" data-dark="true" />
 		</div>
 	</div>
 </template>
