@@ -365,39 +365,58 @@ onMounted(() => {
 			},
 			complete: () => {
 				show_stuff()
+				setTimeout(() => animate_carousel(), 1000)
 			}
 		}, '-=1000')
+
+
+		// carousel.forEach((c, i) => {
+		// 	let img = new URL(`../assets/imgs/${c}`, import.meta.url)
+		// 	document.getElementById(`carousel-${i}`).style.backgroundImage = `url(${img})`
+		// })
+}) // mounted
+
+// const carousel = [
+// 	{ img: 'luna-farm.jpg' },
+// 	{ img: 'kitchen.jpg' },
+// ]
+
+const state = reactive({
+	cc: 10
 })
+
+
+const animate_carousel = () => {
+	setInterval(() => {
+		state.cc++
+		state.cc %= 3
+	}, 6000)
+}
 </script>
 
 
 <template>
 	<div id="hero" class="
-		relative flex bg-light items-center justify-center h-[100vh]
+		relative flex bg-light items-center justify-center h-[100vh] z-0 overflow-hidden
 	">
 
-		<div id="carousel" class="
-			absolute z-0 w-full h-full hidden	
-		">
+		
+		<TransitionGroup mode="in-out" name="cc">
+			<div :class="`one box w-full h-full absolute top-0 left-0`" v-if="state.cc == 0"></div>
+			<div :class="`two box w-full h-full absolute top-0 left-0`" v-else-if="state.cc == 1"></div>
+			<div :class="`three box w-full h-full absolute top-0 left-0`" v-else-if="state.cc == 2"></div>
 
-			<div class="z-carousel-shade"></div>
-
-			<div class="box one"></div>
-			<div class="box two"></div>
-			<div class="box three"></div>
-			
-		</div>
-	
-		<svg viewBox="0 0 9629.1094 2123.3979" id="text" class="relative -top-[8vh] sm:top-0 z-10">
-			<path
-				d="M 513.67445,138.83827 V 1354.9274 c 0,0 -26.19526,271.0445 216.18513,271.0445 H 1921.9284 l -276.7655,358.5866 -881.96491,-6.0309 c 0,0 -658.2748,53.8081 -659.74976,-512.3826 L 100,142.32879 Z" />
-			<path
-				d="m 2132.6296,134.8184 h 417.0721 v 1265.1389 c 0,0 -2.1477,223.0057 179.7439,223.0057 226.1492,0 860.2133,0 860.2133,0 0,0 244.8644,24.014 244.8644,-219.7104 V 133.31936 h 396.4411 V 1469.6605 c 0,0 -13.9155,503.704 -486.286,503.704 H 2636.0875 c 0,0 -497.3578,-28.5187 -497.3578,-488.348 0,-383.1429 -6.1003,-1350.1981 -6.1003,-1350.1981 z" />
-			<path
-				d="M 4540.1378,1982.4336 V 296.47515 c 0,0 -27.0445,-149.90739 177.6029,-188.54296 162.4506,-30.669599 238.3801,77.62041 273.5608,112.39557 76.833,75.94564 1308.5645,1256.65334 1308.5645,1256.65334 V 131.51769 H 6690.12 V 1890.6958 c 0,0 -12.3991,108.1729 -172.2032,131.3506 -76.3882,11.079 -179.5465,-48.1038 -234.5859,-98.9313 -89.04,-82.2987 -1350.6373,-1243.71946 -1350.6373,-1243.71946 v 997.72806 z" />
-			<path
-				d="m 6805.633,1981.9281 c 0,0 915.7114,-1511.82122 1073.9741,-1715.80799 176.1461,-227.03535 427.3212,-222.68574 569.7854,21.24582 97.364,166.71031 1079.7165,1692.18777 1079.7165,1692.18777 H 9063.8639 L 8784.8708,1556.9086 H 7515.4269 l 198.1956,-318.6851 H 8608.932 L 8154.0901,519.71083 7255.2261,1983.3545 Z" />
-		</svg>
+			<svg viewBox="0 0 9629.1094 2123.3979" id="text" class="relative -top-[8vh] sm:top-0 z-10" v-else>
+				<path
+					d="M 513.67445,138.83827 V 1354.9274 c 0,0 -26.19526,271.0445 216.18513,271.0445 H 1921.9284 l -276.7655,358.5866 -881.96491,-6.0309 c 0,0 -658.2748,53.8081 -659.74976,-512.3826 L 100,142.32879 Z" />
+				<path
+					d="m 2132.6296,134.8184 h 417.0721 v 1265.1389 c 0,0 -2.1477,223.0057 179.7439,223.0057 226.1492,0 860.2133,0 860.2133,0 0,0 244.8644,24.014 244.8644,-219.7104 V 133.31936 h 396.4411 V 1469.6605 c 0,0 -13.9155,503.704 -486.286,503.704 H 2636.0875 c 0,0 -497.3578,-28.5187 -497.3578,-488.348 0,-383.1429 -6.1003,-1350.1981 -6.1003,-1350.1981 z" />
+				<path
+					d="M 4540.1378,1982.4336 V 296.47515 c 0,0 -27.0445,-149.90739 177.6029,-188.54296 162.4506,-30.669599 238.3801,77.62041 273.5608,112.39557 76.833,75.94564 1308.5645,1256.65334 1308.5645,1256.65334 V 131.51769 H 6690.12 V 1890.6958 c 0,0 -12.3991,108.1729 -172.2032,131.3506 -76.3882,11.079 -179.5465,-48.1038 -234.5859,-98.9313 -89.04,-82.2987 -1350.6373,-1243.71946 -1350.6373,-1243.71946 v 997.72806 z" />
+				<path
+					d="m 6805.633,1981.9281 c 0,0 915.7114,-1511.82122 1073.9741,-1715.80799 176.1461,-227.03535 427.3212,-222.68574 569.7854,21.24582 97.364,166.71031 1079.7165,1692.18777 1079.7165,1692.18777 H 9063.8639 L 8784.8708,1556.9086 H 7515.4269 l 198.1956,-318.6851 H 8608.932 L 8154.0901,519.71083 7255.2261,1983.3545 Z" />
+			</svg>
+		</TransitionGroup>
 
 		<h1 class="hidden">Luna</h1>
 		<h1 class="hidden">Luna Group</h1>
@@ -424,28 +443,17 @@ onMounted(() => {
 </template>
 
 <style scoped>
-#hero {
-	/* background: #0007; */
+.one {
+	background-image: url(../assets/imgs/luna-farm.jpg)
 }
-#carousel {
-	opacity: .5;
+.two {
+	background-image: url(../assets/imgs/kitchen.jpg)
 }
-#carousel div {
-	top: 0;
-	left: 0;
+.three {
+	background-image: url(../assets/imgs/winery.jpg);
 }
 .box {
-	@apply w-full h-full absolute z-0;
 	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
-}
-.z-carousel-shade {
-	background: #0007;
-	@apply absolute z-[100] w-full h-full;
-}
-.one {
-	background-image: url(../assets/imgs/luna-farm.jpg);
 }
 path {
 	fill: transparent;
@@ -467,5 +475,15 @@ path {
 	svg {
 		width: 60%;
 	}
+}
+
+.cc-enter-from,
+.cc-leave-to {
+	opacity: 0;
+}
+
+.cc-enter-active,
+.cc-leave-active {
+	transition: all 700ms ease;
 }
 </style>
