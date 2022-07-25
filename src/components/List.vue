@@ -13,17 +13,17 @@ import Icon from './Icon.vue';
 const lorem = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis sunt, accusantium unde labore ullam adipisci tempora nihil quibusdam perferendis reprehenderit. Cum ab sapiente minima, illum odit voluptatem quasi.'
 
 const items = [
-	{ icon: Kitchen, title: 'Kitchen', content: 'We offer our customers a variety of unique meals and juices at affordable prices. We work hard to continuously provide our customers with ready to eat food', route: '/brands', background: 'luna-farm.jpg' },
-	{ icon: FreshCorner, title: 'Fresh Corner', content: 'We have 12 Fresh Corner retail stores in different locations of Addis Ababa that offer a wide range of fresh grocery products at a reasonableprice', route: '/brands', background: 'slaughter-house.jpg' },
-	{ icon: SlaughterHouse, title: 'Slaughter House', content: 'Luna livestock has been a leading supplier of chilled and frozen sheep, goat, beef,and veal from Ethiopia. since 2003', route: '/brands', background: 'fresh-corner.jpg' },
-	{ icon: DebreBerhanHoney, title: 'Debre Berhan Honey', content: 'For our state-of-the-art LUNA processing plant bases in Debre Birhan, we are able to receive Fresh Honey direct from the source for our local/global markets.', route: '/brands', background: 'kitchen.jpg' },
-	{ icon: EzanaWinery, title: 'Ezana Winery', content: 'The semi-arid ago ecologies of our farm give our wine its elegant taste. Our grapes are grown with the utmost care to be healthy and environment friendly', route: '/brands', background: 'winery.jpg' },
-	{ icon: LunaFarms, title: 'Luna Farms', content: 'On a total of 500 hectares of land in Ethiopia\'s Oromia, Tigray, and south regions,the company grows vegetables and fruits.', route: '/brands', background: 'honey.jpg' },
+	/**/{ icon: LunaFarms, title: 'Luna Farms', content: 'Feeding and serving the community a nutritious, affordable, sufficient and accessible meal each and every day is why we function as Luna farm.', route: '', color: 'luna-green', background: 'luna-farm.jpg' },
+	/**/{ icon: SlaughterHouse, title: 'Slaughter House', content: 'Luna slaughterhouse is without any exclamation the leading slaughter supplier in Ethiopia. Boldly known for providing healthy, sufficient, satisfying and organic slaughter products.', route: '', color: 'luna-red', background: 'slaughter-house.jpg' },
+	/**/{ icon: FreshCorner, title: 'Fresh Corner', content: 'Fresh corner is a business unit under the mother company (Luna import and export) actively serving the community and envisioning to conquer a sustainable and adequate food supply for the society.', route: '', color: 'luna-orange', background: 'fresh-corner.jpg' },
+	/**/{ icon: Kitchen, title: 'Fresh Corner Kitchen', content: 'As an extensively community serving company, one of the other ways we reach out to the society is through our kitchen. Starting from the ingredient of every single meal we serve; quality, freshness and deliverability had been part of our identity.', route: '', color: 'luna-blue', background: 'kitchen.jpg' },
+	/**/{ icon: EzanaWinery, title: 'Ezana Winery', content: 'We are situated around Quha, mekelle, a place with semi-arid climate and the utmost location to create that elegant taste of grape.', route: '', color: 'luna-pink', background: 'winery.jpg' },
+	/**/{ icon: DebreBerhanHoney, title: 'Luna Honey', content: 'The inspiration of Luna honey came from the idea of “from hive to home”. We wanted to create a platform collectively characterized by originality, trustworthy, transparency and deliverability.', route: '', color: 'luna-yellow', background: 'honey.jpg' },
 ]
 
 const items2 = [
-	{ icon: WaterWellDrilling, title: 'Water Well Drilling', content: 'LUNA Drilling for water wells drilling is one of the borehole drilling contractors in the Federal Democratic Republic of Ethiopia', route: '/brands', background: 'waterwell.jpg' },
-	{ icon: AutoParts, title: 'Auto Parts', content: lorem.slice(0, lorem.length-68)+'.', route: '/brands', background: 'parts.jpg' },
+	/**/{ icon: WaterWellDrilling, title: 'Water Well Drilling', content: 'Luna water will drilling, is one of the recent business unit under Luna import and export. Which had been fully functioning for the past two years, it’s one of the most prominent borehole drilling projects authorized under the Federal Democratic Republic of Ethiopia.', route: '', last: true, color: 'dark', background: 'waterwell.jpg' },
+	/**/{ icon: AutoParts, title: 'LUNA CATERKOMAT', content: 'Luna CATERKOMAT machinery supply is the correspondent business unit of the Luna Export Slaughter House P.L.C. we had been serving the construction industry by supplying original spare parts for construction machineries including dozer, excavator, loader, grader, roller, forklift, generator and generator. Broadening the market freedom of our clients by importing; CATERPILLAR, KOMATSU, CUMMINS, and PERKINS engines approved by the “British quality products”, all the way from Italy.', route: '', last: true, color: 'dark', background: 'parts.jpg' },
 ]
 
 </script>

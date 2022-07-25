@@ -9,6 +9,8 @@ const svgClassName = () => props.dark ? 'fill-white' : 'fill-dark'
 
 const see_more = () => location.assign('/brands')
 
+const contentLength = 125
+
 onMounted(() => {
 	let img = new URL(`../assets/imgs/${props.item.background}`, import.meta.url)
 	document.querySelector(`#${props._id} .pic`).style.backgroundImage = `url(${img})`
@@ -24,6 +26,7 @@ onMounted(() => {
 			lg:rounded-2xl lg:border-[2px] lg:h-[270px] lg:w-60
 			md:rounded-xl md:border-[1px] md:h-[280px] md:w-52
 			rounded-lg border-[1px] h-[330px] w-60 shadow-2xl
+			pb-1.5
 		` + className()"
 		:id="props._id">
 		
@@ -56,7 +59,7 @@ onMounted(() => {
 				lg:mx-4
 				md:text-xs md:mx-4 md:px-0
 				text-xs mx-2 px-3
-			">{{ props.item.content }}</p>
+			">{{ props.item.content.slice(0,contentLength).concat( props.item.content.length > contentLength ? '...' : '') }}</p>
 			<button class="
 				uppercase
 				xl:my-3
@@ -90,7 +93,7 @@ onMounted(() => {
 } */
 .my-list-item {
 	border: none;
-	border-radius: 11px;
+	border-radius: 12px;
 }
 .pic {
 	background-size: cover;

@@ -55,7 +55,7 @@ const draw_border = parent => {
 	svg.style.fillOpacity = 0
 
 	path.style.stroke = parent.dataset.dark ? 'white' : '#52717bff'
-	path.style.strokeWidth = 30
+	path.style.strokeWidth = 23
 	path.style.fill = 'transparent'
 
 	path.style.strokeDasharray = path.getTotalLength()
