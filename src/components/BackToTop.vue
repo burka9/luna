@@ -22,7 +22,9 @@ const goToTop = () => window.scrollTo({ top: 0 })
 <template>
 	<Transition name="top">
 		<div id="back-to-top" class="
-			fixed right-8 bottom-6 z-[999]
+			fixed z-[999]
+			md:right-8 md:bottom-6
+			right-4 bottom-6
 			bg-light cursor-pointer rounded-full drop-shadow-2xl shadow-xl
 			flex items-center justify-center p-[4px]
 		" v-show="state.showButton" @click="goToTop">

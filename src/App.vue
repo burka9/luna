@@ -10,9 +10,48 @@ import Footer from './components/Footer.vue'
 import Feed from './components/Feed.vue'
 import BackToTop from './components/BackToTop.vue'
 
+import { reactive } from 'vue'
+
+const size = {
+  '2xl': 1536,
+  'xl': 1280,
+  'lg': 1024,
+  'md': 768,
+  'sm': 640,
+}
+
+const getSize = () => {
+  let type = null
+
+  Object.entries(size).every(size => {
+    type = size[1] <= window.innerWidth ? size[0] : null
+    return type == null
+  })
+
+  return type
+}
+
+const screen = reactive({
+  size: getSize()
+})
+
+window.onresize = () => screen.size = getSize()
+
 </script>
 
 <template>
+  <div class="
+    fixed z-[99999999] right-5 top-5 px-2 text-white
+    2xl:bg-blue-900
+    xl:bg-blue-500
+    lg:bg-green-900
+    md:bg-green-500
+    sm:bg-red-900
+    bg-red-500
+  ">
+    {{ screen.size }}
+  </div>
+
   <Header />
   <Hero />
   <Brands />
@@ -36,23 +75,4 @@ import BackToTop from './components/BackToTop.vue'
   overflow-x: hidden;
 }
 
-.carousel__item {
-  min-height: 200px;
-  width: 100%;
-  background-color: dodgerblue;
-  color: white;
-  font-size: 20px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.carousel__slide {
-  padding: 10px;
-}
-.carousel_prev,
-.carousel_next {
-  box-sizing: content-box;
-  border: 5px solid white;
-}
 </style>

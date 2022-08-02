@@ -417,6 +417,7 @@ onMounted(() => {
 				opacity-0
 				2xl:h-[2.85rem]
 				md:h-[2.245rem]
+				sm:h-[2rem]
 				h-[1.2rem]
 			" />
 		</div>

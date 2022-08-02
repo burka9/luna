@@ -9,7 +9,7 @@ const svgClassName = () => props.dark ? 'fill-white' : 'fill-dark'
 
 const see_more = () => location.assign('/brands')
 
-const contentLength = 125
+const contentLength = window.innerWidth >= 768 ? 125 : 90
 
 onMounted(() => {
 	let img = new URL(`../assets/imgs/${props.item.background}`, import.meta.url)
@@ -23,7 +23,7 @@ onMounted(() => {
 			cursor-pointer overflow-hidden relative
 			opacity-0
 			xl:rounded-3xl xl:border-[2px] xl:h-[330px] xl:w-64
-			lg:rounded-2xl lg:border-[2px] lg:h-[270px] lg:w-60
+			lg:rounded-2xl lg:border-[2px] lg:h-[280px] lg:w-60
 			md:rounded-xl md:border-[1px] md:h-[280px] md:w-52
 			rounded-lg border-[1px] h-[330px] w-60 shadow-2xl
 			pb-1.5
@@ -53,7 +53,8 @@ onMounted(() => {
 				text-base mb-1
 			">{{ props.item.title }}</h3>
 			<p class="
-				font-[600]
+				lg:font-[600]
+				font-[500]
 				text-center
 				xl:mx-5
 				lg:mx-4
@@ -66,6 +67,8 @@ onMounted(() => {
 				lg:my-2
 				md:text-[11px] md:my-1
 				text-xs my-2
+				lg:pb-0
+				pb-1
 			" @click="see_more">see more</button>
 		</div>
 	</div>

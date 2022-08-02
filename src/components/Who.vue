@@ -7,8 +7,9 @@ const see_more = () => location.assign('/about')
 <template>
 	<div id="who-are-we" class="
 		hidden flex-col justify-center
-		lg:p-16 lg:px-24 lg:p-0 h-[30rem] flex
-		md:px-20
+		2xl:max-w-[1700px] 2xl:mx-auto
+		lg:p-16 lg:px-24 lg:p-0 flex
+		md:px-20 md:h-[30rem]
 		sm:px-16
 		p-12 px-10
 	">
@@ -22,6 +23,7 @@ const see_more = () => location.assign('/about')
 
 		<div class="
 			spacer w-0 h-[2px] bg-dark
+			2xl:my-8
 			lg:my-5
 			md:my-3
 			my-5
@@ -39,7 +41,7 @@ const see_more = () => location.assign('/about')
 				</p>
 			</div>
 
-			<div class="right opacity-0 hidden md:block">
+			<div class="right opacity-0">
 				<p class="text-base text-justify mb-6">
 					The company was established in 2003, and the first one to introduce employee share ownership program (ESOP) which is a mechanism that enables and facilitates employee ownership in both the country and the company.
 				</p>

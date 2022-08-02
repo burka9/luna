@@ -42,10 +42,10 @@ const items2 = [
 		<div id="brands" class="scroll
 		relative z-10
 			hidden grid place-items-center
+			2xl:px-[12vw]
 			xl:gap-6 xl:gap-y-12 xl:p-20 xl:pt-12 xl:px-60
 			lg:-gap-2 lg:gap-y-8 lg:p-12 lg:pt-8 lg:px-52
 			md:grid-cols-3 md:gap-12 md:gap-y-16 md:p-24 md:pt-6
-			sm:grid-cols-2 sm:gap-16 sm:gap-y-8 sm:p-16
 			grid-cols-1 gap-16 p-20
 		">
 			<Item v-for="(item, i) in items" :key="item.title" :item="item" :_id="`item-${i}`" />

@@ -25,8 +25,8 @@ const items = [
 		hidden bg-lighter justify-center relative overflow-hidden
 		lg:py-12 lg:pb-6 lg:p-0 lg:h-60
 		md:py-8 md:pb-4
-		sm:flex-row sm:py-4 sm:pb-2 sm:pt-0
-		flex-col py-4 pt-8
+		sm:flex-row sm:py-6
+		flex-col py-4 pt-12
 	">
 
 		<div class="cover absolute top-0 left-0 bg-lighter h-full w-full z-10"></div>
@@ -40,10 +40,10 @@ const items = [
 			<component class="
 				lg:w-28
 				md:w-24
-				sm:w-16
+				sm:w-20
 				w-24 mb-2
 			" :is="item.icon"/>
-			<p class="text-white text-[13px] font-light">{{ item.text }}</p>
+			<p class="text-white md:text-[13px] sm:text-[10px] text-[14px] font-light">{{ item.text }}</p>
 		</div>
 
 	</div>
