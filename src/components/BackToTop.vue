@@ -29,7 +29,11 @@ const goToTop = () => window.scrollTo({ top: 0 })
 			flex items-center justify-center p-[4px]
 		" v-show="state.showButton" @click="goToTop">
 			<svg viewBox="0 0 24 24" fill="none" stroke="#4a5568" stroke-width="2" stroke-linecap="square"
-				stroke-linejoin="arcs">
+				stroke-linejoin="arcs"
+				class="
+					md:w-[36px] md:h-[36px]
+					w-[28px] h-[28px]
+				">
 				<path d="M18 15l-6-6-6 6" />
 			</svg>
 		</div>
@@ -42,8 +46,6 @@ const goToTop = () => window.scrollTo({ top: 0 })
 	position: relative;
 	top: 0;
 	transition: all 300ms ease;
-	height: 36px;
-	width: 36px;
 	fill: none;
 	stroke: #4a5568;
 	stroke-width: 2;
