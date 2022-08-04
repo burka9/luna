@@ -12,7 +12,7 @@ totalHeight -= window.innerHeight
 window.addEventListener('scroll', e => {
 	percentage = (window.scrollY || window.pageYOffset) / totalHeight
 
-	state.showButton = percentage >= ((window.innerHeight + (window.innerHeight * 0.1)) / totalHeight)
+	state.showButton = percentage >= ((window.innerHeight + (window.innerHeight * .15)) / totalHeight)
 })
 
 const goToTop = () => window.scrollTo({ top: 0 })
@@ -22,12 +22,18 @@ const goToTop = () => window.scrollTo({ top: 0 })
 <template>
 	<Transition name="top">
 		<div id="back-to-top" class="
-			fixed right-8 bottom-6 z-[999]
+			fixed z-[999]
+			md:right-8 md:bottom-6
+			right-4 bottom-6
 			bg-light cursor-pointer rounded-full drop-shadow-2xl shadow-xl
 			flex items-center justify-center p-[4px]
 		" v-show="state.showButton" @click="goToTop">
 			<svg viewBox="0 0 24 24" fill="none" stroke="#4a5568" stroke-width="2" stroke-linecap="square"
-				stroke-linejoin="arcs">
+				stroke-linejoin="arcs"
+				class="
+					md:w-[36px] md:h-[36px]
+					w-[28px] h-[28px]
+				">
 				<path d="M18 15l-6-6-6 6" />
 			</svg>
 		</div>
@@ -40,8 +46,6 @@ const goToTop = () => window.scrollTo({ top: 0 })
 	position: relative;
 	top: 0;
 	transition: all 300ms ease;
-	height: 36px;
-	width: 36px;
 	fill: none;
 	stroke: #4a5568;
 	stroke-width: 2;

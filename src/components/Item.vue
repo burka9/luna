@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted } from 'vue';
 import anime from 'animejs'
+import Hexagon from './Hexagon.vue';
 
 const tailwind_colors = {
 	'dark': '#52717b',
@@ -18,7 +19,7 @@ const props = defineProps(['_id', 'item', 'left', 'color', 'nth'])
 
 const className = () => defaultClassName.concat(props.left ? leftClassName : rightClassName)
 
-const defaultClassName = 'flex justify-between items-center h-full w-full relative '
+const defaultClassName = 'flex md:justify-between justify-center items-center h-full w-full relative '
 const leftClassName = 'flex-row '
 const rightClassName = 'flex-row-reverse '
 
@@ -74,17 +75,25 @@ onMounted(() => {
 	root = document.getElementById(props._id)
 
 	const img = new URL(`../assets/imgs/${props.item.background}`, import.meta.url)
-	document.querySelector(`#${props._id} .image`).src = `${img}`
 
-	intersection.observe(root)
+	if (window.innerWidth >= 768) {
+		const image = document.querySelector(`#${props._id} .image`)
+		image.style.backgroundImage = `url(${img})`
+		intersection.observe(root)
+	}
 })
+
+
 
 </script>
 
 <template>
 	<div :class="`
 		brand-item bg-light
-		flex flex-col items-center justify-center py-0 h-[65vh] px-24 my-16
+		flex flex-col items-center justify-center py-0
+		lg:h-[65vh] lg:px-24
+		md:h-[50vh] md:px-16
+		h-[40vh]
 		${props.nth%3==2 ? 'bg-dark shadow-2xl' : '' }
 	`" :id="props._id" :style="`
 
@@ -96,26 +105,30 @@ onMounted(() => {
 				watermark absolute w-[70%] left-0 opacity-20
 			" :is="props.item.icon" v-if="false"></component>
 
-			<div class="relative w-full h-full flex items-center">
-				<div class="image-box max-h-[70%] w-[100%] flex items-center overflow-hidden">
-					<img class="image opacity-0" />
+			<div class="
+				relative w-full h-full items-center justify-center
+				md:flex
+				hidden
+			">
+				<div class="image-box flex items-center justify-center relative">
+					<div class="image opacity-0 relative z-10"></div>
 				</div>
-				<svg class="clip absolute">
-				</svg>
 			</div>
 
 
 			<div :class="`
-				content flex flex-col items-center max-w-[50%]
-				mx-12
+				content flex flex-col items-center
+				lg:max-w-[50%] lg:mx-12
+				md:mx-6
+				max-w-[70vw]
 			`" :style="`--color: ${color()}`">
 				<h3 class="font-[800] uppercase tracking-wider text-xl mb-1">{{ props.item.title }}</h3>
-				<p class="opacity-0 text-[14px] font-[400] text-center my-5">{{ props.item.content }}</p>
+				<p class="md:opacity-0 opacity-1 text-[14px] font-[400] text-center my-5">{{ props.item.content }}</p>
 				<div class="overflow-hidden">
-					<button :class="`
+					<a :class="`
 						uppercase text-sm mt-2 tracking-wider font-[700]
 						p-1 px-2.5
-					`">Visit</button>
+					`">Visit</a>
 				</div>
 			</div>
 		
@@ -144,21 +157,44 @@ p {
 	-webkit-text-fill-color: transparent;
 	filter: grayscale(.25);
 }
-button {
+a {
+	background-image: linear-gradient(120deg, transparent 0% 50%, var(--color) 50% 100%);
+	background-size: 225% 100%;
+	background-position-x: 0%;
 	color: var(--color);
-	/* background: var(--color);
-	color: transparent;
-	mix-blend-mode: multiply; */
+	cursor: pointer;
 	filter: grayscale(.45);
+	transition: all 200ms ease;
 }
-div {
-	/* border: 1px solid #0007; */
+a:hover {
+	background-position-x: 100%;
+	color: var(--light);
+}
+@media screen and (max-width: 768px) {
+	h3 {
+		background-position-x: 0%;
+	}
 }
 .image-box {
-	/* clip-path: polygon(50% 0%, 100% 23%, 100% 77%, 50% 100%, 0% 77%, 0% 23%); */
-	/* clip-path: path('M0.5,1 C0.5,1,0,0.7,0,0.3 A0.25,0.25,1,1,1,0.5,0.3 A0.25,0.25,1,1,1,1,0.3 C1,0.7,0.5,1,0.5,1 Z'); */
+	@apply h-full w-full cursor-pointer transition;
+	filter: drop-shadow(0 0 15px rgba(50, 50, 0, 0.65));
 }
-.image, .image-shadow {
-	/* clip-path: polygon(50% 0%, 100% 23%, 100% 77%, 50% 100%, 0% 77%, 0% 23%); */
+.image-box:hover {
+	transform: scale(1.025);
+}
+.image {
+	background-position: center;
+	background-size: cover;
+	clip-path: url(#myClip);
+	/* filter: url(#round); */
+	box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.5);
+	@apply
+		xl:w-[400px] xl:h-[400px]
+		lg:w-[340px] lg:h-[340px]
+		md:w-[270px] md:h-[270px]
+}
+.image::before {
+	/* clip-path: polygon(45% 0%, 75% 0%, 100% 50%,); */
+	/* content: ''; */
 }
 </style>

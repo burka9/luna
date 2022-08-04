@@ -4,11 +4,17 @@ import OurBrands from './components/OurBrands.vue';
 import List from './components/List.vue';
 import Footer from './components/Footer.vue';
 import GridLines from './components/GridLines.vue';
-import { onMounted } from 'vue'
+import { onMounted, reactive } from 'vue'
 import anime from 'animejs'
 import BackToTop from './components/BackToTop.vue';
+import Hexagon from './components/Hexagon.vue';
 
 onMounted(() => {
+  if (window.innerWidth >= 768)
+    animate()
+})
+
+const animate = () => {
   const _tl = anime.timeline({
     duration: 1000,
     easing: 'easeInOutSine',
@@ -38,12 +44,43 @@ onMounted(() => {
       targets: '#list-box',
       opacity: [0, 1],
     }, 1500)
+}
 
+const size = {
+  '2xl': 1536,
+  'xl': 1280,
+  'lg': 1024,
+  'md': 768,
+  'sm': 640,
+}
+const getSize = () => {
+  let type = null
+  Object.entries(size).every(size => {
+    type = size[1] <= window.innerWidth ? size[0] : null
+    return type == null
+  })
+  return type
+}
+const screen = reactive({
+  size: getSize()
 })
+window.onresize = () => screen.size = getSize()
 
 </script>
 
 <template>
+  <div class="
+    fixed z-[99999999] right-5 top-5 px-2 text-white
+    2xl:bg-blue-900
+    xl:bg-blue-500
+    lg:bg-green-900
+    md:bg-green-500
+    sm:bg-red-900
+    bg-red-500
+  ">
+    {{ screen.size }}
+  </div>
+  <Hexagon />
   <Header />
   <OurBrands />
   <List />

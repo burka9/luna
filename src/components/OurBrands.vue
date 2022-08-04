@@ -1,24 +1,32 @@
 <template>
 	<div id="our-brands" class="
 		bg-light relative flex items-center justify-stretch z-10
+		lg:mt-0
+		md:mt-5
+		mt-3
 	">
 
 			<div class="
 				the-div
-				absolute w-full left-0 -bottom-[30%] h-[70%]
-				z-0
+				absolute w-full left-0 z-0
+				lg:-bottom-[22%] lg:h-[63%]
+				md:-bottom-[18%] md:h-[50%] md:block
+				hidden
 			"></div>
 
 		<div id="brands" class="
 			flex flex-col items-center grow relative
 			lg:mt-10 lg:mx-32
 			md:mt-6 md:mx-24
+			mt-3
 		">
 
 			<div class="
 				flex flex-col items-center h-[50%] overflow-hidden relative z-10
-				lg:m-24 lg:mx-40
-				md:m-16 md:mx-32
+				lg:m-24 lg:mx-32
+				md:m-16 md:mx-24
+				sm:m-10 sm:mx-16
+				m-10 mx-12
 			">
 
 				<div id="shade" class="hidden absolute w-full h-full"></div>
@@ -28,15 +36,31 @@
 					2xl:text-6xl
 					lg:text-4xl
 					md:text-3xl
-					text-xl
+					text-2xl
 				">Our Brands</h3>
 
-				<div class="bg-slate-200 my-12 w-full h-[2px]"></div>
+				<div class="
+					bg-slate-200 w-full h-[2px]
+					lg:my-10
+					md:my-6
+					my-4
+				"></div>
 
-				<p class="text-slate-200 mb-5">
+				<p class="
+					text-slate-200
+					lg:text-base
+					md:mb-5
+					sm:text-sm
+					text-xs mb-3
+				">
 					Our service is more than a business. From the very beginning of our initiation we had been very clear about where we wanted to stand in the community. “It’s all about you” our motto to guide us through the long journey which made us who we are.
 				</p>
-				<p class="text-slate-200">
+				<p class="
+					text-slate-200
+					lg:text-base
+					sm:text-sm
+					text-xs
+				">
 					Luna is a mother company collaboratively including various business units with an identical aim from the very start. Our brand expresses excellence and strength led by powerful women starting from top management, covering up 46% of our entire employee rate.
 				</p>
 			</div>
@@ -46,11 +70,18 @@
 
 
 <style scoped>
-#brands {
-	background: linear-gradient(180deg, var(--lighter) 75%, transparent);
+@media screen and (min-width: 768px) {
+	#brands {
+		background: linear-gradient(180deg, var(--lighter) 75%, transparent);
+	}
+}
+@media screen and (max-width: 768px) {
+	#brands {
+		background: var(--lighter);
+	}
 }
 .the-div {
-	background: linear-gradient(180deg, var(--dark), var(--light));
+	background: linear-gradient(180deg, var(--dark), transparent);
 }
 p {
 	text-align: justify;

@@ -64,36 +64,37 @@ onMounted(() => {
 			bg-light flex sm:items-center justify-between relative z-10 w-screen
 			opactiy-0
 
-			2xl:p-28 2xl:px-32
+			2xl:p-20 2xl:px-32
+			xl:p-16 xl:px-24
 			lg:p-12 lg:px-24
-			md:p-8
+			md:p-8 md:px-16
 			sm:flex-row sm:p-6
 			flex-col p-5
 		">
 		
 		<div class="
 			logo flex items-center justify-between w-full sm:w-auto overflow-hidden cursor-pointer
-		" title="Luna Group" @click="goToHome">
-			<div id="logo-box" class="flex items-center">
+		" title="Luna Group">
+			<div id="logo-box" class="flex items-center" @click="goToHome">
 				<div class="
 					icon
-					2xl:w-20 2xl:mr-7
-					xl:w-12 xl:mr-3
-					lg:w-10 lg:mr-2
-					md:w-8 md:mr-1
-					sm:w-6 sm:mr-1
-					w-7 mr-1
+					2xl:w-16 2xl:mr-12
+					xl:w-12 xl:mr-6
+					lg:w-10 lg:mr-6
+					md:w-7 md:mr-4
+					sm:w-6 sm:mr-2
+					w-7 mr-2
 				">
 					<Icon colorful="true" />
 				</div>
 				<div class="
 					text
-					2xl:w-32
-					xl:w-24
-					lg:w-16
-					md:w-8
-					sm:w-6
-					w-12
+					2xl:w-48
+					xl:w-36
+					lg:w-32
+					md:w-20
+					sm:w-20
+					w-16
 				">
 					<Text />
 				</div>
@@ -115,7 +116,8 @@ onMounted(() => {
 			`" v-for="link in links" :key="link.text">
 				<a :class="`
 					text-dark font-bold
-					2xl:text-3xl 2xl:mx-5
+					2xl:text-[22px] 2xl:mx-2
+					xl:text-[16px] xl:mx-2
 					lg:text-[16px] lg:mx-1
 					md:text-[12px] md:mx-1
 					sm:text-xs sm:mx-0.5
