@@ -1,6 +1,6 @@
 <script setup>
 import anime from 'animejs'
-import { reactive, computed } from 'vue';
+import { reactive, computed, onMounted } from 'vue';
 import Icon from './Icon.vue'
 import Text from './Text.vue'
 
@@ -47,6 +47,16 @@ const toggleBurger = () => {
 		}
 	})
 }
+
+onMounted(() => {
+	// anime({
+	// 	targets: '#header',
+	// 	top: el => ([el.getBoundingClientRect().height * -1, 0]),
+	// 	duration: 1000,
+	// 	easing: 'easeOutSine'
+	// })
+})
+
 </script>
 
 <template>
@@ -54,10 +64,10 @@ const toggleBurger = () => {
 			bg-transprent flex sm:items-center justify-between absolute z-10 w-screen
 			opactiy-0 top-[-15vh]
 
-			2xl:p-16 2xl:px-32
-			xl:p-10 xl:px-24
-			lg:p-10 lg:px-24
-			md:p-8
+			2xl:p-20 2xl:px-32
+			xl:p-16 xl:px-24
+			lg:p-12 lg:px-24
+			md:p-8 md:px-16
 			sm:flex-row sm:p-6
 			flex-col p-5
 		">
@@ -69,21 +79,20 @@ const toggleBurger = () => {
 				<div class="
 					icon
 					2xl:w-16 2xl:mr-12
-					xl:w-12 xl:mr-8
+					xl:w-12 xl:mr-6
 					lg:w-10 lg:mr-6
-					md:w-8 md:mr-4
+					md:w-7 md:mr-4
 					sm:w-6 sm:mr-2
 					w-7 mr-2
 				">
 					<Icon colorful="true" />
 				</div>
 				<div class="
-				hidden
-					text
+					text hidden
 					2xl:w-48
-					xl:w-44
+					xl:w-36
 					lg:w-32
-					md:w-24
+					md:w-20
 					sm:w-20
 					w-16
 				">
@@ -101,19 +110,23 @@ const toggleBurger = () => {
 			sm:relative sm:opacity-1 sm:top-0
 			absolute -top-8 opactiy-0
 		">
-			<div class="
+			<div :class="`
 				link relative flex flex-col items-center justify-center mx-2
-			" v-for="link in links" :key="link.text">
-				<a class="
+				${link.active ? 'text-dark' : ''}
+			`" v-for="link in links" :key="link.text">
+				<a :class="`
 					text-dark font-bold
 					2xl:text-[22px] 2xl:mx-2
-					xl:text-[18px] xl:mx-2
+					xl:text-[16px] xl:mx-2
 					lg:text-[16px] lg:mx-1
 					md:text-[12px] md:mx-1
 					sm:text-xs sm:mx-0.5
 					text-xs mx-0.5
-				" :href="link.href">{{ link.text }}</a>
-				<div class="hover-line hidden sm:flex transition-all w-0 absolute -bottom-1 left-0 h-[2px] bg-dark"></div>
+				`" :href="link.href">{{ link.text }}</a>
+				<div :class="`
+					hover-line hidden sm:flex transition-all absolute -bottom-1 left-0 h-[2px] bg-dark
+					${link.active ? 'w-full' : 'w-0'}
+				`"></div>
 			</div>
 		</div>
 	</div>
