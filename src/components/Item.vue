@@ -54,7 +54,8 @@ const appear = el => {
 		.add({
 			targets: `${tmp} .image`,
 			translateX: el => ([el.getBoundingClientRect().width * (props.left ? -1 : 1), 0]),
-			opacity: [0, 1]
+			opacity: [0, 1],
+			duration: 900
 		}, 200)
 }
 
@@ -110,7 +111,7 @@ onMounted(() => {
 				md:flex
 				hidden
 			">
-				<div class="image-box flex items-center justify-center relative">
+				<div class="image-box flex items-center justify-center relative overflow-x-hidden">
 					<div class="image opacity-0 relative z-10"></div>
 				</div>
 			</div>
