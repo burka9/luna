@@ -125,12 +125,13 @@ onMounted(() => {
 			`" :style="`--color: ${color()}`">
 				<h3 class="font-[800] uppercase tracking-wider text-xl mb-1">{{ props.item.title }}</h3>
 				<p class="md:opacity-0 opacity-1 text-[14px] font-[400] text-center my-5">{{ props.item.content }}</p>
-				<div class="overflow-hidden">
+				<!-- <div class="flex items-center"> -->
 					<a :class="`
-						uppercase text-sm mt-2 tracking-wider font-[700]
-						p-1 px-2.5
+						uppercase text-sm m-0 tracking-wider font-[700] rounded-sm
+						p-0.5 px-2.5
+						${props.left ? 'left' : ''}
 					`">Visit</a>
-				</div>
+				<!-- </div> -->
 			</div>
 		
 		</div>
@@ -159,17 +160,25 @@ p {
 	filter: grayscale(.25);
 }
 a {
-	background-image: linear-gradient(120deg, transparent 0% 50%, var(--color) 50% 100%);
+	background-image: linear-gradient(60deg, var(--color) 0% 50%, transparent 50% 100%);
 	background-size: 225% 100%;
-	background-position-x: 0%;
+	background-position-x: 115%;
+	background-repeat: no-repeat;
 	color: var(--color);
 	cursor: pointer;
 	filter: grayscale(.45);
 	transition: all 200ms ease;
 }
 a:hover {
-	background-position-x: 100%;
+	background-position-x: 0%;
 	color: var(--light);
+}
+a.left {
+	background-image: linear-gradient(120deg, transparent 0% 50%, var(--color) 50% 100%);
+	background-position-x: 0%;
+}
+a.left:hover {
+	background-position-x: 100%;
 }
 @media screen and (max-width: 768px) {
 	h3 {
@@ -186,9 +195,9 @@ a:hover {
 .image {
 	background-position: center;
 	background-size: cover;
-	clip-path: url(#myClip);
-	/* filter: url(#round); */
-	box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.5);
+	/* clip-path: url(#myClip); */
+	filter: url(#round);
+	box-shadow: 0 0 25px rgba(25, 25, 25, 0.5);
 	@apply
 		xl:w-[400px] xl:h-[400px]
 		lg:w-[340px] lg:h-[340px]

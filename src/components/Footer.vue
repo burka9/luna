@@ -3,8 +3,8 @@ import Icon from './Icon.vue'
 import Text from './Text.vue'
 
 const info = [
-	{ heading: 'address', content: 'HEAD OFFICE Addis Ababa, Ethiopia Bole Kifleketema, Wereda 04, House number 048' },
-	{ heading: 'phone', content: '+251 116 627 894/97 | +251 116 627 893' },
+	{ heading: 'address', content: ['Bole, Addis Ababa, Ethiopia', 'Wereda 04', 'House number 048'] },
+	{ heading: 'phone', content: ['+251 116 627 894 (97)', '+251 116 627 893'] },
 	{ heading: 'email', content: 'info@lunafarmexport.com' },
 ]
 
@@ -13,6 +13,7 @@ const info = [
 <template>
 	<div class="bg-lighter">
 		<div id="footer" class="
+			grid
 			2xl:max-w-[1700px] 2xl:mx-auto
 			lg:py-10 lg:px-24
 			md:grid-cols-2 md:p-8 md:px-12
@@ -54,7 +55,12 @@ const info = [
 
 			<div class="flex flex-col" v-for="(i, j) in info" :key="j">
 				<p class="text-dark font-bold uppercase tracking-widest mb-1.5">{{ i.heading }}</p>
-				<p class="font-light text-slate-200 mb-3">{{ i.content }}</p>
+				<ul v-if="i.content instanceof Array" class="mb-3">
+					<li v-for="k in i.content" :key="k">
+						<p class="font-light text-slate-200">{{ k }}</p>
+					</li>
+				</ul>
+				<p class="font-light text-slate-200 mb-3" v-else>{{ i.content }}</p>
 			</div>
 			
 		</div>
