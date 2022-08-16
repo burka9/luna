@@ -7,8 +7,6 @@ const props = defineProps(['item', 'dark', '_id'])
 const className = () => props.dark ? 'border-white text-white' : 'border-dark text-dark'
 const svgClassName = () => props.dark ? 'fill-white' : 'fill-dark'
 
-const see_more = () => location.assign('/brands')
-
 const contentLength = window.innerWidth >= 768 ? 125 : 90
 
 onMounted(() => {
@@ -19,7 +17,7 @@ onMounted(() => {
 </script>
 
 <template>
-	<div :class="`my-list-item grid grid-rows-2 items-start justify-items-center
+	<a :href="`/brands${item.route}`" :class="`my-list-item grid grid-rows-2 items-start justify-items-center
 			cursor-pointer overflow-hidden relative
 			opacity-0
 			xl:rounded-3xl xl:border-[2px] xl:h-[330px] xl:w-64
@@ -40,7 +38,9 @@ onMounted(() => {
 			"
 		:is="props.item.icon"></component> -->
 
-		<div class="pic w-full h-full"></div>
+		<div class="pic-box w-full h-full overflow-hidden">
+			<div class="pic w-full h-full bg-cover"></div>
+		</div>
 
 		<div class="
 			content flex flex-col items-center justify-between h-full mt-3
@@ -61,7 +61,7 @@ onMounted(() => {
 				md:text-xs md:mx-4 md:px-0
 				text-xs mx-2 px-3
 			">{{ props.item.content.slice(0,contentLength).concat( props.item.content.length > contentLength ? '...' : '') }}</p>
-			<button class="
+			<a :href="`/brands${item.route}`" class="
 				uppercase
 				xl:my-3
 				lg:my-2
@@ -69,9 +69,9 @@ onMounted(() => {
 				text-xs my-2
 				lg:pb-0
 				pb-1
-			" @click="see_more">see more</button>
+			">see more</a>
 		</div>
-	</div>
+	</a>
 </template>
 
 <style scoped>
@@ -98,7 +98,12 @@ onMounted(() => {
 	border: none;
 	border-radius: 12px;
 }
-.pic {
-	background-size: cover;
+.my-list-item:hover .pic {
+	transform: scale(1.05);
+	filter: brightness(1);
 }
+	.my-list-item .pic {
+		filter: brightness(.915);
+		transition: all 850ms ease;
+	}
 </style>

@@ -1,7 +1,4 @@
 <script setup>
-
-const see_more = () => location.assign('/about/#feed')
-
 </script>
 
 
@@ -35,9 +32,9 @@ const see_more = () => location.assign('/about/#feed')
 					We are passionate about the next generation of Ethiopians. We know that many across our great country go to school without the nourishment they need.
 				</p>
 
-				<button class="
-					bg-lighter uppercase text-white text-xs p-1 px-3
-				" @click="see_more">See more</button>
+				<a href="/about#feed" class="
+					bg-lighter uppercase text-white text-xs p-1 px-3 transition-all hover:shadow-2xl hover:bg-dark
+				">See more</a>
 			</div>
 
 

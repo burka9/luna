@@ -48,6 +48,7 @@ window.onresize = () => screen.size = getSize()
     md:bg-green-500
     sm:bg-red-900
     bg-red-500
+    hidden
   ">
     {{ screen.size }}
   </div>

@@ -1,7 +1,4 @@
 <script setup>
-
-const see_more = () => location.assign('/about')
-
 </script>
 
 <template>
@@ -48,7 +45,7 @@ const see_more = () => location.assign('/about')
 				<p class="text-base text-justify mb-6">
 					We care about the environment is one of our positive impact approach to do well on behalf of mother earth.
 				</p>
-				<button class="uppercase text-sm font-bold" @click="see_more">See More</button>
+				<a href="/about" class="uppercase text-sm font-bold">See More</a>
 			</div>
 		</div>
 	</div>
@@ -63,5 +60,18 @@ h3 {
 	transform: translateX(25px);
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
+}
+a {
+	background: transparent;
+	background: linear-gradient(120deg, var(--dark) 0 50%, transparent 50% 100%);
+	background-size: 225%;
+	background-position-x: 100%;
+	transition: all 250ms ease;
+	padding: 3px 0;
+}
+a:hover {
+	background-position-x: 0%;
+	padding: 3px 7px;
+	color: white;
 }
 </style>
