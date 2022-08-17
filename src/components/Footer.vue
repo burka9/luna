@@ -14,10 +14,9 @@ const info = [
 	<div id="footer" class="
 		bg-lighter
 		flex items-center justify-center
-		px-32
-		lg:py-10
-		md:py-8
-		py-6
+		lg:py-10 lg:px-32
+		md:py-8 md:px-24
+		py-6 px-12
 	">
 		
 		<div class="left flex flex-col items-center justify-center">
@@ -29,19 +28,24 @@ const info = [
 			">
 				<Icon class="
 					lg:w-14
-					w-12
+					md:w-12
+					sm:w-10
+					w-8
 				" :darker="true" :colorful="true" />
 				<Text class="
 					fill-[#33515b]
 					lg:w-40 lg:ml-4
-					w-32 ml-2
+					md:w-32 md:ml-3
+					sm:w-24 sm:ml-2
+					w-20 ml-2
 				" />
 			</div>
 
 			<p class="
 				text-light tracking-[3px] font-bold uppercase
 				md:text-[15px]
-				text-sm text-center
+				sm:text-[13px]
+				text-[11px] text-center
 			">&copy; Luna group 2022</p>
 		</div>
 

@@ -2,16 +2,18 @@
 
 <template>
 	<div id="hero" class="
-		bg-light flex flex-col justify-end items-center h-[55vh]
-		lg:px-32
+		bg-light flex flex-col justify-end items-center
+		lg:h-[55vh]
+		md:h-[45vh]
+		h-[40vh]
 	">
 
 		<h1 class="
-			text-dark font-bold
+			text-dark font-bold text-center
 			2xl:text-6xl
 			lg:text-4xl
 			md:text-3xl
-			text-1xl
+			text-xl
 			pt-8
 		">Get in touch with us</h1>
 
