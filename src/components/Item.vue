@@ -91,20 +91,15 @@ onMounted(() => {
 <template>
 	<div :class="`
 		brand-item bg-light
-		flex flex-col items-center justify-center py-0
-		lg:h-[65vh] lg:px-24
-		md:h-[50vh] md:px-16
-		h-[40vh]
+		flex flex-col items-center justify-center my-0
+		xl:h-[480px] xl:px-32
+		lg:h-[440px] lg:px-24
+		md:h-[400px] md:px-12
+		h-[270px]
 		${props.nth%3==2 ? 'bg-dark shadow-2xl' : '' }
-	`" :id="props._id" :style="`
-
-	`">
+	`" :id="props._id">
 		<!-- <div class="flex items-center justify-center"> -->
 		<div :class="className()">
-
-			<component class="
-				watermark absolute w-[70%] left-0 opacity-20
-			" :is="props.item.icon" v-if="false"></component>
 
 			<div class="
 				relative w-full h-full items-center justify-center
@@ -119,8 +114,8 @@ onMounted(() => {
 
 			<div :class="`
 				content flex flex-col items-center
-				lg:max-w-[50%] lg:mx-12
-				md:mx-6
+				lg:mx-12
+				md:max-w-[50%] md:mx-6
 				max-w-[70vw]
 			`" :style="`--color: ${color()}`">
 				<h3 class="font-[800] uppercase tracking-wider text-xl mb-1">{{ props.item.title }}</h3>
@@ -186,7 +181,15 @@ a.left:hover {
 	}
 }
 .image-box {
-	@apply h-full w-full cursor-pointer transition;
+	@apply cursor-pointer transition
+		xl:w-[420px] xl:h-[380px]
+		lg:w-[380px] lg:h-[340px]
+		md:w-[340px] md:h-[300px]
+		w-[200px] h-[200px]
+		;
+		/* xl:w-[400px] xl:h-[400px]
+		lg:w-[340px] lg:h-[340px]
+		md:w-[270px] md:h-[270px]; */
 	filter: drop-shadow(0 0 15px rgba(50, 50, 0, 0.65));
 }
 .image-box:hover {
@@ -198,10 +201,7 @@ a.left:hover {
 	/* clip-path: url(#myClip); */
 	filter: url(#round);
 	box-shadow: 0 0 25px rgba(25, 25, 25, 0.5);
-	@apply
-		xl:w-[400px] xl:h-[400px]
-		lg:w-[340px] lg:h-[340px]
-		md:w-[270px] md:h-[270px]
+	@apply h-full w-full;
 }
 .image::before {
 	/* clip-path: polygon(45% 0%, 75% 0%, 100% 50%,); */
