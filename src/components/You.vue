@@ -3,6 +3,8 @@ import { onMounted } from 'vue'
 import anime from 'animejs'
 
 onMounted(() => {
+	if (window.innerWidth <= 768) return
+	
 	let title = new IntersectionObserver(([entry], observer) => {
 		if (entry.isIntersecting) {
 			anime({
@@ -39,15 +41,23 @@ onMounted(() => {
 	<div id="you" class="
 		flex flex-col items-center justify-center
 		text-dark
-		p-20
+		md:p-20
+		sm:p-12
+		p-7
 	">
 		<h2 class="
-			text-[4rem] font-bold -mb-3
-		">it's all about <span class="text-[3rem]">YOU!</span></h2>
+			font-bold
+			md:text-[4rem]  md:-mb-3
+			text-[2.15rem] -mb-1.5
+		">it's all about <span class="md:text-[3rem] text-[2.15rem]">YOU!</span></h2>
 
 		<p class="font-[300]">Our service is more than a business.</p>
 
-		<a href="/contact" class="mt-12 uppercase bg-dark text-gray-200 p-1.5 px-3.5">Contact Us</a>
+		<a href="/contact" class="
+			uppercase bg-dark text-gray-200
+			md:mt-12 md:p-1.5 md:px-3.5 md:text-base
+			mt-6 p-1 px-2 text-sm
+		">Contact Us</a>
 	</div>
 </template>
 
@@ -65,5 +75,10 @@ a {
 	background: linear-gradient(120deg, transparent 0% 50%, var(--dark) 50% 100%);
 	background-size: 225% 100%;
 	background-position-x: 0%;
+}
+@media screen and (max-width: 768px) {
+	a {
+		background-position-x: 100%;
+	}
 }
 </style>

@@ -7,8 +7,9 @@ import Info from './components/Info.vue';
 import Pic from './components/Pic.vue';
 import Feed from './components/Feed.vue';
 import You from './components/You.vue';
-import { onMounted } from 'vue';
+import { onMounted, reactive } from 'vue';
 import anime from 'animejs'
+import BackToTop from './components/BackToTop.vue';
 
 onMounted(() => {
   const _timeline = anime.timeline({
@@ -69,9 +70,42 @@ onMounted(() => {
     }, 2900)
 })
 
+
+const size = {
+  '2xl': 1536,
+  'xl': 1280,
+  'lg': 1024,
+  'md': 768,
+  'sm': 640,
+}
+const getSize = () => {
+  let type = null
+  Object.entries(size).every(size => {
+    type = size[1] <= window.innerWidth ? size[0] : null
+    return type == null
+  })
+  return type
+}
+const screen = reactive({
+  size: getSize()
+})
+window.onresize = () => screen.size = getSize()
+
 </script>
 
 <template>
+<div class="
+    fixed z-[99999999] right-5 top-5 px-2 text-white
+    2xl:bg-blue-900
+    xl:bg-blue-500
+    lg:bg-green-900
+    md:bg-green-500
+    sm:bg-red-900
+    bg-red-500
+    hidden
+  ">
+    {{ screen.size }}
+  </div>
   <div class="
     bg-light
   ">
@@ -85,6 +119,7 @@ onMounted(() => {
   <Feed />
   <You />
   <Footer />
+  <BackToTop />
 </template>
 
 <style>

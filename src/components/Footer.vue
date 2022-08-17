@@ -3,58 +3,69 @@ import Icon from './Icon.vue'
 import Text from './Text.vue'
 
 const info = [
-	{ heading: 'address', content: 'HEAD OFFICE Addis Ababa, Ethiopia Bole Kifleketema, Wereda 04, House number 048' },
-	{ heading: 'phone', content: '+251 116 627 894/97 | +251 116 627 893' },
+	{ heading: 'address', content: ['Bole, Addis Ababa, Ethiopia', 'Wereda 04', 'House number 048'] },
+	{ heading: 'phone', content: ['+251 116 627 894 (97)', '+251 116 627 893'] },
 	{ heading: 'email', content: 'info@lunafarmexport.com' },
 ]
 
 </script>
 
 <template>
-	<div id="footer" class="
-		bg-lighter
-		grid grid-cols-2
-		px-32
-		lg:py-10
-		md:py-8
-		py-6
-	">
-		
-		<div class="left flex flex-col items-start justify-center">
+	<div class="bg-lighter">
+		<div id="footer" class="
+			grid
+			2xl:max-w-[1700px] 2xl:mx-auto
+			lg:py-10 lg:px-24
+			md:grid-cols-2 md:p-8 md:px-12
+			sm:p-6
+			grid-cols-1 p-5 py-8
+		">
+			
 			<div class="
-				logo flex items-center
-				lg:my-5
-				md:my-4
-				my-3
+				left flex flex-col justify-center items-start
+				md:order-1 md:py-0
+				order-2 py-5
 			">
-				<Icon class="
-					lg:w-14
-					w-12
-				" :darker="true" :colorful="true" />
-				<Text class="
-					fill-[#33515b]
-					lg:w-40 lg:ml-4
-					w-32 ml-2
-				" />
+				<div class="
+					logo flex items-center
+					lg:my-5
+					md:my-4
+					my-3
+				">
+					<Icon class="
+						md:w-14
+						w-8
+					" :darker="true" :colorful="true" />
+					<Text class="
+						fill-[#33515b]
+						md:w-40 md:ml-4
+						w-24 ml-2
+					" />
+				</div>
+
+				<p class="
+					text-light tracking-[3px] font-bold uppercase
+					md:text-[15px]
+					text-sm
+				">&copy; Luna group 2022</p>
 			</div>
 
-			<p class="
-				text-light tracking-[3px] font-bold uppercase
-				md:text-[15px]
-				text-sm
-			">&copy; Luna group 2022</p>
+
+		<div class="right flex flex-col md:order-2 order-1">
+
+			<div class="flex flex-col" v-for="(i, j) in info" :key="j">
+				<p class="text-dark font-bold uppercase tracking-widest mb-1.5">{{ i.heading }}</p>
+				<ul v-if="i.content instanceof Array" class="mb-3">
+					<li v-for="k in i.content" :key="k">
+						<p class="font-light text-slate-200">{{ k }}</p>
+					</li>
+				</ul>
+				<p class="font-light text-slate-200 mb-3" v-else>{{ i.content }}</p>
+			</div>
+			
 		</div>
 
-
-	<div class="right flex flex-col">
-
-		<div class="flex flex-col" v-for="(i, j) in info" :key="j">
-			<p class="text-dark font-bold uppercase tracking-widest mb-1.5">{{ i.heading }}</p>
-			<p class="font-light text-slate-200 mb-3">{{ i.content }}</p>
+			
 		</div>
-		
-	</div>
-
-		
 	</div>
 </template>

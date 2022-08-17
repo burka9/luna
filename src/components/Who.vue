@@ -71,8 +71,8 @@ onMounted(() => {
 <template>
 	<div id="who-are-we" class="
 		bg-lighter flex flex-col text-slate-200
-		lg:p-20 lg:px-24 lg:py-32
-		md:px-20 md:py-32
+		lg:p-16 lg:px-20 lg:py-28
+		md:px-10 md:py-20
 		sm:px-16
 		p-16 px-10
 	">
@@ -91,11 +91,19 @@ onMounted(() => {
 		
 		</div>
 		
-		<div class="grid grid-cols-2 gap-40 px-20 text-gray-200">
+		<div class="
+			grid text-gray-200
+			xl:gap-40 xl:px-20
+			lg:gap-28 lg:px-12
+			md:gap-20 md:px-8 md:grid-cols-2
+			grid-cols-1
+		">
 
 			<div class="
 				card
 				flex flex-col items-center opacity-0
+				md:my-0
+				my-6
 			" v-for="(item, i) in items.slice(0)" :key="i">
 				<h2 class="
 					text-4xl font-[500] mb-8
@@ -103,7 +111,10 @@ onMounted(() => {
 				<ul class="list-outside list-disc">
 					<li v-for="(child, i) in item.children" :key="i"
 					class="
-						text-base font-[400] my-2
+						font-[400]
+						lg:text-base lg:my-2
+						md:text-sm md:my-2
+						text-xs my-2
 					">
 						{{ child }}
 					</li>
