@@ -17,6 +17,7 @@
 			">Our Brand</h3>
 			<p class="
 				text-slate-500
+				max-w-[1000px]
 				md:w-[69vw] md:px-0 md:text-base md:leading-7
 				leading-5
 				text-sm
