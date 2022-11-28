@@ -19,7 +19,7 @@ const props = defineProps(['_id', 'item', 'left', 'color', 'nth'])
 
 const className = () => defaultClassName.concat(props.left ? leftClassName : rightClassName)
 
-const defaultClassName = 'flex md:justify-between justify-center items-center h-full w-full relative '
+const defaultClassName = 'max-w-[1350px] flex md:justify-between justify-center items-center h-full w-full relative '
 const leftClassName = 'flex-row '
 const rightClassName = 'flex-row-reverse '
 
@@ -119,7 +119,10 @@ onMounted(() => {
 				max-w-[70vw]
 			`" :style="`--color: ${color()}`">
 				<h3 class="font-[800] uppercase tracking-wider text-xl mb-1">{{ props.item.title }}</h3>
-				<p class="md:opacity-0 opacity-1 text-[14px] font-[400] text-center my-5">{{ props.item.content }}</p>
+				<p class="
+					opacity-1 text-[14px] font-[400] text-center my-5
+					md:opacity-0
+				">{{ props.item.content }}</p>
 				<!-- <div class="flex items-center"> -->
 					<a :class="`
 						uppercase text-sm m-0 tracking-wider font-[700] rounded-sm

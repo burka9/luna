@@ -1,6 +1,6 @@
 <template>
 	<div id="our-brands" class="
-		bg-light relative flex items-center justify-stretch z-10
+		bg-light relative flex items-center justify-center z-10
 		lg:mt-0
 		md:mt-5
 		mt-3
@@ -16,6 +16,7 @@
 
 		<div id="brands" class="
 			flex flex-col items-center grow relative
+			max-w-[1400px]
 			lg:mt-10 lg:mx-32
 			md:mt-6 md:mx-24
 			mt-3
@@ -23,6 +24,7 @@
 
 			<div class="
 				flex flex-col items-center h-[50%] overflow-hidden relative z-10
+				max-w-[1000px]
 				lg:m-24 lg:mx-32
 				md:m-16 md:mx-24
 				sm:m-10 sm:mx-16
@@ -37,7 +39,7 @@
 					lg:text-4xl
 					md:text-3xl
 					text-2xl
-				">Our Brands</h3>
+				">Our Brand</h3>
 
 				<div class="
 					bg-slate-200 w-full h-[2px]
@@ -53,7 +55,10 @@
 					sm:text-sm
 					text-xs mb-3
 				">
-					Our service is more than a business. From the very beginning of our initiation we had been very clear about where we wanted to stand in the community. “It’s all about you” our motto to guide us through the long journey which made us who we are.
+				Our brand expresses excellence and strength led by powerful women starting from top management, 
+covering up 46% of the entire employees. Our service is more than a business. Luna slaughterhouse, the 
+lead exporter of halal meat and meat products to the Middle East and western Africa is a great instance of 
+who we are.
 				</p>
 				<p class="
 					text-slate-200
@@ -61,7 +66,8 @@
 					sm:text-sm
 					text-xs
 				">
-					Luna is a mother company collaboratively including various business units with an identical aim from the very start. Our brand expresses excellence and strength led by powerful women starting from top management, covering up 46% of our entire employee rate.
+				Luna is a mother company with the collaboration of various business units engaged in an 
+import-export process for numerous countries.
 				</p>
 			</div>
 		</div>
