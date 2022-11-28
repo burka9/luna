@@ -26,7 +26,7 @@
 			sm:mx-10 sm:text-sm
 			text-xs w-[80vw]
 		">
-			Luna is a mother company for the collaboration of various business units engaged in the import-export process of numerous countries.
+		Luna is a mother company with the collaboration of various business units engaged in an import-export process for numerous countries.
 		</p>
 		
 	</div>

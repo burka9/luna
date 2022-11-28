@@ -7,22 +7,18 @@ const items = [
 	{
 		header: 'Our Mission',
 		children: [
-			'Serving with passion, care, honesty and fairness',
-			'Outshining the potential and inner strength of female leaders ',
-			'Creating community leveled product and services, raising the satisfaction and reachability scope of our impact ',
-			'Ensuring traceability, safety and efficiency in our product and services',
-			'Eradicating the rate of malnutrition and supply shortage in Ethiopia',
+			`Serving our domestic and international customers with quality, fresh, and affordable farm and slaughter products`,
+			`Providing prepared and semi-prepared healthy dishes along with fine wine`,
+			`Ensuring traceability, safety, and efficiency in our product`,
+			`Eradicating the rate of malnutrition and food insecurity in Ethiopia`,
 		]
 	},
 	{
 		header: 'Our Vision',
 		children: [
-			'To proof the capacity, dedication and consistency of every single stakeholders in our company ',
-			'To encourage women both in top management and lower level employee to create a self-sufficient and stable life ',
-			'To create an authentic and measurable positive impact in the daily life of our customers ',
-			'To build a nation with sufficient food supply and accessibility',
-			'To exponentially decrease the number children who goes to school without the prior proper diet',
-			// 'Raise awareness about the importance of a versatile food nutrition in daily life',
+			`We value the lasting reputation we have built, more than the short-term financial success we could get`,
+			`We value the dedication of our employees, their energy, and the growing intention to improve`,
+			`We value the rewarding performance and the long-term relationship with our customers`,
 		]
 	},
 	{

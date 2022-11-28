@@ -40,27 +40,27 @@ onMounted(() => {
 		
 		<div class="
 			relative z-10 grid
-			xl:m-32
-			lg:m-20
-			md:grid-cols-2 md:m-12
-			grid-cols-1 gap-3 m-10 my-16
+			xl:m-36
+			lg:m-24 lg:gap-x-12
+			md:grid-cols-2 md:m-16
+			grid-cols-1 gap-3 m-10 my-20
 		">
 			<h3 class="
 				text-transparent font-bold uppercase self-start
-				lg:text-4xl lg:tracking-wide
-				md:text-3xl md:tracking-wide md:text-start
-				text-2xl text-center
+				lg:text-5xl lg:tracking-wide lg:leading-snug
+				md:text-4xl md:tracking-wide md:text-start md:leading-tight
+				text-2xl text-center leading-none
 			">
 				Our School Feeding Program
 			</h3>
 
 			<p class="
 				text-gray-300 font-[300] text-justify opacity-0
-				lg:text-xl
-				md:text-base
-				text-sm
+				lg:text-xl lg:px-16
+				md:text-base md:px-8
+				text-sm px-4
 			">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat omnis ipsum iste debitis. Doloribus a nisi ipsum voluptas laboriosam est beatae.  consectetur adipisicing elit. Fugiat omnis ipsum iste debitis. Doloribus a nisi ipsum voluptas laboriosam est beatae? Inventore esse labore nihil. Facere, numquam vero? Perferendis, recusandae.
+				We are passionate about the next generation of Ethiopians. We know that many across our great country go to school without the nourishment they need.
 			</p>
 		</div>
 	</div>
