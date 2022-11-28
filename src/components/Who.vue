@@ -93,6 +93,8 @@ onMounted(() => {
 			lg:gap-28 lg:px-12
 			md:gap-20 md:px-8 md:grid-cols-2
 			grid-cols-1
+			max-w-[1200px]
+			mx-auto
 		">
 
 			<div class="

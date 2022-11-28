@@ -20,7 +20,7 @@ const items = [
 
 		<div class="
 			bg-lighter shadow-2xl relative z-10 flex flex-wrap items-center justify-around
-			2xl:max-w-[1500px]
+			2xl:max-w-[1400px]
 			xl:p-8 xl:mx-32
 			lg:p-5 lg:mx-24
 			md:w-[80vw] md:p-5 md:mx-20

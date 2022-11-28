@@ -34,11 +34,12 @@ onMounted(() => {
 </script>
 
 <template>
-	<div id="feed" class="relative">
+	<div id="feed" class="relative flex justify-center">
 
 		<span class="absolute z-0 w-full h-full bg-black opacity-60"></span>
 		
 		<div class="
+			max-w-[1200px] grow
 			relative z-10 grid
 			xl:m-36
 			lg:m-24 lg:gap-x-12
