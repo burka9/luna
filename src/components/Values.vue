@@ -14,7 +14,7 @@
 				lg:mb-8
 				md:mb-6 md:text-4xl
 				mb-4 text-3xl
-			">Our Values</h3>
+			">Our Brand</h3>
 			<p class="
 				text-slate-500
 				md:w-[69vw] md:px-0 md:text-base md:leading-7
@@ -22,7 +22,7 @@
 				text-sm
 				opacity-0
 			">
-				We value the lasting reputation we have built, more than the short term financial success we could get. We value the irreplaceable human relation we have with everyone. We value the dedication of our employees, their energy and the growing intention to improve. We value the rewarding performance and the long-term relationship with our customers.
+				Our brand expresses excellence and strength led by powerful women starting from top management, covering up 46% of the entire employees. Our service is more than a business. Luna slaughterhouse, the lead exporter of halal meat and meat products to the Middle East and western Africa is a great instance of who we are.
 			</p>
 		</div>
 	</div>

@@ -34,16 +34,16 @@
 		">
 			<div class="left opacity-0">
 				<p class="md:text-2xl text-xl mb-12 md:mb-0 font-[300]">
-					Luna is a mother company for the collaboration of various business units engaged in the import-export process of numerous countries.
+					Luna is a mother company with the collaboration of various business units engaged in an import-export process for numerous countries.
 				</p>
 			</div>
 
 			<div class="right opacity-0">
 				<p class="text-base text-justify mb-6">
-					The company was established in 2003, and the first one to introduce employee share ownership program (ESOP) which is a mechanism that enables and facilitates employee ownership in both the country and the company.
+					Established in 2003, Luna is by far the first to introduce an employee share ownership program (ESOP) which is a mechanism that enables and facilitates employee ownership as a country and company.
 				</p>
 				<p class="text-base text-justify mb-6">
-					We care about the environment is one of our positive impact approach to do well on behalf of mother earth.
+					Luna tethers is a powerful and iconic brand with excellent and long-lasting commitment.
 				</p>
 				<a href="/about" class="uppercase text-sm font-bold">See More</a>
 			</div>
