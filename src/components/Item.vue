@@ -95,7 +95,7 @@ onMounted(() => {
 		xl:h-[480px] xl:px-32
 		lg:h-[440px] lg:px-24
 		md:h-[400px] md:px-12
-		h-[270px]
+		min-h-[400px]
 		${props.nth%3==2 ? 'bg-dark shadow-2xl' : '' }
 	`" :id="props._id">
 		<!-- <div class="flex items-center justify-center"> -->

@@ -44,11 +44,11 @@ natural timing, which made them a reliable food source for our customers for man
 		id: 'slaughter-house',
 		icon: SlaughterHouse,
 		title: 'Slaughter House',
-		content: `Widely known for providing healthy, sufficient, satisfying, and organic slaughter products of goat, 
-sheep, veal, beef, and red and green offal meat both for the domestic and international market, for 
-the past 20 years. Our process is simple and innovative; the animals grow in an abattoir grazing on open pastures, 
-with no growth hormone and antibiotic application, our experienced veterinarians always examine 
-the health and weight status of the animals before slaughter.
+		content: `More than 20 years ago, Hagos family members founded Luna through their commitment 
+to establishing an exemplary fresh produce supplier in Ethiopia. 
+Filled with a great passion for the rich livestock resource in the country and an inspiration 
+to make Ethiopia one of the leading exporters of standardized meat products, the family 
+started building a modern export slaughterhouse that ended up being the pioneer state-ofthe-art production facility in the country. 
 `,
 		route: '#slaughter-house',
 		color: 'luna-red',
