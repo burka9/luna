@@ -3,7 +3,8 @@
 
 <template>
 	<div id="who-are-we" class="
-		hidden flex-col justify-center
+		hidden
+		flex-col justify-center
 		2xl:max-w-[1700px] 2xl:mx-auto
 		lg:p-16 lg:px-24 lg:p-0 flex
 		md:px-20 md:h-[30rem]
@@ -34,16 +35,20 @@
 		">
 			<div class="left opacity-0">
 				<p class="md:text-2xl text-xl mb-12 md:mb-0 font-[300]">
-					Luna is a mother company with the collaboration of various business units engaged in an import-export process for numerous countries.
+					Luna’s story begins in 2003 – with a step taken for an establishment of a state-of-the-art fresh meat production led to the development of a new unparalleled portfolio of powerful and Iconic brands. 
 				</p>
 			</div>
 
 			<div class="right opacity-0">
 				<p class="text-base text-justify mb-6">
-					Established in 2003, Luna is by far the first to introduce an employee share ownership program (ESOP) which is a mechanism that enables and facilitates employee ownership as a country and company.
+					Luna’s mission is to provide our customers both in Ethiopia and the world with 
+quality fresh produces including but not limited to meat, vegetable, and fruits, as 
+well-prepared and semi-prepared healthy dishes along with our unique wine and 
+organic honey.
 				</p>
 				<p class="text-base text-justify mb-6">
-					Luna tethers is a powerful and iconic brand with excellent and long-lasting commitment.
+					At Luna, we provide more than fresh produce to the market. We are unique 
+in what we provide.
 				</p>
 				<a href="/about" class="uppercase text-sm font-bold">See More</a>
 			</div>
