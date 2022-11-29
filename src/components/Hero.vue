@@ -26,7 +26,8 @@
 			sm:mx-10 sm:text-sm
 			text-xs w-[80vw]
 		">
-		Luna is a mother company with the collaboration of various business units engaged in an import-export process for numerous countries.
+		Luna’s story begins in 2003 – with a step taken for an establishment of a state-ofthe-art fresh meat production led to the development of a new unparalleled 
+portfolio of powerful and Iconic brands. 
 		</p>
 		
 	</div>

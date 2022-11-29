@@ -42,7 +42,7 @@ onMounted(() => {
 			max-w-[1200px] grow
 			relative z-10 grid
 			xl:m-36
-			lg:m-24 lg:gap-x-12
+			lg:m-24 lg:gap-x-32
 			md:grid-cols-2 md:m-16
 			grid-cols-1 gap-3 m-10 my-20
 		">
@@ -57,11 +57,13 @@ onMounted(() => {
 
 			<p class="
 				text-gray-300 font-[300] text-justify opacity-0
-				lg:text-xl lg:px-16
+				lg:text-xl lg:px-12
 				md:text-base md:px-8
 				text-sm px-4
 			">
-				We are passionate about the next generation of Ethiopians. We know that many across our great country go to school without the nourishment they need.
+			We are committed to giving back. Luna leads and positively impacts the community 
+through its sustainable environmental practices and its charitable services supporting 
+disabled children and its school feeding program supports more than 360 needy students. 
 			</p>
 		</div>
 	</div>

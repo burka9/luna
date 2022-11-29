@@ -51,7 +51,7 @@ onMounted(() => {
 			text-[2.15rem] -mb-1.5
 		">it's all about <span class="md:text-[3rem] text-[2.15rem]">YOU!</span></h2>
 
-		<p class="font-[300]">Our service is more than a business.</p>
+		<p class="font-[300]">We serve quality on your door</p>
 
 		<a href="/contact" class="
 			uppercase bg-dark text-gray-200

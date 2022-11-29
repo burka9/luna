@@ -6,11 +6,16 @@ import anime from 'animejs'
 const items = [
 	{
 		header: 'Our Mission',
+		text: `Luna’s mission is to provide our customers both in Ethiopia and the world.
+Luna culture stands in three pillars.`,
 		children: [
-			`Serving our domestic and international customers with quality, fresh, and affordable farm and slaughter products`,
-			`Providing prepared and semi-prepared healthy dishes along with fine wine`,
-			`Ensuring traceability, safety, and efficiency in our product`,
-			`Eradicating the rate of malnutrition and food insecurity in Ethiopia`,
+			`Food Safety and Quality: Luna is known for its leading position in Food Safety 
+Management and Quality Assurance systems, producing a safe and 
+consistent product. Production in our units is conducted in accordance with 
+strict quality procedures in place. 
+`,
+			`Consistency has been our backbone in developing firm relations with our 
+partners for a very long time.`
 		]
 	},
 	{
@@ -106,12 +111,13 @@ onMounted(() => {
 				<h2 class="
 					text-4xl font-[500] mb-8
 				">{{ item.header }}</h2>
-				<ul class="list-outside list-disc">
+				<p v-if="item.text" class="mb-4">{{ item.text }}</p>
+				<ul class="list-outside list-disc lg:px-4 md:px-3 sm:px-2 px-1">
 					<li v-for="(child, i) in item.children" :key="i"
 					class="
 						font-[400]
-						lg:text-base lg:my-2
-						md:text-sm md:my-2
+						lg:text-base lg:my-4
+						md:text-sm md:my-3
 						text-xs my-2
 					">
 						{{ child }}
