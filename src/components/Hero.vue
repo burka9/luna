@@ -509,7 +509,8 @@ path {
 	@apply text-dark
 		text-xl mt-8;
 
-	background: linear-gradient(to right, var(--dark) 45%, transparent 55%);
+	/* background: linear-gradient(to right, var(--dark) 45%, transparent 55%); */
+	background: linear-gradient(to right, transparent 45%, transparent 55%);
 	background-clip: text;
 	background-size: 250% 100%;
 	background-position-x: 100%;

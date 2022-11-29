@@ -32,6 +32,13 @@
 					We are passionate about the next generation of Ethiopians. We know that many across our great country go to school without the nourishment they need.
 				</p>
 
+				<!-- <p class="font-[100] opacity-0 md:my-0 my-4 md:text-start text-center">
+					We are committed to giving back. Luna leads and positively impacts the community 
+through its sustainable environmental practices and its charitable services supporting 
+disabled children and its school feeding program supports more than 360 needy students. 
+				</p> -->
+
+
 				<a href="/about#feed" class="
 					bg-lighter uppercase text-white text-xs p-1 px-3 transition-all hover:shadow-2xl hover:bg-dark
 				">See more</a>

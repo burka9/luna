@@ -41,14 +41,14 @@
 
 			<div class="right opacity-0">
 				<p class="text-base text-justify mb-6">
-					Luna’s mission is to provide our customers both in Ethiopia and the world with 
-quality fresh produces including but not limited to meat, vegetable, and fruits, as 
-well-prepared and semi-prepared healthy dishes along with our unique wine and 
-organic honey.
+					Luna is pillared by more than 800 employee-partners with a positive work environment 
+that respects its employee’s diversity, and inclusiveness and strives for growth 
+opportunities. The women employees’ proportion is 46%; giving it a positive outcome for 
+its achievements. 
 				</p>
 				<p class="text-base text-justify mb-6">
-					At Luna, we provide more than fresh produce to the market. We are unique 
-in what we provide.
+					Luna is implementing Occupational Health & Safety program /OHS/ to foster a safe and 
+healthy occupational environment for its employees. 
 				</p>
 				<a href="/about" class="uppercase text-sm font-bold">See More</a>
 			</div>
