@@ -383,7 +383,7 @@ const animate_carousel = () => {
 	setTimeout(() => state.cc = 2, 1000)
 	setInterval(() => {
 		state.cc++
-		state.cc %= 3
+		state.cc %= 4
 	}, 7500)
 }
 </script>
@@ -403,6 +403,7 @@ const animate_carousel = () => {
 			<div class="box one"></div>
 			<div class="box two"></div>
 			<div class="box three"></div>
+			<div class="box four"></div>
 			
 		</div>
 	
@@ -410,6 +411,7 @@ const animate_carousel = () => {
 			<div :class="`one box w-full h-full absolute top-0 left-0`" v-if="state.cc == 0"></div>
 			<div :class="`two box w-full h-full absolute top-0 left-0`" v-else-if="state.cc == 1"></div>
 			<div :class="`three box w-full h-full absolute top-0 left-0`" v-else-if="state.cc == 2"></div>
+			<div :class="`four box w-full h-full absolute top-0 left-0`" v-else-if="state.cc == 3"></div>
 
 			<svg viewBox="0 0 9629.1094 2123.3979" id="text" class="relative -top-[8vh] sm:top-0 z-10" v-else>
 				<path
@@ -450,13 +452,16 @@ const animate_carousel = () => {
 
 <style scoped>
 .one {
-	background-image: url(../assets/imgs/luna-farm.jpg)
+	background-image: url(../assets/imgs/one.jpg)
 }
 .two {
-	background-image: url(../assets/imgs/kitchen.jpg)
+	background-image: url(../assets/imgs/two.JPG)
 }
 .three {
-	background-image: url(../assets/imgs/winery.jpg);
+	background-image: url(../assets/imgs/three.JPG);
+}
+.four {
+	background-image: url(../assets/imgs/four.jpg);
 }
 .box {
 	background-size: cover;
@@ -480,9 +485,6 @@ const animate_carousel = () => {
 .z-carousel-shade {
 	background: #0007;
 	@apply absolute z-[100] w-full h-full;
-}
-.one {
-	background-image: url(../assets/imgs/luna-farm.jpg);
 }
 path {
 	fill: transparent;
