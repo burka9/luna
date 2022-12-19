@@ -71,7 +71,7 @@ disabled children and its school feeding program supports more than 360 needy st
 
 <style scoped>
 #feed {
-	background-image: url('../assets/imgs/feeding_2.jpeg');
+	background-image: url('../assets/imgs/feeding.png');
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
