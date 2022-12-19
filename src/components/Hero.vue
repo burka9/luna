@@ -383,7 +383,7 @@ const animate_carousel = () => {
 	setTimeout(() => state.cc = 2, 1000)
 	setInterval(() => {
 		state.cc++
-		state.cc %= 4
+		state.cc %= 3
 	}, 7500)
 }
 </script>
@@ -403,7 +403,7 @@ const animate_carousel = () => {
 			<div class="box one"></div>
 			<div class="box two"></div>
 			<div class="box three"></div>
-			<div class="box four"></div>
+			<!-- <div class="box four"></div> -->
 			
 		</div>
 	
@@ -411,7 +411,7 @@ const animate_carousel = () => {
 			<div :class="`one box w-full h-full absolute top-0 left-0`" v-if="state.cc == 0"></div>
 			<div :class="`two box w-full h-full absolute top-0 left-0`" v-else-if="state.cc == 1"></div>
 			<div :class="`three box w-full h-full absolute top-0 left-0`" v-else-if="state.cc == 2"></div>
-			<div :class="`four box w-full h-full absolute top-0 left-0`" v-else-if="state.cc == 3"></div>
+			<!-- <div :class="`four box w-full h-full absolute top-0 left-0`" v-else-if="state.cc == 3"></div> -->
 
 			<svg viewBox="0 0 9629.1094 2123.3979" id="text" class="relative -top-[8vh] sm:top-0 z-10" v-else>
 				<path
