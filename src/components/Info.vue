@@ -19,12 +19,14 @@ const items = [
 		<div class="bg-lighter absolute z-0 w-full h-1/2 top-1/2"></div>
 
 		<div class="
-			bg-lighter shadow-2xl relative z-10 flex flex-wrap items-center justify-around
+			bg-lighter md:shadow-2xl relative z-10 flex flex-wrap items-center justify-around
 			2xl:max-w-[1400px]
 			xl:p-8 xl:mx-32
 			lg:p-5 lg:mx-24
 			md:w-[80vw] md:p-5 md:mx-20
 			w-full
+
+			md:mt-0 mt-8
 		">
 			<div class="
 				item flex flex-col items-center

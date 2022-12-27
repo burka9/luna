@@ -74,7 +74,14 @@ h2 {
 a {
 	background: linear-gradient(120deg, transparent 0% 50%, var(--dark) 50% 100%);
 	background-size: 225% 100%;
-	background-position-x: 0%;
+	background-position-x: 100%;
+	/* transition: all ease 500ms; */
+	border: 2px solid;
+}
+a:hover {
+	background-position-x: 50%;
+	background: transparent;
+	color: var(--dark);
 }
 @media screen and (max-width: 768px) {
 	a {

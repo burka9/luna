@@ -61,9 +61,7 @@ onMounted(() => {
 				md:text-base md:px-8
 				text-sm px-4
 			">
-			We are committed to giving back. Luna leads and positively impacts the community 
-through its sustainable environmental practices and its charitable services supporting 
-disabled children and its school feeding program supports more than 360 needy students. 
+			We are committed to giving back. Luna leads and positively impacts the community through its sustainable environmental practices and its charitable services supporting disabled children and its school feeding program supports more than 360 needy students.
 			</p>
 		</div>
 	</div>
