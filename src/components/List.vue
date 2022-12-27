@@ -10,6 +10,8 @@ import EzanaWinery from './Brands/EzanaWinery.vue';
 import LunaFarms from './Brands/LunaFarms.vue';
 import WaterWellDrilling from './Brands/WaterWellDrilling.vue';
 import AutoParts from './Brands/AutoParts.vue';
+import items from '../assets/content/brands.json'
+
 
 const colored = true
 const lorem = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis sunt, accusantium unde labore ullam adipisci tempora nihil quibusdam perferendis reprehenderit. Cum ab sapiente minima, illum odit voluptatem quasi.'
@@ -25,105 +27,6 @@ const lorem = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspic
 // 	/**/{ id: 'parts', icon: AutoParts, title: 'LUNA CATERKOMAT MACHINERY', content: 'Luna CATERKOMAT machinery supply is the correspondent business unit of the Luna Export Slaughter House P.L.C. we had been serving the construction industry by supplying original spare parts for construction machineries including dozer, excavator, loader, grader, roller, forklift, generator and generator. Broadening the market freedom of our clients by importing; CATERPILLAR, KOMATSU, CUMMINS, and PERKINS engines approved by the “British quality products”, all the way from Italy.', route: '#', last: true, color: 'dark', background: 'parts.jpg' },
 // ]
 
-const items = [
-	{
-		id: 'luna-farm',
-		icon: LunaFarms,
-		title: 'Luna Farms',
-		content: `Feeding and serving the community a nutritious, affordable, sufficient, and accessible meal 
-daily is our brand's objective. Our 1000 and 500 hectares of farmland in Oromia, Tigray, and the 
-southern region of the country are sources of vegetable and fruit supply. The secret is simple 
-Luna’s farm products are made free from fertilizers, and pesticide chemicals and harvested at 
-natural timing, which made them a reliable food source for our customers for many years.
-`,
-		route: '#luna-farm',
-		color: 'luna-green',
-		background: 'luna-farm.jpg'
-	},
-	{
-		id: 'slaughter-house',
-		icon: SlaughterHouse,
-		title: 'Slaughter House',
-		content: `More than 20 years ago, Hagos family members founded Luna through their commitment 
-to establishing an exemplary fresh produce supplier in Ethiopia. 
-Filled with a great passion for the rich livestock resource in the country and an inspiration 
-to make Ethiopia one of the leading exporters of standardized meat products, the family 
-started building a modern export slaughterhouse that ended up being the pioneer state-ofthe-art production facility in the country. 
-`,
-		route: '#slaughter-house',
-		color: 'luna-red',
-		background: 'slaughter-house.jpg'
-	},
-	{
-		id: 'fresh-corner',
-		icon: FreshCorner,
-		title: 'Fresh Corner',
-		content: `Fresh Corner located in the center of Ethiopia, Addis Ababa, opened 12 retail shops in the city 
-to provide healthy, fresh, highly hygienic, and affordable, vegetable, fruit, slaughter, and dairy 
-products directly from the farm.`,
-		route: '#fresh-corner',
-		color: 'luna-orange',
-		background: 'fresh-corner.jpg' },
-	{
-		id: 'kitchen',
-		icon: Kitchen,
-		title: 'Fresh Corner Kitchen',
-		content: `As an extensively community-serving company, Starting from the ingredient of every single meal 
-we serve; quality, freshness, and deliverability had been part of our identity. Our passionate chefs 
-work to meet your standard meal with the highest quality possible, we are proud to present you 
-fresh corner kitchen; a place where you can enjoy simple, tasty, nutritious, and affordable with 
-your loved once.`,
-		route: '#kitchen',
-		color: 'luna-blue',
-		background: 'kitchen.jpg' },
-	{
-		id: 'winery',
-		icon: EzanaWinery,
-		title: 'Ezana Winery',
-		content: `We are situated around Quha, Mekelle, a place with a semi-arid climate and the utmost 
-location to create that elegant taste of grapes. Ezana winery and vineyard was established in 2010, 
-near a place with a wonderful natural state and atmosphere.`,
-		route: '#winery',
-		color: 'luna-pink',
-		background: 'winery.jpg' },
-	{
-		id: 'honey',
-		icon: DebreBerhanHoney,
-		title: 'Luna Honey',
-		content: `The inspiration came from the idea of “from hive to home”. We wanted to create a platform 
-characterized by originality, trustworthiness, transparency, and deliverability. Our local processing 
-plant is located at Debre Birhan, with a fully controlled quality manner and regularly testing 
-independent laboratory. Everything from land selection, beekeeping, bee hiving, production, 
-packing, and distribution is kept under the qualification of high export standards.`,
-		route: '#honey',
-		color: 'luna-yellow',
-		background: 'honey.jpg'
-	},
-	{
-		id: 'waterwell',
-		icon: WaterWellDrilling,
-		title: 'Water Well Drilling',
-		content: `Luna water will drill, is one of the recent business units under Luna import and export. Which 
-had been functioning for the past two years, and it’s one of the most prominent borehole drilling 
-projects authorized under the Federal Democratic Republic of Ethiopia.`,
-		route: '#waterwell',
-		last: true,
-		color: 'dark',
-		background: 'waterwell.jpg'
-	},
-	{
-		id: 'parts',
-		icon: AutoParts,
-		title: 'LUNA CATERKOMAT',
-		content: `Luna CATERKOMAT machinery supply is a correspondent business unit of Luna Export 
-Slaughter House P.L.C. we had been serving by supplying original spare parts for construction 
-machinery including dozers, excavators, loaders, graders, rollers, forklifts, and generators.`,
-		route: '#parts',
-		last: true,
-		color: 'dark',
-		background: 'parts.jpg'
-	},
-]
 
 var aBox = function (element) {
 	let box = element.getBoundingClientRect()

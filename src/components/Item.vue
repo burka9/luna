@@ -115,12 +115,13 @@ onMounted(() => {
 			<div :class="`
 				content flex flex-col items-center
 				lg:mx-12
+				lg:max-w-[1500px]
 				md:max-w-[50%] md:mx-6
 				max-w-[70vw]
 			`" :style="`--color: ${color()}`">
 				<h3 class="font-[800] uppercase tracking-wider text-xl mb-1">{{ props.item.title }}</h3>
 				<p class="
-					opacity-1 text-[14px] font-[400] text-center my-5
+					opacity-1 text-[14px] font-[400] text-center my-5 max-w-[1000px]
 					md:opacity-0
 				">{{ props.item.content }}</p>
 				<!-- <div class="flex items-center"> -->
