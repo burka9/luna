@@ -35,20 +35,20 @@
 		">
 			<div class="left opacity-0">
 				<p class="md:text-2xl text-xl mb-12 md:mb-0 font-[300]">
-					Luna’s story begins in 2003 – with a step taken for an establishment of a state-of-the-art fresh meat production led to the development of a new unparalleled portfolio of powerful and Iconic brands. 
+					Luna’s story begins in 2003 – with a step taken for an establishment of a state-of-the-art fresh
+meat production led to the development of a new unparalleled portfolio of powerful and Iconic
+brands.
 				</p>
 			</div>
 
 			<div class="right opacity-0">
 				<p class="text-base text-justify mb-6">
-					Luna is pillared by more than 800 employee-partners with a positive work environment 
-that respects its employee’s diversity, and inclusiveness and strives for growth 
-opportunities. The women employees’ proportion is 46%; giving it a positive outcome for 
-its achievements. 
+					“Excellence” and “Commitment” refers to everything we do at Luna and it is an essential
+part of our success.
 				</p>
 				<p class="text-base text-justify mb-6">
-					Luna is implementing Occupational Health & Safety program /OHS/ to foster a safe and 
-healthy occupational environment for its employees. 
+					At Luna, we provide more than fresh produce to the market. We are unique in what we
+provide.
 				</p>
 				<a href="/about" class="uppercase text-sm font-bold">See More</a>
 			</div>
